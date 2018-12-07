@@ -6,25 +6,43 @@ import SwiftyJSON
 class MoyaNetworkProvider: NetworkProvider, PluginType {
     static var shared = MoyaNetworkProvider()
     private let provider: MoyaProvider<Endpoint>
+    private let cacheProvider: NetworkCacheProvider
 
-    private init(provider: MoyaProvider<Endpoint> = MoyaProvider<Endpoint>()) {
+    private init(provider: MoyaProvider<Endpoint> = MoyaProvider<Endpoint>(), cacheProvider: NetworkCacheProvider = UserDefaultsProvider.shared) {
         self.provider = provider
+        self.cacheProvider = cacheProvider
     }
     
-    private func customRequest(_ target: Endpoint, customPath: [JSONSubscriptType]? = nil) -> Single<(JSONDict, Response)> {
-        return provider.rx.request(target)
+    private func customRequest(_ endpoint: Endpoint, customPath: [JSONSubscriptType]? = nil) -> Single<(JSONDict, Response)> {
+        return provider.rx.request(endpoint)
             .parseToJSON()
+            .cacheResponse(endpoint: endpoint, cacheProvider: cacheProvider)
             .handleError()
     }
     
-    func request(_ target: Endpoint) -> Single<JSONDict> {
-        return customRequest(target).extractJSON()
+    func request(_ endpoint: Endpoint) -> Single<JSONDict> {
+        return customRequest(endpoint)
+            .extractJSON()
+            .catchError({ [weak self] error -> PrimitiveSequence<SingleTrait, JSONDict> in
+                guard let cacheProvider = self?.cacheProvider else { throw error }
+                guard let error = error as? NetworkError else {
+                    return cacheProvider.request(endpoint)
+                }
+                throw error
+            })
     }
     
-    func requestDecodable<D: Decodable>(_ target: Endpoint, customPath: [JSONSubscriptType]? = nil) -> Single<D> {
-        return customRequest(target, customPath: customPath).map(D.self, atKeyPath: customPath)
+    func requestDecodable<D: Decodable>(_ endpoint: Endpoint, customPath: [JSONSubscriptType]? = nil) -> Single<D> {
+        return customRequest(endpoint, customPath: customPath)
+            .map(D.self, atKeyPath: customPath)
+            .catchError({ [weak self] error -> PrimitiveSequence<SingleTrait, D> in
+                guard let cacheProvider = self?.cacheProvider else { throw error }
+                guard let error = error as? NetworkError else {
+                    return cacheProvider.requestDecodable(endpoint, customPath: customPath)
+                }
+                throw error
+            })
     }
-    
 }
 
 //MARK: - Endpoint Moya extension
@@ -84,15 +102,14 @@ private extension Single where TraitType == SingleTrait, Element == (JSONDict, R
                 let data = try json.rawData()
                 return .just(try JSONDecoder().decode(D.self, from: data))
             }
-            catch let error {
-                print(error.localizedDescription)
+            catch {
                 throw NetworkError.malformedJSON
             }
         }
     }
     
     func extractJSON() -> Single<JSONDict> {
-        return map({$0.0})
+        return map { $0.0 }
     }
     
     func handleError() -> Single<(JSONDict, Response)> {
@@ -104,5 +121,9 @@ private extension Single where TraitType == SingleTrait, Element == (JSONDict, R
             default: return .just((json, response))
             }
         }
+    }
+    
+    func cacheResponse(endpoint: Endpoint, cacheProvider: NetworkCacheProvider) -> Single<(JSONDict, Response)> {
+        return self.do(onSuccess: { cacheProvider.saveData($0.0, for: endpoint) })
     }
 }

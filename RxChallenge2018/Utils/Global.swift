@@ -26,3 +26,9 @@ private extension DateFormatter {
         self.dateFormat = dateFormat
     }
 }
+
+extension Dictionary where Key == String, Value: Any {
+    var hash: String {
+        return self.keys.sorted().map { [$0, String(describing: self[$0])].joined(separator: ":") }.joined(separator: ",")
+    }
+}

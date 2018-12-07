@@ -1,7 +1,7 @@
 import Foundation
 import Moya
 
-enum EndpointMethod {
+enum EndpointMethod: String {
     case options
     case get
     case head
@@ -31,5 +31,12 @@ struct Endpoint {
         self.headers = headers
         self.parameters = parameters
         self.parametersEncoding = parametersEncoding
+    }
+}
+
+//MARK - Cache extension
+extension Endpoint {
+    var key: String {
+        return [httpMethod.rawValue, baseURL.absoluteString, parameters?.hash ?? ""].joined(separator: "|")
     }
 }

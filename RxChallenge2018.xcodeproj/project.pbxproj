@@ -23,6 +23,7 @@
 		282FF9A821BA6ACF0049A05D /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282FF9A121BA6ACF0049A05D /* NetworkProvider.swift */; };
 		282FF9A921BA6ACF0049A05D /* Hosts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282FF9A221BA6ACF0049A05D /* Hosts.swift */; };
 		282FF9AC21BA6B930049A05D /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282FF9AB21BA6B930049A05D /* Post.swift */; };
+		282FF9B221BA94910049A05D /* UserDefaultsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282FF9B121BA94910049A05D /* UserDefaultsProvider.swift */; };
 		287E027421BA4F4400437462 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287E027321BA4F4400437462 /* AppDelegate.swift */; };
 		287E027D21BA4F4600437462 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 287E027C21BA4F4600437462 /* Assets.xcassets */; };
 		287E028021BA4F4600437462 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 287E027E21BA4F4600437462 /* LaunchScreen.storyboard */; };
@@ -66,6 +67,7 @@
 		282FF9A121BA6ACF0049A05D /* NetworkProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkProvider.swift; sourceTree = "<group>"; };
 		282FF9A221BA6ACF0049A05D /* Hosts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hosts.swift; sourceTree = "<group>"; };
 		282FF9AB21BA6B930049A05D /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		282FF9B121BA94910049A05D /* UserDefaultsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsProvider.swift; sourceTree = "<group>"; };
 		287E027021BA4F4400437462 /* RxChallenge2018.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxChallenge2018.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		287E027321BA4F4400437462 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		287E027C21BA4F4600437462 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -196,8 +198,9 @@
 			isa = PBXGroup;
 			children = (
 				282FF9A121BA6ACF0049A05D /* NetworkProvider.swift */,
-				282FF99F21BA6ACF0049A05D /* MoyaNetworkProvider.swift */,
 				282FF9A021BA6ACF0049A05D /* TypicodeProvider.swift */,
+				282FF9AD21BA93790049A05D /* Moya */,
+				282FF9AE21BA93930049A05D /* UserDefaults */,
 			);
 			path = Providers;
 			sourceTree = "<group>";
@@ -208,6 +211,22 @@
 				282FF9AB21BA6B930049A05D /* Post.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		282FF9AD21BA93790049A05D /* Moya */ = {
+			isa = PBXGroup;
+			children = (
+				282FF99F21BA6ACF0049A05D /* MoyaNetworkProvider.swift */,
+			);
+			path = Moya;
+			sourceTree = "<group>";
+		};
+		282FF9AE21BA93930049A05D /* UserDefaults */ = {
+			isa = PBXGroup;
+			children = (
+				282FF9B121BA94910049A05D /* UserDefaultsProvider.swift */,
+			);
+			path = UserDefaults;
 			sourceTree = "<group>";
 		};
 		287E026721BA4F4400437462 = {
@@ -530,6 +549,7 @@
 				282FF98F21BA60D70049A05D /* ListAPI.swift in Sources */,
 				282FF9AC21BA6B930049A05D /* Post.swift in Sources */,
 				282FF99521BA61370049A05D /* Global.swift in Sources */,
+				282FF9B221BA94910049A05D /* UserDefaultsProvider.swift in Sources */,
 				282FF9A921BA6ACF0049A05D /* Hosts.swift in Sources */,
 				282FF9A421BA6ACF0049A05D /* TypicodeEndpoint.swift in Sources */,
 				282FF9A621BA6ACF0049A05D /* MoyaNetworkProvider.swift in Sources */,

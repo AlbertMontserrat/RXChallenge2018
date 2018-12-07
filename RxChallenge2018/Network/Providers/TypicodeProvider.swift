@@ -3,7 +3,7 @@ import Moya
 import RxSwift
 
 protocol TypicodeService {
-    func getPosts(_ target: TypicodeEndpoint, page: Int) -> Single<Post>
+    func getPosts(_ endpoint: TypicodeEndpoint) -> Single<Post>
 }
 
 class TypicodeProvider: TypicodeService {
@@ -14,7 +14,7 @@ class TypicodeProvider: TypicodeService {
         self.networkProvider = networkProvider
     }
     
-    func getPosts(_ target: TypicodeEndpoint = TypicodeEndpoint(), page: Int) -> Single<Post>  {
-        return networkProvider.requestDecodable(target.getMovies(page: page))
+    func getPosts(_ endpoint: TypicodeEndpoint = TypicodeEndpoint()) -> Single<Post>  {
+        return networkProvider.requestDecodable(target.getPosts(), customPath: nil)
     }
 }
