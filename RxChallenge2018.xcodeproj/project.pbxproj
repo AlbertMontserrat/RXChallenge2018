@@ -29,6 +29,8 @@
 		287E028B21BA4F4600437462 /* RxChallenge2018Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287E028A21BA4F4600437462 /* RxChallenge2018Tests.swift */; };
 		287E029621BA4F4600437462 /* RxChallenge2018UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287E029521BA4F4600437462 /* RxChallenge2018UITests.swift */; };
 		5038013521BAE1D500EA82F9 /* UIView+Anchors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5038013421BAE1D500EA82F9 /* UIView+Anchors.swift */; };
+		5038013821BAF77E00EA82F9 /* PostCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5038013721BAF77E00EA82F9 /* PostCellController.swift */; };
+		5038013A21BAF78A00EA82F9 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5038013921BAF78A00EA82F9 /* PostTableViewCell.swift */; };
 		76A2FFC69A13C9FA8F87ACAD /* Pods_RxChallenge2018UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE9DB6FEF1F0517E4861B112 /* Pods_RxChallenge2018UITests.framework */; };
 		CF24AE228E1E40D5F2ADA2E9 /* Pods_RxChallenge2018.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75A596011461E780B745E530 /* Pods_RxChallenge2018.framework */; };
 /* End PBXBuildFile section */
@@ -81,6 +83,8 @@
 		4608BBA354F500F63ABBE0BF /* Pods-RxChallenge2018UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxChallenge2018UITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxChallenge2018UITests/Pods-RxChallenge2018UITests.debug.xcconfig"; sourceTree = "<group>"; };
 		4CD0AA5193917A71F9A0C25C /* Pods-RxChallenge2018.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxChallenge2018.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxChallenge2018/Pods-RxChallenge2018.debug.xcconfig"; sourceTree = "<group>"; };
 		5038013421BAE1D500EA82F9 /* UIView+Anchors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Anchors.swift"; sourceTree = "<group>"; };
+		5038013721BAF77E00EA82F9 /* PostCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCellController.swift; sourceTree = "<group>"; };
+		5038013921BAF78A00EA82F9 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		56B6687E9EC5610483E91819 /* Pods-RxChallenge2018.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxChallenge2018.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxChallenge2018/Pods-RxChallenge2018.release.xcconfig"; sourceTree = "<group>"; };
 		73ED6648045C194F1BB0ABB4 /* Pods_RxChallenge2018Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxChallenge2018Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		75A596011461E780B745E530 /* Pods_RxChallenge2018.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxChallenge2018.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -149,6 +153,7 @@
 		282FF98521BA60BC0049A05D /* List */ = {
 			isa = PBXGroup;
 			children = (
+				5038013621BAF76000EA82F9 /* Cell */,
 				282FF98721BA60D70049A05D /* ListCoordinator.swift */,
 				282FF98821BA60D70049A05D /* ListPresenter.swift */,
 				282FF98921BA60D70049A05D /* ListAPI.swift */,
@@ -280,6 +285,15 @@
 				287E029721BA4F4600437462 /* Info.plist */,
 			);
 			path = RxChallenge2018UITests;
+			sourceTree = "<group>";
+		};
+		5038013621BAF76000EA82F9 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				5038013721BAF77E00EA82F9 /* PostCellController.swift */,
+				5038013921BAF78A00EA82F9 /* PostTableViewCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		9FCB77767826460D761A2756 /* Pods */ = {
@@ -541,8 +555,10 @@
 				282FF99021BA60D70049A05D /* ListInteractor.swift in Sources */,
 				287E027421BA4F4400437462 /* AppDelegate.swift in Sources */,
 				282FF99221BA60D70049A05D /* ListGateway.swift in Sources */,
+				5038013A21BAF78A00EA82F9 /* PostTableViewCell.swift in Sources */,
 				282FF98321BA5F970049A05D /* MainCoordinator.swift in Sources */,
 				282FF99121BA60D70049A05D /* ListView.swift in Sources */,
+				5038013821BAF77E00EA82F9 /* PostCellController.swift in Sources */,
 				282FF9A721BA6ACF0049A05D /* TypicodeProvider.swift in Sources */,
 				282FF9A821BA6ACF0049A05D /* NetworkProvider.swift in Sources */,
 				282FF98E21BA60D70049A05D /* ListPresenter.swift in Sources */,

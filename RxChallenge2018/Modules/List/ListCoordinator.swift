@@ -21,6 +21,8 @@ class ListCoordinator: MainCoordinator {
 
 extension ListCoordinator: ListRoutingInterface {
     func gotoDetail(with post: Post) {
-        
+        let alertController = UIAlertController(title: post.title, message: post.body, preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        navigationController?.present(alertController, animated: true, completion: nil)
     }
 }

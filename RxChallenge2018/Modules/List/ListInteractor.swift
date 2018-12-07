@@ -1,7 +1,7 @@
 import Foundation
 import RxSwift
 
-typealias ListData = ()
+typealias PostsWithQuery = (posts: [Post], query: String)
 
 final class ListInteractor: ListInteractorInterface {
     
@@ -9,7 +9,6 @@ final class ListInteractor: ListInteractorInterface {
     private let interactorOutput: ListPresenterInterface
     private let gateway: ListGateway
     private let router: ListRoutingInterface
-    
     private let disposeBag = DisposeBag()
     
     //MARK: - Lifecycle
@@ -19,12 +18,6 @@ final class ListInteractor: ListInteractorInterface {
         self.interactorOutput = outputInterface
         self.gateway = gateway
         self.router = router
-        
-//        gateway.getPosts().subscribe(onSuccess: { posts in
-//            print("\(posts.count) posts loaded")
-//        }) { error in
-//            print(error)
-//        }.disposed(by: disposeBag)
     }
     
     //MARK: - ListInteractorInterface
@@ -33,16 +26,23 @@ final class ListInteractor: ListInteractorInterface {
     }
     
     func configure(with searchObservable: Observable<String>) {
-        Observable
-            .zip(gateway.getPosts().asObservable(), searchObservable) { posts, searchString -> [Post] in
-                return posts.filter { $0.title.lowercased().contains(searchString.lowercased()) || $0.body.lowercased().contains(searchString.lowercased()) }
-            }
-            .subscribe(onNext: { posts in
-                print("\(posts.count) posts loaded")
-            })
-            .disposed(by: disposeBag)
+        interactorOutput.setupPosts(with: Observable.combineLatest(gateway.getPosts().asObservable(), searchObservable) { posts, searchString -> PostsWithQuery in
+            return (posts.filter {
+                guard !searchString.isEmpty else { return true }
+                return $0.title.lowercased().contains(searchString.lowercased())
+            }, searchString)
+        })
     }
     
+    func configureSelection(with selectionIdObservable: Observable<Int>) {
+        selectionIdObservable
+            .withLatestFrom(gateway.getPosts().asObservable()) { id, posts -> Post? in
+                return posts.first { $0.id == id }
+            }.subscribe(onNext: { [unowned self] post in
+                guard let post = post else { return }
+                self.router.gotoDetail(with: post)
+            }).disposed(by: disposeBag)
+    }
 }
 
 //MARK: - Private methods

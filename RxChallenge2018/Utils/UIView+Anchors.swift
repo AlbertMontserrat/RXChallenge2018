@@ -6,15 +6,16 @@ extension UIView {
         translatesAutoresizingMaskIntoConstraints = false
         widthAnchor.constraint(equalTo: heightAnchor, multiplier: multiplier).isActive = true
     }
-
-    public func fillSuperview() {
+    
+    func fillSuperview(withEdges edges: UIEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)) {
+        guard let superView = superview else { return }
         translatesAutoresizingMaskIntoConstraints = false
-        if let superview = superview {
-            leftAnchor.constraint(equalTo: superview.leftAnchor).isActive = true
-            rightAnchor.constraint(equalTo: superview.rightAnchor).isActive = true
-            topAnchor.constraint(equalTo: superview.topAnchor).isActive = true
-            bottomAnchor.constraint(equalTo: superview.bottomAnchor).isActive = true
-        }
+        NSLayoutConstraint.activate([
+            leadingAnchor.constraint(equalTo: superView.leadingAnchor, constant: edges.left),
+            trailingAnchor.constraint(equalTo: superView.trailingAnchor, constant: -edges.right),
+            topAnchor.constraint(equalTo: superView.topAnchor, constant: edges.top),
+            bottomAnchor.constraint(equalTo: superView.bottomAnchor, constant: -edges.bottom)
+            ])
     }
 
     public func anchorCenterXToSuperview(constant: CGFloat = 0) {
