@@ -37,10 +37,7 @@ class MoyaNetworkProvider: NetworkProvider, PluginType {
             .map(D.self, atKeyPath: customPath)
             .catchError({ [weak self] error -> PrimitiveSequence<SingleTrait, D> in
                 guard let cacheProvider = self?.cacheProvider else { throw error }
-                guard let error = error as? NetworkError else {
-                    return cacheProvider.requestDecodable(endpoint, customPath: customPath)
-                }
-                throw error
+                return cacheProvider.requestDecodable(endpoint, customPath: customPath)
             })
     }
     
@@ -50,10 +47,7 @@ class MoyaNetworkProvider: NetworkProvider, PluginType {
             .map(D.self)
             .catchError({ [weak self] error -> PrimitiveSequence<SingleTrait, [D]> in
                 guard let cacheProvider = self?.cacheProvider else { throw error }
-                guard let error = error as? NetworkError else {
-                    return cacheProvider.requestDecodableArray(endpoint)
-                }
-                throw error
+                return cacheProvider.requestDecodableArray(endpoint)
             })
     }
 }
@@ -111,18 +105,18 @@ private extension Single where TraitType == SingleTrait, Element == Response {
     func handleError() -> Single<Response> {
         return flatMap { response in
             switch response.statusCode {
+            case 200..<300: return .just(response)
             case 401: throw NetworkError.unauthorized
             case 404: throw NetworkError.notFound
             case 422: throw NetworkError.noMoreElements
-            default: return .just(response)
+            default: throw NetworkError.undefined
             }
         }
     }
     
     func cacheResponse(endpoint: Endpoint, cacheProvider: NetworkCacheProvider) -> Single<Response> {
         return self.do(onSuccess: {
-            guard let string = String(data: $0.data, encoding: .utf8) else { throw NetworkError.malformedJSON }
-            cacheProvider.saveData(string, for: endpoint)
+            cacheProvider.saveData($0.data, for: endpoint)
         })
     }
 }

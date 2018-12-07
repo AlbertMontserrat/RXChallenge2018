@@ -11,9 +11,9 @@ class UserDefaultsProvider: NetworkCacheProvider {
         self.provider = provider
     }
     
-    private func customRequest(_ endpoint: Endpoint) -> Single<String> {
-        return Observable<String>.create { [weak self] observer in
-            if let value = self?.provider.string(forKey: endpoint.key) {
+    private func customRequest(_ endpoint: Endpoint) -> Single<Data> {
+        return Observable<Data>.create { [weak self] observer in
+            if let value = self?.provider.data(forKey: endpoint.key) {
                 observer.onNext(value)
                 observer.onCompleted()
             } else {
@@ -35,23 +35,23 @@ class UserDefaultsProvider: NetworkCacheProvider {
         return customRequest(endpoint).parseToArray().map(D.self)
     }
     
-    func saveData(_ data: String, for endpoint: Endpoint) {
+    func saveData(_ data: Data, for endpoint: Endpoint) {
         provider.set(data, forKey: endpoint.key)
     }
 }
 
 //MARK: - Single<Response> extensions
-private extension Single where TraitType == SingleTrait, Element == String {
+private extension Single where TraitType == SingleTrait, Element == Data {
     func parseToJSON() -> Single<JSONDict> {
-        return flatMap { string in
-            guard let json = JSON(stringLiteral: string).dictionaryObject else { throw NetworkError.malformedJSON }
+        return flatMap { data in
+            guard let json = try JSON(data: data).dictionaryObject else { throw NetworkError.malformedJSON }
             return .just(json)
         }
     }
     
     func parseToArray() -> Single<JSONArray> {
-        return flatMap { string in
-            guard let json = JSON(stringLiteral: string).arrayObject else { throw NetworkError.malformedJSON }
+        return flatMap { data in
+            guard let json = try JSON(data: data).arrayObject else { throw NetworkError.malformedJSON }
             return .just(json)
         }
     }

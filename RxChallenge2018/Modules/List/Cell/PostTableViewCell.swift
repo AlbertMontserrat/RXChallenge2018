@@ -26,6 +26,7 @@ class PostTableViewCell: UITableViewCell {
 
 private extension PostTableViewCell {
     func setupUI() {
+        selectionStyle = .none
         layoutUI()
     }
     

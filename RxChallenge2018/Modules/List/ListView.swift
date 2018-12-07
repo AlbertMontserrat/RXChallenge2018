@@ -2,6 +2,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 import GenericCellControllers
+import RxKeyboard
 
 final class ListView: UIViewController, ListViewInterface {
     
@@ -12,6 +13,9 @@ final class ListView: UIViewController, ListViewInterface {
     private var cellControllers: [TableCellController] = []
     private let selectionSubject = ReplaySubject<Int>.create(bufferSize: 1)
     private let disposeBag = DisposeBag()
+    private var contentViewBottomConstraint: NSLayoutConstraint?
+    var animating = false
+    var firstAnimation = true
     
     //MARK: - UI Elements
     let searchController = UISearchController(searchResultsController: nil)
@@ -33,6 +37,10 @@ final class ListView: UIViewController, ListViewInterface {
         viewOutput?.initializeTitles()
         viewOutput?.configure(with: searchController.searchBar.rx.value.map { $0 ?? "" })
         viewOutput?.configureSelection(with: selectionSubject)
+        
+        RxKeyboard.instance.visibleHeight.drive(onNext: { [weak self] height in
+            self?.animate(to: height)
+        }).disposed(by: disposeBag)
     }
     
     //MARK: - ListViewInterface
@@ -72,7 +80,21 @@ private extension ListView {
     
     func layout() {
         view.addSubviewWithAutolayout(tableView)
-        tableView.fillSuperview()
+        tableView.anchor(top: view.topAnchor, left: view.leftAnchor, right: view.rightAnchor)
+        contentViewBottomConstraint = tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        contentViewBottomConstraint?.isActive = true
+    }
+    
+    func animate(to height: CGFloat) {
+        animating = true
+        contentViewBottomConstraint?.constant = -height
+        
+        UIView.animate(withDuration: firstAnimation ? 0.0 : 0.3, delay: 0.0, options: .beginFromCurrentState, animations: {
+            self.view.layoutIfNeeded()
+        }) { complete in
+            self.firstAnimation = false
+            self.animating = false
+        }
     }
 }
 

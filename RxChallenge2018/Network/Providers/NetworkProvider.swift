@@ -20,5 +20,5 @@ protocol NetworkCacheProvider {
     func request(_ endpoint: Endpoint) -> Single<JSONDict>
     func requestDecodable<D: Decodable>(_ endpoint: Endpoint, customPath: [JSONSubscriptType]?) -> Single<D>
     func requestDecodableArray<D: Decodable>(_ endpoint: Endpoint) -> Single<[D]>
-    func saveData(_ data: String, for endpoint: Endpoint)
+    func saveData(_ data: Data, for endpoint: Endpoint)
 }

@@ -8,7 +8,7 @@ target 'RxChallenge2018' do
   pod 'RxCocoa', '~> 4.0'
   pod 'GenericCellControllers'
   pod 'SwiftyJSON', '~> 4.0'
-  pod 'Nuke'
+  pod 'RxKeyboard'
   
   target 'RxChallenge2018Tests' do
     inherit! :search_paths

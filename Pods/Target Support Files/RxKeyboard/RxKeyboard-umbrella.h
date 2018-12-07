@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double NukeVersionNumber;
-FOUNDATION_EXPORT const unsigned char NukeVersionString[];
+FOUNDATION_EXPORT double RxKeyboardVersionNumber;
+FOUNDATION_EXPORT const unsigned char RxKeyboardVersionString[];
 
