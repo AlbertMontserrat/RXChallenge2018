@@ -16,7 +16,6 @@
 		282FF99121BA60D70049A05D /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282FF98B21BA60D70049A05D /* ListView.swift */; };
 		282FF99221BA60D70049A05D /* ListGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282FF98C21BA60D70049A05D /* ListGateway.swift */; };
 		282FF99521BA61370049A05D /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282FF99421BA61370049A05D /* Global.swift */; };
-		282FF9A421BA6ACF0049A05D /* TypicodeEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282FF99C21BA6ACF0049A05D /* TypicodeEndpoint.swift */; };
 		282FF9A521BA6ACF0049A05D /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282FF99D21BA6ACF0049A05D /* Endpoint.swift */; };
 		282FF9A621BA6ACF0049A05D /* MoyaNetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282FF99F21BA6ACF0049A05D /* MoyaNetworkProvider.swift */; };
 		282FF9A721BA6ACF0049A05D /* TypicodeProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282FF9A021BA6ACF0049A05D /* TypicodeProvider.swift */; };
@@ -60,7 +59,6 @@
 		282FF98B21BA60D70049A05D /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		282FF98C21BA60D70049A05D /* ListGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListGateway.swift; sourceTree = "<group>"; };
 		282FF99421BA61370049A05D /* Global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
-		282FF99C21BA6ACF0049A05D /* TypicodeEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypicodeEndpoint.swift; sourceTree = "<group>"; };
 		282FF99D21BA6ACF0049A05D /* Endpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		282FF99F21BA6ACF0049A05D /* MoyaNetworkProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoyaNetworkProvider.swift; sourceTree = "<group>"; };
 		282FF9A021BA6ACF0049A05D /* TypicodeProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypicodeProvider.swift; sourceTree = "<group>"; };
@@ -189,7 +187,6 @@
 			children = (
 				282FF9A221BA6ACF0049A05D /* Hosts.swift */,
 				282FF99D21BA6ACF0049A05D /* Endpoint.swift */,
-				282FF99C21BA6ACF0049A05D /* TypicodeEndpoint.swift */,
 			);
 			path = Endpoints;
 			sourceTree = "<group>";
@@ -551,7 +548,6 @@
 				282FF99521BA61370049A05D /* Global.swift in Sources */,
 				282FF9B221BA94910049A05D /* UserDefaultsProvider.swift in Sources */,
 				282FF9A921BA6ACF0049A05D /* Hosts.swift in Sources */,
-				282FF9A421BA6ACF0049A05D /* TypicodeEndpoint.swift in Sources */,
 				282FF9A621BA6ACF0049A05D /* MoyaNetworkProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

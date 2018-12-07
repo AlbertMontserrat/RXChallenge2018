@@ -3,7 +3,7 @@ import Moya
 import RxSwift
 
 protocol TypicodeService {
-    func getPosts(_ endpoint: TypicodeEndpoint) -> Single<Post>
+    func getPosts() -> Single<[Post]>
 }
 
 class TypicodeProvider: TypicodeService {
@@ -14,7 +14,9 @@ class TypicodeProvider: TypicodeService {
         self.networkProvider = networkProvider
     }
     
-    func getPosts(_ endpoint: TypicodeEndpoint = TypicodeEndpoint()) -> Single<Post>  {
-        return networkProvider.requestDecodable(target.getPosts(), customPath: nil)
+    func getPosts() -> Single<[Post]>  {
+        let endpoint = Endpoint(baseURL: Hosts.typicode.getBaseURL(),
+                                path: "posts")
+        return networkProvider.requestDecodableArray(endpoint)
     }
 }

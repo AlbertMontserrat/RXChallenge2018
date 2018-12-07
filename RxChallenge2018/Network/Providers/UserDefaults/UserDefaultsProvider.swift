@@ -11,7 +11,7 @@ class UserDefaultsProvider: NetworkCacheProvider {
         self.provider = provider
     }
     
-    private func customRequest(_ endpoint: Endpoint, customPath: [JSONSubscriptType]? = nil) -> Single<JSONDict> {
+    private func customRequest(_ endpoint: Endpoint) -> Single<String> {
         return Observable<String>.create { [weak self] observer in
             if let value = self?.provider.string(forKey: endpoint.key) {
                 observer.onNext(value)
@@ -20,18 +20,22 @@ class UserDefaultsProvider: NetworkCacheProvider {
                 observer.onError(NetworkError.notFound)
             }
             return Disposables.create()
-        }.asSingle().parseToJSON()
+        }.asSingle()
     }
     
     func request(_ endpoint: Endpoint) -> Single<JSONDict> {
-        return customRequest(endpoint)
+        return customRequest(endpoint).parseToJSON()
     }
     
     func requestDecodable<D: Decodable>(_ endpoint: Endpoint, customPath: [JSONSubscriptType]? = nil) -> Single<D> {
-        return customRequest(endpoint, customPath: customPath).map(D.self, atKeyPath: customPath)
+        return customRequest(endpoint).parseToJSON().map(D.self, atKeyPath: customPath)
     }
     
-    func saveData(_ data: JSONDict, for endpoint: Endpoint) {
+    func requestDecodableArray<D>(_ endpoint: Endpoint) -> PrimitiveSequence<SingleTrait, [D]> where D : Decodable {
+        return customRequest(endpoint).parseToArray().map(D.self)
+    }
+    
+    func saveData(_ data: String, for endpoint: Endpoint) {
         provider.set(data, forKey: endpoint.key)
     }
 }
@@ -44,24 +48,11 @@ private extension Single where TraitType == SingleTrait, Element == String {
             return .just(json)
         }
     }
-}
-
-//MARK: - Single<JSON, Response> extensions
-private extension Single where TraitType == SingleTrait, Element == JSONDict {
-
-    func map<D: Decodable>(_ type: D.Type, atKeyPath keyPath: [JSONSubscriptType]? = nil) -> Single<D> {
-        return flatMap { result in
-            var json = JSON(result)
-            if let path = keyPath {
-                json = json[path]
-            }
-            do {
-                let data = try json.rawData()
-                return .just(try JSONDecoder().decode(D.self, from: data))
-            }
-            catch {
-                throw NetworkError.malformedJSON
-            }
+    
+    func parseToArray() -> Single<JSONArray> {
+        return flatMap { string in
+            guard let json = JSON(stringLiteral: string).arrayObject else { throw NetworkError.malformedJSON }
+            return .just(json)
         }
     }
 }

@@ -13,16 +13,15 @@ class MoyaNetworkProvider: NetworkProvider, PluginType {
         self.cacheProvider = cacheProvider
     }
     
-    private func customRequest(_ endpoint: Endpoint, customPath: [JSONSubscriptType]? = nil) -> Single<(JSONDict, Response)> {
+    private func customRequest(_ endpoint: Endpoint) -> Single<Response> {
         return provider.rx.request(endpoint)
-            .parseToJSON()
-            .cacheResponse(endpoint: endpoint, cacheProvider: cacheProvider)
             .handleError()
+            .cacheResponse(endpoint: endpoint, cacheProvider: cacheProvider)
     }
     
     func request(_ endpoint: Endpoint) -> Single<JSONDict> {
         return customRequest(endpoint)
-            .extractJSON()
+            .parseToJSON()
             .catchError({ [weak self] error -> PrimitiveSequence<SingleTrait, JSONDict> in
                 guard let cacheProvider = self?.cacheProvider else { throw error }
                 guard let error = error as? NetworkError else {
@@ -33,12 +32,26 @@ class MoyaNetworkProvider: NetworkProvider, PluginType {
     }
     
     func requestDecodable<D: Decodable>(_ endpoint: Endpoint, customPath: [JSONSubscriptType]? = nil) -> Single<D> {
-        return customRequest(endpoint, customPath: customPath)
+        return customRequest(endpoint)
+            .parseToJSON()
             .map(D.self, atKeyPath: customPath)
             .catchError({ [weak self] error -> PrimitiveSequence<SingleTrait, D> in
                 guard let cacheProvider = self?.cacheProvider else { throw error }
                 guard let error = error as? NetworkError else {
                     return cacheProvider.requestDecodable(endpoint, customPath: customPath)
+                }
+                throw error
+            })
+    }
+    
+    func requestDecodableArray<D>(_ endpoint: Endpoint) -> PrimitiveSequence<SingleTrait, [D]> where D : Decodable {
+        return customRequest(endpoint)
+            .parseToArray()
+            .map(D.self)
+            .catchError({ [weak self] error -> PrimitiveSequence<SingleTrait, [D]> in
+                guard let cacheProvider = self?.cacheProvider else { throw error }
+                guard let error = error as? NetworkError else {
+                    return cacheProvider.requestDecodableArray(endpoint)
                 }
                 throw error
             })
@@ -81,49 +94,35 @@ extension Endpoint: TargetType {
 
 //MARK: - Single<Response> extensions
 private extension Single where TraitType == SingleTrait, Element == Response {
-    func parseToJSON() -> Single<(JSONDict, Response)> {
+    func parseToJSON() -> Single<JSONDict> {
         return flatMap { response in
             guard let json = try response.mapJSON() as? JSONDict else { throw NetworkError.malformedJSON }
-            return .just((json, response))
-        }
-    }
-}
-
-//MARK: - Single<JSON, Response> extensions
-private extension Single where TraitType == SingleTrait, Element == (JSONDict, Response) {
-    
-    func map<D: Decodable>(_ type: D.Type, atKeyPath keyPath: [JSONSubscriptType]? = nil) -> Single<D> {
-        return flatMap { result in
-            var json = JSON(result.0)
-            if let path = keyPath {
-                json = json[path]
-            }
-            do {
-                let data = try json.rawData()
-                return .just(try JSONDecoder().decode(D.self, from: data))
-            }
-            catch {
-                throw NetworkError.malformedJSON
-            }
+            return .just(json)
         }
     }
     
-    func extractJSON() -> Single<JSONDict> {
-        return map { $0.0 }
+    func parseToArray() -> Single<JSONArray> {
+        return flatMap { response in
+            guard let json = try response.mapJSON() as? JSONArray else { throw NetworkError.malformedJSON }
+            return .just(json)
+        }
     }
     
-    func handleError() -> Single<(JSONDict, Response)> {
-        return flatMap { json, response in
+    func handleError() -> Single<Response> {
+        return flatMap { response in
             switch response.statusCode {
             case 401: throw NetworkError.unauthorized
             case 404: throw NetworkError.notFound
             case 422: throw NetworkError.noMoreElements
-            default: return .just((json, response))
+            default: return .just(response)
             }
         }
     }
     
-    func cacheResponse(endpoint: Endpoint, cacheProvider: NetworkCacheProvider) -> Single<(JSONDict, Response)> {
-        return self.do(onSuccess: { cacheProvider.saveData($0.0, for: endpoint) })
+    func cacheResponse(endpoint: Endpoint, cacheProvider: NetworkCacheProvider) -> Single<Response> {
+        return self.do(onSuccess: {
+            guard let string = String(data: $0.data, encoding: .utf8) else { throw NetworkError.malformedJSON }
+            cacheProvider.saveData(string, for: endpoint)
+        })
     }
 }

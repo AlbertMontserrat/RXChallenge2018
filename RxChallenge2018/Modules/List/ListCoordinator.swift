@@ -13,7 +13,7 @@ class ListCoordinator: MainCoordinator {
     func start(animated: Bool = true) {
         let moduleView = ListView()
         let modulePresenter = ListPresenter(outputInterface: moduleView)
-        let gateway = ListGateway()
+        let gateway = ListGateway(provider: TypicodeProvider())
         moduleView.viewOutput = ListInteractor(router: self, outputInterface: modulePresenter, gateway: gateway)
         navigationController?.pushViewController(moduleView, animated: animated)
     }
