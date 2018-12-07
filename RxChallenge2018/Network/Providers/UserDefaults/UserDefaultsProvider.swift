@@ -32,7 +32,7 @@ class UserDefaultsProvider: NetworkCacheProvider {
     }
     
     func saveData(_ data: JSONDict, for endpoint: Endpoint) {
-        
+        provider.set(data, forKey: endpoint.key)
     }
 }
 
