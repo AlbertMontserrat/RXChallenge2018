@@ -13,7 +13,10 @@ final class ListPresenter: ListPresenterInterface {
     }
     
     //MARK: - ListPresenterInterface
-    
+    func configureTitles() {
+        presenterOutput?.configureTitle("Posts")
+        presenterOutput?.configureSearchBarPlaceholder("Search post")
+    }
     
 }
 

@@ -20,5 +20,7 @@ class ListCoordinator: MainCoordinator {
 }
 
 extension ListCoordinator: ListRoutingInterface {
-    
+    func gotoDetail(with post: Post) {
+        
+    }
 }
