@@ -2,7 +2,7 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-typealias DetailDescriptor = (bodyText: String, authorText: String, numberOfCommentsText: String)
+typealias DetailDescriptor = (titleText: String, bodyText: String, authorText: String, numberOfCommentsText: String)
 
 final class DetailPresenter: DetailPresenterInterface {
     
@@ -21,11 +21,12 @@ final class DetailPresenter: DetailPresenterInterface {
     
     func setupTitles(with detailObservable: Observable<DetailData>) {
         presenterOutput?.setTitles(with: detailObservable.map { data in
+            let title = data.post.title ?? ""
             let body = data.post.body ?? ""
             let author = "By \(data.user.name ?? "") (@\(data.user.username ?? ""))"
             let numberOfComments = "\(data.comments.count) comments"
-            return (body, author, numberOfComments)
-        }.asDriver(onErrorJustReturn: ("", "", "")))
+            return (title, body, author, numberOfComments)
+        }.asDriver(onErrorJustReturn: ("", "", "", "")))
     }
 }
 

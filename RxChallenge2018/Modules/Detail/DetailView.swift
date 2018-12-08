@@ -18,10 +18,18 @@ final class DetailView: UIViewController, DetailViewInterface {
         return stackView
     }()
     
-    private lazy var bodyLabel: UILabel = {
+    private lazy var titleLabel: UILabel = {
         let lbl = UILabel()
         lbl.textColor = .black
         lbl.font = .boldSystemFont(ofSize: 16)
+        lbl.numberOfLines = 0
+        return lbl
+    }()
+    
+    private lazy var bodyLabel: UILabel = {
+        let lbl = UILabel()
+        lbl.textColor = .black
+        lbl.font = .systemFont(ofSize: 16)
         lbl.numberOfLines = 0
         return lbl
     }()
@@ -61,11 +69,10 @@ final class DetailView: UIViewController, DetailViewInterface {
     }
     
     func setTitles(with descriptorObservable: Driver<DetailDescriptor>) {
-        descriptorObservable.drive(onNext: { [unowned self] descriptor in
-            self.bodyLabel.text = descriptor.bodyText
-            self.authorLabel.text = descriptor.authorText
-            self.numberOfCommentsLabel.text = descriptor.numberOfCommentsText
-        }).disposed(by: disposeBag)
+        descriptorObservable.map { $0.titleText }.drive(titleLabel.rx.text).disposed(by: disposeBag)
+        descriptorObservable.map { $0.bodyText }.drive(bodyLabel.rx.text).disposed(by: disposeBag)
+        descriptorObservable.map { $0.authorText }.drive(authorLabel.rx.text).disposed(by: disposeBag)
+        descriptorObservable.map { $0.numberOfCommentsText }.drive(numberOfCommentsLabel.rx.text).disposed(by: disposeBag)
     }
 }
 
@@ -80,7 +87,7 @@ private extension DetailView {
     func layout() {
         view.addSubviewWithAutolayout(stackView)
         stackView.fillSuperview()
-        [bodyLabel, authorLabel, numberOfCommentsLabel].forEach { stackView.stackView.addArrangedSubview($0) }
+        [titleLabel, bodyLabel, authorLabel, numberOfCommentsLabel].forEach { stackView.stackView.addArrangedSubview($0) }
     }
 }
 
