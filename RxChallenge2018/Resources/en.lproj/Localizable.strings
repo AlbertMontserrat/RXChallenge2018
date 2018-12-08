@@ -2,3 +2,6 @@
 "str_posts" = "Posts";
 "str_search_posts" = "Search post";
 "str_error_loading_data" = "Error loading information. Please, check your internet connection and try again.";
+"str_post_details" = "Post detail";
+"str_by_user_username" = "By $var1 (@$var2)";
+"str_x_comments" = "$var1 comments";

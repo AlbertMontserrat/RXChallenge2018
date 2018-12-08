@@ -16,5 +16,4 @@ struct DetailGateway {
     func getComments(for postId: Int) -> Single<[Comment]> {
         return provider.getComments(for: postId)
     }
-    
 }

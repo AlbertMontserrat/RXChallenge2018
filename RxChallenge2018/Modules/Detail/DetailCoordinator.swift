@@ -3,12 +3,10 @@ import UIKit
 class DetailCoordinator {
     
     private weak var navigationController: UINavigationController?
-    private let completionClosure: VoidClosure?
     private let post: Post
     
-    init(navigationController: UINavigationController, post: Post, completionClosure: VoidClosure?) {
+    init(navigationController: UINavigationController, post: Post) {
         self.navigationController = navigationController
-        self.completionClosure = completionClosure
         self.post = post
     }
     
@@ -16,11 +14,7 @@ class DetailCoordinator {
         let moduleView = DetailView()
         let modulePresenter = DetailPresenter(outputInterface: moduleView)
         let gateway = DetailGateway(provider: TypicodeProvider())
-        moduleView.viewOutput = DetailInteractor(router: self, outputInterface: modulePresenter, gateway: gateway, post: post)
+        moduleView.viewOutput = DetailInteractor(outputInterface: modulePresenter, gateway: gateway, post: post)
         navigationController?.pushViewController(moduleView, animated: animated)
     }
-}
-
-extension DetailCoordinator: DetailRoutingInterface {
-    
 }

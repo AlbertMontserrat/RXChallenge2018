@@ -10,7 +10,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         let window = UIWindow(frame: UIScreen.main.bounds)
         self.window = window
         let naviationController = UINavigationController()
-        let listCoordinator = ListCoordinator(navigationController: naviationController, completionClosure: nil)
+        let listCoordinator = ListCoordinator(navigationController: naviationController)
         listCoordinator.start()
         listCoordinator.setRootViewController(in: window)
         return true

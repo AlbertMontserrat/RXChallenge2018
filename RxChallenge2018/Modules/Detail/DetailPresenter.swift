@@ -16,28 +16,37 @@ final class DetailPresenter: DetailPresenterInterface {
     
     //MARK: - DetailPresenterInterface
     func configureTitles() {
-        presenterOutput?.configureTitle("Post detail")
+        presenterOutput?.configureTitle(Constants.postDetailsTitle)
     }
     
     func setupTitles(with detailObservable: Observable<DetailData>) {
         presenterOutput?.setTitles(with: detailObservable.map { data in
             let title = data.post.title ?? ""
             let body = data.post.body ?? ""
-            let author = "By \(data.user.name ?? "") (@\(data.user.username ?? ""))"
-            let numberOfComments = "\(data.comments.count) comments"
+            let author = Constants.byAuthorTitle.replacingVariables([data.user.name ?? "", data.user.username ?? ""])
+            let numberOfComments = Constants.numberCommentsTitle.replacingVariables(["\(data.comments.count)"])
             return (title, body, author, numberOfComments)
         }.asDriver(onErrorJustReturn: ("", "", "", "")))
     }
-}
-
-//MARK: - Private methods
-private extension DetailPresenter {
     
+    func showError(with error: NetworkError) {
+        var text: String? = nil
+        switch error {
+        //Option to show different errors for each network error
+        default:
+            text = Constants.errorLoadingErrorMessage
+        }
+        guard let errorMessage = text else { return }
+        presenterOutput?.showError(with: errorMessage)
+    }
 }
 
 //MARK: - Constants
 private extension DetailPresenter {
     enum Constants {
-        
+        static var errorLoadingErrorMessage: String { return .str_error_loading_data }
+        static var postDetailsTitle: String { return .str_post_details }
+        static var byAuthorTitle: String { return .str_by_user_username }
+        static var numberCommentsTitle: String { return .str_x_comments }
     }
 }

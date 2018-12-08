@@ -36,6 +36,16 @@ extension Dictionary where Key == String, Value: Any {
     }
 }
 
+extension String {
+    func replacingVariables(_ variables: [String]) -> String {
+        var replaced = self
+        variables.enumerated().forEach {
+            replaced = replaced.replacingOccurrences(of: "$var\($0.offset + 1)", with: $0.element)
+        }
+        return replaced
+    }
+}
+
 //MARK: - Single extensions
 extension Single where TraitType == SingleTrait, Element == JSONDict {
     func map<D: Decodable>(_ type: D.Type, atKeyPath keyPath: [JSONSubscriptType]? = nil) -> Single<D> {

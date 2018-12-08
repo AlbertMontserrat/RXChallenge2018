@@ -3,11 +3,9 @@ import UIKit
 class ListCoordinator: MainCoordinator {
     
     weak var navigationController: UINavigationController?
-    private let completionClosure: VoidClosure?
     
-    init(navigationController: UINavigationController, completionClosure: VoidClosure?) {
+    init(navigationController: UINavigationController) {
         self.navigationController = navigationController
-        self.completionClosure = completionClosure
     }
     
     func start(animated: Bool = true) {
@@ -22,9 +20,7 @@ class ListCoordinator: MainCoordinator {
 extension ListCoordinator: ListRoutingInterface {
     func gotoDetail(with post: Post) {
         guard let navigationController = navigationController else { return }
-        let coordinator = DetailCoordinator(navigationController: navigationController, post: post, completionClosure: {
-            navigationController.popViewController(animated: true)
-        })
+        let coordinator = DetailCoordinator(navigationController: navigationController, post: post)
         coordinator.start()
     }
 }

@@ -12,40 +12,42 @@ final class DetailView: UIViewController, DetailViewInterface {
     private let disposeBag = DisposeBag()
     
     //MARK: - UI Elements
+    private lazy var activityIndicator = UIActivityIndicatorView(style: .gray)
+    
     private lazy var stackView: ScrolledStackView = {
-        let stackView = ScrolledStackView(direction: .vertical, insets: UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16))
+        let stackView = ScrolledStackView(direction: .vertical, insets: DisplayData.stackViewInsets)
         stackView.stackView.spacing = 16
         return stackView
     }()
     
     private lazy var titleLabel: UILabel = {
         let lbl = UILabel()
-        lbl.textColor = .black
-        lbl.font = .boldSystemFont(ofSize: 16)
+        lbl.textColor = .customDarkBlue
+        lbl.font = .boldSystemFont(ofSize: 22)
         lbl.numberOfLines = 0
         return lbl
     }()
     
     private lazy var bodyLabel: UILabel = {
         let lbl = UILabel()
-        lbl.textColor = .black
-        lbl.font = .systemFont(ofSize: 16)
+        lbl.textColor = .customDarkBlue
+        lbl.font = .systemFont(ofSize: 18)
         lbl.numberOfLines = 0
         return lbl
     }()
     
     private lazy var authorLabel: UILabel = {
         let lbl = UILabel()
-        lbl.textColor = .black
-        lbl.font = .systemFont(ofSize: 12)
+        lbl.textColor = .customBlueGray
+        lbl.font = .systemFont(ofSize: 15)
         lbl.numberOfLines = 0
         return lbl
     }()
     
     private lazy var numberOfCommentsLabel: UILabel = {
         let lbl = UILabel()
-        lbl.textColor = .gray
-        lbl.font = .systemFont(ofSize: 12)
+        lbl.textColor = .customBlueGray
+        lbl.font = .systemFont(ofSize: 15)
         lbl.numberOfLines = 0
         return lbl
     }()
@@ -69,10 +71,21 @@ final class DetailView: UIViewController, DetailViewInterface {
     }
     
     func setTitles(with descriptorObservable: Driver<DetailDescriptor>) {
-        descriptorObservable.map { $0.titleText }.drive(titleLabel.rx.text).disposed(by: disposeBag)
-        descriptorObservable.map { $0.bodyText }.drive(bodyLabel.rx.text).disposed(by: disposeBag)
-        descriptorObservable.map { $0.authorText }.drive(authorLabel.rx.text).disposed(by: disposeBag)
-        descriptorObservable.map { $0.numberOfCommentsText }.drive(numberOfCommentsLabel.rx.text).disposed(by: disposeBag)
+        let driver = descriptorObservable
+            .do(onNext: { [unowned self] _ in
+                self.activityIndicator.stopAnimating()
+                }, onSubscribe: {
+                    self.activityIndicator.startAnimating()
+            })
+        driver.map { $0.titleText }.drive(titleLabel.rx.text).disposed(by: disposeBag)
+        driver.map { $0.bodyText }.drive(bodyLabel.rx.text).disposed(by: disposeBag)
+        driver.map { $0.authorText }.drive(authorLabel.rx.text).disposed(by: disposeBag)
+        driver.map { $0.numberOfCommentsText }.drive(numberOfCommentsLabel.rx.text).disposed(by: disposeBag)
+    }
+    
+    func showError(with text: String) {
+        activityIndicator.stopAnimating()
+        MessagesManager.showErrorMessage(text)
     }
 }
 
@@ -80,7 +93,7 @@ final class DetailView: UIViewController, DetailViewInterface {
 private extension DetailView {
     
     func setupView() {
-        view.backgroundColor = .white
+        view.backgroundColor = .customBackground
         layout()
     }
     
@@ -88,12 +101,14 @@ private extension DetailView {
         view.addSubviewWithAutolayout(stackView)
         stackView.fillSuperview()
         [titleLabel, bodyLabel, authorLabel, numberOfCommentsLabel].forEach { stackView.stackView.addArrangedSubview($0) }
+        view.addSubviewWithAutolayout(activityIndicator)
+        activityIndicator.anchorCenterSuperview()
     }
 }
 
 //MARK: - DisplayData
 private extension DetailView {
     enum DisplayData {
-        
+        static var stackViewInsets: UIEdgeInsets { return UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16) }
     }
 }

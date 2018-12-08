@@ -76,7 +76,7 @@ final class ListView: UIViewController, ListViewInterface {
 private extension ListView {
     
     func setupView() {
-        view.backgroundColor = .white
+        view.backgroundColor = .customBackground
         
         // Setup the Search Controller
         searchController.obscuresBackgroundDuringPresentation = false
