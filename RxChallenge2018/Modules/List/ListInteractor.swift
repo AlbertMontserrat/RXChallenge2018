@@ -28,8 +28,8 @@ final class ListInteractor: ListInteractorInterface {
     func configure(with searchObservable: Observable<String>) {
         interactorOutput.setupPosts(with: Observable.combineLatest(gateway.getPosts().asObservable(), searchObservable) { posts, searchString -> PostsWithQuery in
             return (posts.filter {
-                guard !searchString.isEmpty else { return true }
-                return $0.title.lowercased().contains(searchString.lowercased())
+                guard !searchString.isEmpty, let title = $0.title else { return true }
+                return title.lowercased().contains(searchString.lowercased())
             }, searchString)
         })
     }

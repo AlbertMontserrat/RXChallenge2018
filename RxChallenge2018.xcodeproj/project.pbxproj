@@ -31,6 +31,17 @@
 		5038013521BAE1D500EA82F9 /* UIView+Anchors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5038013421BAE1D500EA82F9 /* UIView+Anchors.swift */; };
 		5038013821BAF77E00EA82F9 /* PostCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5038013721BAF77E00EA82F9 /* PostCellController.swift */; };
 		5038013A21BAF78A00EA82F9 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5038013921BAF78A00EA82F9 /* PostTableViewCell.swift */; };
+		5038014121BBBA9800EA82F9 /* DetailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5038013B21BBBA9800EA82F9 /* DetailCoordinator.swift */; };
+		5038014221BBBA9800EA82F9 /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5038013C21BBBA9800EA82F9 /* DetailPresenter.swift */; };
+		5038014321BBBA9800EA82F9 /* DetailAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5038013D21BBBA9800EA82F9 /* DetailAPI.swift */; };
+		5038014421BBBA9800EA82F9 /* DetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5038013E21BBBA9800EA82F9 /* DetailInteractor.swift */; };
+		5038014521BBBA9800EA82F9 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5038013F21BBBA9800EA82F9 /* DetailView.swift */; };
+		5038014621BBBA9800EA82F9 /* DetailGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5038014021BBBA9800EA82F9 /* DetailGateway.swift */; };
+		5038014821BBBC5800EA82F9 /* ScrolledStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5038014721BBBC5800EA82F9 /* ScrolledStackView.swift */; };
+		5038014A21BBBD7900EA82F9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5038014921BBBD7900EA82F9 /* User.swift */; };
+		5038014C21BBBD8300EA82F9 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5038014B21BBBD8300EA82F9 /* Comment.swift */; };
+		5038014E21BBBDB600EA82F9 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5038014D21BBBDB600EA82F9 /* Address.swift */; };
+		5038015021BBBDEE00EA82F9 /* GeoPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5038014F21BBBDEE00EA82F9 /* GeoPoint.swift */; };
 		76A2FFC69A13C9FA8F87ACAD /* Pods_RxChallenge2018UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE9DB6FEF1F0517E4861B112 /* Pods_RxChallenge2018UITests.framework */; };
 		CF24AE228E1E40D5F2ADA2E9 /* Pods_RxChallenge2018.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75A596011461E780B745E530 /* Pods_RxChallenge2018.framework */; };
 /* End PBXBuildFile section */
@@ -85,6 +96,17 @@
 		5038013421BAE1D500EA82F9 /* UIView+Anchors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Anchors.swift"; sourceTree = "<group>"; };
 		5038013721BAF77E00EA82F9 /* PostCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCellController.swift; sourceTree = "<group>"; };
 		5038013921BAF78A00EA82F9 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
+		5038013B21BBBA9800EA82F9 /* DetailCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCoordinator.swift; sourceTree = "<group>"; };
+		5038013C21BBBA9800EA82F9 /* DetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
+		5038013D21BBBA9800EA82F9 /* DetailAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailAPI.swift; sourceTree = "<group>"; };
+		5038013E21BBBA9800EA82F9 /* DetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInteractor.swift; sourceTree = "<group>"; };
+		5038013F21BBBA9800EA82F9 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		5038014021BBBA9800EA82F9 /* DetailGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailGateway.swift; sourceTree = "<group>"; };
+		5038014721BBBC5800EA82F9 /* ScrolledStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrolledStackView.swift; sourceTree = "<group>"; };
+		5038014921BBBD7900EA82F9 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		5038014B21BBBD8300EA82F9 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		5038014D21BBBDB600EA82F9 /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
+		5038014F21BBBDEE00EA82F9 /* GeoPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoPoint.swift; sourceTree = "<group>"; };
 		56B6687E9EC5610483E91819 /* Pods-RxChallenge2018.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxChallenge2018.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxChallenge2018/Pods-RxChallenge2018.release.xcconfig"; sourceTree = "<group>"; };
 		73ED6648045C194F1BB0ABB4 /* Pods_RxChallenge2018Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxChallenge2018Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		75A596011461E780B745E530 /* Pods_RxChallenge2018.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxChallenge2018.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -167,6 +189,12 @@
 		282FF98621BA60C10049A05D /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				5038013B21BBBA9800EA82F9 /* DetailCoordinator.swift */,
+				5038013C21BBBA9800EA82F9 /* DetailPresenter.swift */,
+				5038013D21BBBA9800EA82F9 /* DetailAPI.swift */,
+				5038013E21BBBA9800EA82F9 /* DetailInteractor.swift */,
+				5038013F21BBBA9800EA82F9 /* DetailView.swift */,
+				5038014021BBBA9800EA82F9 /* DetailGateway.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -176,6 +204,7 @@
 			children = (
 				282FF99421BA61370049A05D /* Global.swift */,
 				5038013421BAE1D500EA82F9 /* UIView+Anchors.swift */,
+				5038014721BBBC5800EA82F9 /* ScrolledStackView.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -214,6 +243,10 @@
 			isa = PBXGroup;
 			children = (
 				282FF9AB21BA6B930049A05D /* Post.swift */,
+				5038014921BBBD7900EA82F9 /* User.swift */,
+				5038014D21BBBDB600EA82F9 /* Address.swift */,
+				5038014F21BBBDEE00EA82F9 /* GeoPoint.swift */,
+				5038014B21BBBD8300EA82F9 /* Comment.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -551,21 +584,32 @@
 			buildActionMask = 2147483647;
 			files = (
 				282FF9A521BA6ACF0049A05D /* Endpoint.swift in Sources */,
+				5038014521BBBA9800EA82F9 /* DetailView.swift in Sources */,
+				5038014321BBBA9800EA82F9 /* DetailAPI.swift in Sources */,
+				5038014C21BBBD8300EA82F9 /* Comment.swift in Sources */,
 				5038013521BAE1D500EA82F9 /* UIView+Anchors.swift in Sources */,
 				282FF99021BA60D70049A05D /* ListInteractor.swift in Sources */,
+				5038014A21BBBD7900EA82F9 /* User.swift in Sources */,
 				287E027421BA4F4400437462 /* AppDelegate.swift in Sources */,
 				282FF99221BA60D70049A05D /* ListGateway.swift in Sources */,
+				5038014221BBBA9800EA82F9 /* DetailPresenter.swift in Sources */,
 				5038013A21BAF78A00EA82F9 /* PostTableViewCell.swift in Sources */,
 				282FF98321BA5F970049A05D /* MainCoordinator.swift in Sources */,
 				282FF99121BA60D70049A05D /* ListView.swift in Sources */,
 				5038013821BAF77E00EA82F9 /* PostCellController.swift in Sources */,
 				282FF9A721BA6ACF0049A05D /* TypicodeProvider.swift in Sources */,
+				5038014821BBBC5800EA82F9 /* ScrolledStackView.swift in Sources */,
 				282FF9A821BA6ACF0049A05D /* NetworkProvider.swift in Sources */,
 				282FF98E21BA60D70049A05D /* ListPresenter.swift in Sources */,
+				5038014E21BBBDB600EA82F9 /* Address.swift in Sources */,
 				282FF98D21BA60D70049A05D /* ListCoordinator.swift in Sources */,
+				5038014121BBBA9800EA82F9 /* DetailCoordinator.swift in Sources */,
 				282FF98F21BA60D70049A05D /* ListAPI.swift in Sources */,
+				5038014621BBBA9800EA82F9 /* DetailGateway.swift in Sources */,
 				282FF9AC21BA6B930049A05D /* Post.swift in Sources */,
+				5038015021BBBDEE00EA82F9 /* GeoPoint.swift in Sources */,
 				282FF99521BA61370049A05D /* Global.swift in Sources */,
+				5038014421BBBA9800EA82F9 /* DetailInteractor.swift in Sources */,
 				282FF9B221BA94910049A05D /* UserDefaultsProvider.swift in Sources */,
 				282FF9A921BA6ACF0049A05D /* Hosts.swift in Sources */,
 				282FF9A621BA6ACF0049A05D /* MoyaNetworkProvider.swift in Sources */,

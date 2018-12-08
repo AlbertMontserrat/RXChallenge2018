@@ -20,7 +20,7 @@ final class ListPresenter: ListPresenterInterface {
     
     func setupPosts(with postsObservable: Observable<PostsWithQuery>) {
         presenterOutput?.setupControllers(with: postsObservable.map { [unowned self] posts, searchQuery in
-            return posts.map { PostCellController(descriptor: PostCellDescriptor(title: $0.title), didSelectCell: self.didSelectCell(with: $0.id)) }
+            return posts.map { PostCellController(descriptor: PostCellDescriptor(title: $0.title ?? ""), didSelectCell: self.didSelectCell(with: $0.id ?? 0)) }
         }.asDriver(onErrorJustReturn: []))
     }
 }
