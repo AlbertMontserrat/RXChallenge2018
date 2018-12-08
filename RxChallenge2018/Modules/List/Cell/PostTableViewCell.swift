@@ -4,9 +4,9 @@ class PostTableViewCell: UITableViewCell {
 
     private lazy var titleLabel: UILabel = {
         let lbl = UILabel()
-        lbl.textColor = .black
+        lbl.textColor = .customDarkBlue
         lbl.numberOfLines = 0
-        lbl.font = .systemFont(ofSize: 16)
+        lbl.font = .systemFont(ofSize: 15)
         return lbl
     }()
     

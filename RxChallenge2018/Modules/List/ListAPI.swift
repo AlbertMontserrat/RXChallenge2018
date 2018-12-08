@@ -12,11 +12,13 @@ protocol ListViewInterface: class {
     func configureSearchBarPlaceholder(_ title: String)
     func setupControllers(with controllersObservable: Driver<[TableCellController]>)
     func didSelectCell(with id: Int)
+    func showError(with text: String)
 }
 
 protocol ListPresenterInterface {
     func configureTitles()
     func setupPosts(with postsObservable: Observable<PostsWithQuery>)
+    func showError(with error: NetworkError)
 }
 
 protocol ListInteractorInterface {

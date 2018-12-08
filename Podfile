@@ -9,7 +9,9 @@ target 'RxChallenge2018' do
   pod 'GenericCellControllers'
   pod 'SwiftyJSON', '~> 4.0'
   pod 'RxKeyboard'
-  
+  pod 'SwiftMessages'
+  pod 'Hue'
+
   target 'RxChallenge2018Tests' do
     inherit! :search_paths
     # Pods for testing

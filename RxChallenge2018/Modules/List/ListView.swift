@@ -14,13 +14,14 @@ final class ListView: UIViewController, ListViewInterface {
     private let selectionSubject = ReplaySubject<Int>.create(bufferSize: 1)
     private let disposeBag = DisposeBag()
     private var contentViewBottomConstraint: NSLayoutConstraint?
-    var animating = false
-    var firstAnimation = true
+    private var animating = false
+    private var firstAnimation = true
     
     //MARK: - UI Elements
-    let searchController = UISearchController(searchResultsController: nil)
+    private let searchController = UISearchController(searchResultsController: nil)
+    private lazy var activityIndicator = UIActivityIndicatorView(style: .gray)
 
-    lazy var tableView: UITableView = {
+    private lazy var tableView: UITableView = {
         let tableview = UITableView(frame: .zero)
         tableview.rowHeight = UITableView.automaticDimension
         tableview.estimatedRowHeight = 100
@@ -34,6 +35,7 @@ final class ListView: UIViewController, ListViewInterface {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+        activityIndicator.startAnimating()
         viewOutput?.initializeTitles()
         viewOutput?.configure(with: searchController.searchBar.rx.value.map { $0 ?? "" })
         viewOutput?.configureSelection(with: selectionSubject)
@@ -56,7 +58,13 @@ final class ListView: UIViewController, ListViewInterface {
         controllersObservable.drive(onNext: { [weak self] controllers in
             self?.cellControllers = controllers
             self?.tableView.reloadData()
+            self?.activityIndicator.stopAnimating()
         }).disposed(by: disposeBag)
+    }
+    
+    func showError(with text: String) {
+        activityIndicator.stopAnimating()
+        MessagesManager.showErrorMessage(text)
     }
     
     func didSelectCell(with id: Int) {
@@ -83,6 +91,8 @@ private extension ListView {
         tableView.anchor(top: view.topAnchor, left: view.leftAnchor, right: view.rightAnchor)
         contentViewBottomConstraint = tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         contentViewBottomConstraint?.isActive = true
+        view.addSubviewWithAutolayout(activityIndicator)
+        activityIndicator.anchorCenterSuperview()
     }
     
     func animate(to height: CGFloat) {

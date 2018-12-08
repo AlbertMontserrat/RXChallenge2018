@@ -26,12 +26,18 @@ final class ListInteractor: ListInteractorInterface {
     }
     
     func configure(with searchObservable: Observable<String>) {
-        interactorOutput.setupPosts(with: Observable.combineLatest(gateway.getPosts().asObservable(), searchObservable) { posts, searchString -> PostsWithQuery in
-            return (posts.filter {
-                guard !searchString.isEmpty, let title = $0.title else { return true }
-                return title.lowercased().contains(searchString.lowercased())
-            }, searchString)
-        })
+        let observable = Observable
+            .combineLatest(gateway.getPosts().asObservable(), searchObservable) { posts, searchString -> PostsWithQuery in
+                return (posts.filter {
+                    guard !searchString.isEmpty, let title = $0.title else { return true }
+                    return title.lowercased().contains(searchString.lowercased())
+                }, searchString)
+            }
+            .do(onError: { [unowned self] error in
+                let error = error as? NetworkError ?? .undefined
+                self.interactorOutput.showError(with: error)
+            })
+        interactorOutput.setupPosts(with: observable)
     }
     
     func configureSelection(with selectionIdObservable: Observable<Int>) {
@@ -43,9 +49,4 @@ final class ListInteractor: ListInteractorInterface {
                 self.router.gotoDetail(with: post)
             }).disposed(by: disposeBag)
     }
-}
-
-//MARK: - Private methods
-private extension ListInteractor {
-    
 }

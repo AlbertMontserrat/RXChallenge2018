@@ -42,6 +42,10 @@
 		5038014C21BBBD8300EA82F9 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5038014B21BBBD8300EA82F9 /* Comment.swift */; };
 		5038014E21BBBDB600EA82F9 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5038014D21BBBDB600EA82F9 /* Address.swift */; };
 		5038015021BBBDEE00EA82F9 /* GeoPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5038014F21BBBDEE00EA82F9 /* GeoPoint.swift */; };
+		5038015221BC585C00EA82F9 /* MessagesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5038015121BC585C00EA82F9 /* MessagesManager.swift */; };
+		5038015421BC587900EA82F9 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5038015321BC587900EA82F9 /* Colors.swift */; };
+		5038015721BC5A8600EA82F9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5038015921BC5A8600EA82F9 /* Localizable.strings */; };
+		5038015B21BC5B3700EA82F9 /* Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5038015A21BC5B3700EA82F9 /* Localizable.swift */; };
 		76A2FFC69A13C9FA8F87ACAD /* Pods_RxChallenge2018UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE9DB6FEF1F0517E4861B112 /* Pods_RxChallenge2018UITests.framework */; };
 		CF24AE228E1E40D5F2ADA2E9 /* Pods_RxChallenge2018.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75A596011461E780B745E530 /* Pods_RxChallenge2018.framework */; };
 /* End PBXBuildFile section */
@@ -107,6 +111,10 @@
 		5038014B21BBBD8300EA82F9 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		5038014D21BBBDB600EA82F9 /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		5038014F21BBBDEE00EA82F9 /* GeoPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoPoint.swift; sourceTree = "<group>"; };
+		5038015121BC585C00EA82F9 /* MessagesManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesManager.swift; sourceTree = "<group>"; };
+		5038015321BC587900EA82F9 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		5038015821BC5A8600EA82F9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		5038015A21BC5B3700EA82F9 /* Localizable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Localizable.swift; sourceTree = "<group>"; };
 		56B6687E9EC5610483E91819 /* Pods-RxChallenge2018.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxChallenge2018.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxChallenge2018/Pods-RxChallenge2018.release.xcconfig"; sourceTree = "<group>"; };
 		73ED6648045C194F1BB0ABB4 /* Pods_RxChallenge2018Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxChallenge2018Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		75A596011461E780B745E530 /* Pods_RxChallenge2018.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxChallenge2018.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -159,6 +167,8 @@
 				287E028121BA4F4600437462 /* Info.plist */,
 				287E027E21BA4F4600437462 /* LaunchScreen.storyboard */,
 				287E027C21BA4F4600437462 /* Assets.xcassets */,
+				5038015921BC5A8600EA82F9 /* Localizable.strings */,
+				5038015A21BC5B3700EA82F9 /* Localizable.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -203,8 +213,10 @@
 			isa = PBXGroup;
 			children = (
 				282FF99421BA61370049A05D /* Global.swift */,
+				5038015321BC587900EA82F9 /* Colors.swift */,
 				5038013421BAE1D500EA82F9 /* UIView+Anchors.swift */,
 				5038014721BBBC5800EA82F9 /* ScrolledStackView.swift */,
+				5038015121BC585C00EA82F9 /* MessagesManager.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -451,6 +463,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				287E028021BA4F4600437462 /* LaunchScreen.storyboard in Resources */,
+				5038015721BC5A8600EA82F9 /* Localizable.strings in Resources */,
 				287E027D21BA4F4600437462 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -483,12 +496,14 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-RxChallenge2018/Pods-RxChallenge2018-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/GenericCellControllers/GenericCellControllers.framework",
+				"${BUILT_PRODUCTS_DIR}/Hue/Hue.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxKeyboard/RxKeyboard.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftMessages/SwiftMessages.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -497,12 +512,14 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GenericCellControllers.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hue.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxKeyboard.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftMessages.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -594,6 +611,7 @@
 				282FF99221BA60D70049A05D /* ListGateway.swift in Sources */,
 				5038014221BBBA9800EA82F9 /* DetailPresenter.swift in Sources */,
 				5038013A21BAF78A00EA82F9 /* PostTableViewCell.swift in Sources */,
+				5038015221BC585C00EA82F9 /* MessagesManager.swift in Sources */,
 				282FF98321BA5F970049A05D /* MainCoordinator.swift in Sources */,
 				282FF99121BA60D70049A05D /* ListView.swift in Sources */,
 				5038013821BAF77E00EA82F9 /* PostCellController.swift in Sources */,
@@ -604,9 +622,11 @@
 				5038014E21BBBDB600EA82F9 /* Address.swift in Sources */,
 				282FF98D21BA60D70049A05D /* ListCoordinator.swift in Sources */,
 				5038014121BBBA9800EA82F9 /* DetailCoordinator.swift in Sources */,
+				5038015B21BC5B3700EA82F9 /* Localizable.swift in Sources */,
 				282FF98F21BA60D70049A05D /* ListAPI.swift in Sources */,
 				5038014621BBBA9800EA82F9 /* DetailGateway.swift in Sources */,
 				282FF9AC21BA6B930049A05D /* Post.swift in Sources */,
+				5038015421BC587900EA82F9 /* Colors.swift in Sources */,
 				5038015021BBBDEE00EA82F9 /* GeoPoint.swift in Sources */,
 				282FF99521BA61370049A05D /* Global.swift in Sources */,
 				5038014421BBBA9800EA82F9 /* DetailInteractor.swift in Sources */,
@@ -654,6 +674,14 @@
 				287E027F21BA4F4600437462 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		5038015921BC5A8600EA82F9 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5038015821BC5A8600EA82F9 /* en */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
