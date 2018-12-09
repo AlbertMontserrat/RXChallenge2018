@@ -4,8 +4,8 @@ import RxCocoa
 
 class ScrolledStackView: UIScrollView {
     
-    var direction: NSLayoutConstraint.Axis
-    let insets: UIEdgeInsets
+    private var direction: NSLayoutConstraint.Axis
+    private let insets: UIEdgeInsets
     private lazy var disposeBag = DisposeBag()
 
     lazy var stackView: UIStackView = {
@@ -18,11 +18,6 @@ class ScrolledStackView: UIScrollView {
         self.direction = direction
         self.insets = insets
         super.init(frame: frame)
-        stackView.rx.observe(NSLayoutConstraint.Axis.self, "axis").subscribe(onNext: { axis in
-            if axis != direction {
-                fatalError("Don't change axis in the stack view. Axis should be set with the direction param in init method.")
-            }
-        }).disposed(by: disposeBag)
         setupUI()
         layoutUI()
     }
@@ -30,7 +25,6 @@ class ScrolledStackView: UIScrollView {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
 }
 
 private extension ScrolledStackView {

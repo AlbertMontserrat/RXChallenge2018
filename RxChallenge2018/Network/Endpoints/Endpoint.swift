@@ -37,6 +37,6 @@ struct Endpoint {
 //MARK - Cache extension
 extension Endpoint {
     var key: String {
-        return [httpMethod.rawValue, baseURL.absoluteString, path, parameters?.hash ?? ""].joined(separator: "|")
+        return [httpMethod.rawValue, baseURL.absoluteString, path, String(describing: parameters ?? [:])].joined(separator: "|")
     }
 }

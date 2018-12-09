@@ -55,6 +55,10 @@ final class ListView: UIViewController, ListViewInterface {
     }
 
     func setupControllers(with controllersObservable: Driver<[TableCellController]>) {
+        //NOTE: I don't use tableview.rx.items data binding and tableview.rx.itemSelected because I use the Generic cell controllers
+        //which gives the option to create fully heterogenic lists with a common controller type.
+        //Moreover, with this architecture, we cannot be 100% sure that the indexPath will be the same from interactor to presenter -> view.
+        //So we cannot use itemSelected and send back to interactor directly. We could send the model, but then, the view wouldn't be 100% model agnostic.
         controllersObservable.drive(onNext: { [weak self] controllers in
             self?.cellControllers = controllers
             self?.tableView.reloadData()
