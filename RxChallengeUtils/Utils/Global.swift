@@ -5,8 +5,6 @@ import SwiftyJSON
 // MARK: - Typealias
 public typealias VoidClosure = () -> (Void)
 public typealias ObjectClosure<T> = (T) -> (Void)
-public typealias JSONDict = [String: Any]
-public typealias JSONArray = [Any]
 
 // MARK: - Translation helper
 public extension String {

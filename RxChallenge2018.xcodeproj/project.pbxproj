@@ -47,7 +47,6 @@
 		280D1D5121BE9B2500829061 /* UIView+Anchors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5038013421BAE1D500EA82F9 /* UIView+Anchors.swift */; };
 		280D1D5221BE9B2500829061 /* ScrolledStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5038014721BBBC5800EA82F9 /* ScrolledStackView.swift */; };
 		280D1D5321BE9B2500829061 /* MessagesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5038015121BC585C00EA82F9 /* MessagesManager.swift */; };
-		280D1D5621BEA61800829061 /* Single+Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280D1D2621BE8BCA00829061 /* Single+Map.swift */; };
 		280D1D5721BEA72300829061 /* RxChallengeDomain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 280D1CF921BE847800829061 /* RxChallengeDomain.framework */; };
 		282FF98321BA5F970049A05D /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282FF98221BA5F970049A05D /* MainCoordinator.swift */; };
 		282FF98D21BA60D70049A05D /* ListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282FF98721BA60D70049A05D /* ListCoordinator.swift */; };
@@ -192,7 +191,6 @@
 		280D1D0121BE847800829061 /* RxChallengeDomainTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RxChallengeDomainTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		280D1D0821BE847900829061 /* RxChallengeDomainTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxChallengeDomainTests.swift; sourceTree = "<group>"; };
 		280D1D0A21BE847900829061 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		280D1D2621BE8BCA00829061 /* Single+Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Single+Map.swift"; sourceTree = "<group>"; };
 		280D1D2D21BE8C1900829061 /* RxChallengeUtils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxChallengeUtils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		280D1D3021BE8C1900829061 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		280D1D3521BE8C1900829061 /* RxChallengeUtilsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RxChallengeUtilsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -493,7 +491,6 @@
 				5038013421BAE1D500EA82F9 /* UIView+Anchors.swift */,
 				5038014721BBBC5800EA82F9 /* ScrolledStackView.swift */,
 				5038015121BC585C00EA82F9 /* MessagesManager.swift */,
-				280D1D2621BE8BCA00829061 /* Single+Map.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -1211,7 +1208,6 @@
 			files = (
 				280D1D4F21BE9B2500829061 /* Global.swift in Sources */,
 				280D1D5121BE9B2500829061 /* UIView+Anchors.swift in Sources */,
-				280D1D5621BEA61800829061 /* Single+Map.swift in Sources */,
 				280D1D5021BE9B2500829061 /* Colors.swift in Sources */,
 				280D1D5221BE9B2500829061 /* ScrolledStackView.swift in Sources */,
 				280D1D5321BE9B2500829061 /* MessagesManager.swift in Sources */,

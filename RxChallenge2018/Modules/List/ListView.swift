@@ -103,7 +103,7 @@ private extension ListView {
         contentViewBottomConstraint = tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         contentViewBottomConstraint?.isActive = true
         view.addSubviewWithAutolayout(activityIndicator)
-        activityIndicator.anchorCenterSuperview()
+        activityIndicator.anchorCenterToSuperview()
     }
     
     func animate(to height: CGFloat) {

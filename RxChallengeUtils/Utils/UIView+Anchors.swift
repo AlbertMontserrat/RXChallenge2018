@@ -32,7 +32,7 @@ public extension UIView {
         }
     }
 
-    public func anchorCenterSuperview() {
+    public func anchorCenterToSuperview() {
         anchorCenterXToSuperview()
         anchorCenterYToSuperview()
     }

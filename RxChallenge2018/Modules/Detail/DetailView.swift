@@ -105,7 +105,7 @@ private extension DetailView {
         stackView.fillSuperview()
         [titleLabel, bodyLabel, authorLabel, numberOfCommentsLabel].forEach { stackView.stackView.addArrangedSubview($0) }
         view.addSubviewWithAutolayout(activityIndicator)
-        activityIndicator.anchorCenterSuperview()
+        activityIndicator.anchorCenterToSuperview()
     }
 }
 
