@@ -1,4 +1,4 @@
-import Foundation
+import RxChallengeDomain
 import RxSwift
 import RxCocoa
 import GenericCellControllers
@@ -10,9 +10,9 @@ protocol ListRoutingInterface {
 protocol ListViewInterface: class {
     func configureTitle(_ title: String)
     func configureSearchBarPlaceholder(_ title: String)
-    func setupControllers(with controllersObservable: Driver<[TableCellController]>)
+    func setupControllers(with driver: Driver<[TableCellController]>)
     func didSelectCell(with id: Int)
-    func showError(with text: String)
+    func showError(with title: String, message: String)
     func startAnimating()
     func stopAnimating()
 }

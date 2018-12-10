@@ -1,11 +1,11 @@
-import Foundation
+import RxChallengeDomain
 import RxSwift
 import RxCocoa
 
 protocol DetailViewInterface: class {
     func configureTitle(_ title: String)
-    func setTitles(with descriptorObservable: Driver<DetailDescriptor>)
-    func showError(with text: String)
+    func setTitles(with driver: Driver<DetailDescriptor>)
+    func showError(with title: String, message: String)
     func startAnimating()
     func stopAnimating()
 }

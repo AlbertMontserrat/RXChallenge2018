@@ -1,4 +1,5 @@
-import Foundation
+import RxChallengeDomain
+import RxChallengeUtils
 import RxSwift
 import RxCocoa
 
@@ -45,13 +46,14 @@ final class DetailPresenter: DetailPresenterInterface {
             text = Constants.errorLoadingErrorMessage
         }
         guard let errorMessage = text else { return }
-        presenterOutput?.showError(with: errorMessage)
+        presenterOutput?.showError(with: Constants.errorLoadingErrorTitle, message: errorMessage)
     }
 }
 
 //MARK: - Constants
 private extension DetailPresenter {
     enum Constants {
+        static var errorLoadingErrorTitle: String { return .str_error }
         static var errorLoadingErrorMessage: String { return .str_error_loading_data }
         static var postDetailsTitle: String { return .str_post_details }
         static var byAuthorTitle: String { return .str_by_user_username }

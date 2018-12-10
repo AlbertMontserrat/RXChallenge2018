@@ -8,27 +8,58 @@
 
 /* Begin PBXBuildFile section */
 		10BD408C017752B933F5BC60 /* Pods_RxChallenge2018Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73ED6648045C194F1BB0ABB4 /* Pods_RxChallenge2018Tests.framework */; };
+		277181EDCCED81D9A5087EB6 /* Pods_RxChallengeNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EA01E9FB09FC3E80C9B8A90 /* Pods_RxChallengeNetwork.framework */; };
+		280D1CC121BE765100829061 /* RxChallengeNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 280D1CB821BE765100829061 /* RxChallengeNetwork.framework */; };
+		280D1CC821BE765100829061 /* RxChallengeNetworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280D1CC721BE765100829061 /* RxChallengeNetworkTests.swift */; };
+		280D1CE121BE796600829061 /* Post+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282FF9AB21BA6B930049A05D /* Post+Decodable.swift */; };
+		280D1CE221BE796E00829061 /* User+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5038014921BBBD7900EA82F9 /* User+Decodable.swift */; };
+		280D1CE321BE797100829061 /* Address+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5038014D21BBBDB600EA82F9 /* Address+Decodable.swift */; };
+		280D1CE421BE797500829061 /* GeoPoint+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5038014F21BBBDEE00EA82F9 /* GeoPoint+Decodable.swift */; };
+		280D1CE521BE797900829061 /* Comment+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5038014B21BBBD8300EA82F9 /* Comment+Decodable.swift */; };
+		280D1CE621BE797C00829061 /* Hosts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282FF9A221BA6ACF0049A05D /* Hosts.swift */; };
+		280D1CE721BE797F00829061 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282FF99D21BA6ACF0049A05D /* Endpoint.swift */; };
+		280D1CE821BE798200829061 /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282FF9A121BA6ACF0049A05D /* NetworkProvider.swift */; };
+		280D1CE921BE798600829061 /* TypicodeProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282FF9A021BA6ACF0049A05D /* TypicodeProvider.swift */; };
+		280D1CEA21BE798B00829061 /* MoyaNetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282FF99F21BA6ACF0049A05D /* MoyaNetworkProvider.swift */; };
+		280D1CEB21BE798F00829061 /* UserDefaultsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282FF9B121BA94910049A05D /* UserDefaultsProvider.swift */; };
+		280D1CF021BE804C00829061 /* AppProviders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280D1CEF21BE804C00829061 /* AppProviders.swift */; };
+		280D1D0221BE847900829061 /* RxChallengeDomain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 280D1CF921BE847800829061 /* RxChallengeDomain.framework */; };
+		280D1D0921BE847900829061 /* RxChallengeDomainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280D1D0821BE847900829061 /* RxChallengeDomainTests.swift */; };
+		280D1D0E21BE847900829061 /* RxChallengeDomain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 280D1CF921BE847800829061 /* RxChallengeDomain.framework */; };
+		280D1D0F21BE847900829061 /* RxChallengeDomain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 280D1CF921BE847800829061 /* RxChallengeDomain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		280D1D1821BE84E800829061 /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280D1CED21BE7F5800829061 /* Provider.swift */; };
+		280D1D1921BE84EC00829061 /* NetworkErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280D1CF221BE820900829061 /* NetworkErrors.swift */; };
+		280D1D1A21BE85CC00829061 /* RxChallengeDomain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 280D1CF921BE847800829061 /* RxChallengeDomain.framework */; };
+		280D1D1C21BE85F900829061 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280D1CDB21BE787000829061 /* Post.swift */; };
+		280D1D1D21BE85F900829061 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280D1CDA21BE787000829061 /* User.swift */; };
+		280D1D1E21BE85F900829061 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280D1CD821BE787000829061 /* Address.swift */; };
+		280D1D1F21BE85F900829061 /* GeoPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280D1CD721BE787000829061 /* GeoPoint.swift */; };
+		280D1D2021BE85F900829061 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280D1CD921BE787000829061 /* Comment.swift */; };
+		280D1D3621BE8C1900829061 /* RxChallengeUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 280D1D2D21BE8C1900829061 /* RxChallengeUtils.framework */; };
+		280D1D3D21BE8C1900829061 /* RxChallengeUtilsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280D1D3C21BE8C1900829061 /* RxChallengeUtilsTests.swift */; };
+		280D1D4221BE8C1900829061 /* RxChallengeUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 280D1D2D21BE8C1900829061 /* RxChallengeUtils.framework */; };
+		280D1D4321BE8C1900829061 /* RxChallengeUtils.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 280D1D2D21BE8C1900829061 /* RxChallengeUtils.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		280D1D4A21BE9AE100829061 /* RxChallengeUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 280D1D2D21BE8C1900829061 /* RxChallengeUtils.framework */; };
+		280D1D4B21BE9AED00829061 /* RxChallengeNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 280D1CB821BE765100829061 /* RxChallengeNetwork.framework */; };
+		280D1D4C21BE9AED00829061 /* RxChallengeNetwork.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 280D1CB821BE765100829061 /* RxChallengeNetwork.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		280D1D4F21BE9B2500829061 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282FF99421BA61370049A05D /* Global.swift */; };
+		280D1D5021BE9B2500829061 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5038015321BC587900EA82F9 /* Colors.swift */; };
+		280D1D5121BE9B2500829061 /* UIView+Anchors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5038013421BAE1D500EA82F9 /* UIView+Anchors.swift */; };
+		280D1D5221BE9B2500829061 /* ScrolledStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5038014721BBBC5800EA82F9 /* ScrolledStackView.swift */; };
+		280D1D5321BE9B2500829061 /* MessagesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5038015121BC585C00EA82F9 /* MessagesManager.swift */; };
+		280D1D5621BEA61800829061 /* Single+Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280D1D2621BE8BCA00829061 /* Single+Map.swift */; };
+		280D1D5721BEA72300829061 /* RxChallengeDomain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 280D1CF921BE847800829061 /* RxChallengeDomain.framework */; };
 		282FF98321BA5F970049A05D /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282FF98221BA5F970049A05D /* MainCoordinator.swift */; };
 		282FF98D21BA60D70049A05D /* ListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282FF98721BA60D70049A05D /* ListCoordinator.swift */; };
 		282FF98E21BA60D70049A05D /* ListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282FF98821BA60D70049A05D /* ListPresenter.swift */; };
 		282FF98F21BA60D70049A05D /* ListAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282FF98921BA60D70049A05D /* ListAPI.swift */; };
 		282FF99021BA60D70049A05D /* ListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282FF98A21BA60D70049A05D /* ListInteractor.swift */; };
 		282FF99121BA60D70049A05D /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282FF98B21BA60D70049A05D /* ListView.swift */; };
-		282FF99221BA60D70049A05D /* ListGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282FF98C21BA60D70049A05D /* ListGateway.swift */; };
-		282FF99521BA61370049A05D /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282FF99421BA61370049A05D /* Global.swift */; };
-		282FF9A521BA6ACF0049A05D /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282FF99D21BA6ACF0049A05D /* Endpoint.swift */; };
-		282FF9A621BA6ACF0049A05D /* MoyaNetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282FF99F21BA6ACF0049A05D /* MoyaNetworkProvider.swift */; };
-		282FF9A721BA6ACF0049A05D /* TypicodeProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282FF9A021BA6ACF0049A05D /* TypicodeProvider.swift */; };
-		282FF9A821BA6ACF0049A05D /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282FF9A121BA6ACF0049A05D /* NetworkProvider.swift */; };
-		282FF9A921BA6ACF0049A05D /* Hosts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282FF9A221BA6ACF0049A05D /* Hosts.swift */; };
-		282FF9AC21BA6B930049A05D /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282FF9AB21BA6B930049A05D /* Post.swift */; };
-		282FF9B221BA94910049A05D /* UserDefaultsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282FF9B121BA94910049A05D /* UserDefaultsProvider.swift */; };
 		287E027421BA4F4400437462 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287E027321BA4F4400437462 /* AppDelegate.swift */; };
 		287E027D21BA4F4600437462 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 287E027C21BA4F4600437462 /* Assets.xcassets */; };
 		287E028021BA4F4600437462 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 287E027E21BA4F4600437462 /* LaunchScreen.storyboard */; };
 		287E028B21BA4F4600437462 /* RxChallenge2018Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287E028A21BA4F4600437462 /* RxChallenge2018Tests.swift */; };
 		287E029621BA4F4600437462 /* RxChallenge2018UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287E029521BA4F4600437462 /* RxChallenge2018UITests.swift */; };
-		5038013521BAE1D500EA82F9 /* UIView+Anchors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5038013421BAE1D500EA82F9 /* UIView+Anchors.swift */; };
 		5038013821BAF77E00EA82F9 /* PostCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5038013721BAF77E00EA82F9 /* PostCellController.swift */; };
 		5038013A21BAF78A00EA82F9 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5038013921BAF78A00EA82F9 /* PostTableViewCell.swift */; };
 		5038014121BBBA9800EA82F9 /* DetailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5038013B21BBBA9800EA82F9 /* DetailCoordinator.swift */; };
@@ -36,21 +67,78 @@
 		5038014321BBBA9800EA82F9 /* DetailAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5038013D21BBBA9800EA82F9 /* DetailAPI.swift */; };
 		5038014421BBBA9800EA82F9 /* DetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5038013E21BBBA9800EA82F9 /* DetailInteractor.swift */; };
 		5038014521BBBA9800EA82F9 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5038013F21BBBA9800EA82F9 /* DetailView.swift */; };
-		5038014621BBBA9800EA82F9 /* DetailGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5038014021BBBA9800EA82F9 /* DetailGateway.swift */; };
-		5038014821BBBC5800EA82F9 /* ScrolledStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5038014721BBBC5800EA82F9 /* ScrolledStackView.swift */; };
-		5038014A21BBBD7900EA82F9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5038014921BBBD7900EA82F9 /* User.swift */; };
-		5038014C21BBBD8300EA82F9 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5038014B21BBBD8300EA82F9 /* Comment.swift */; };
-		5038014E21BBBDB600EA82F9 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5038014D21BBBDB600EA82F9 /* Address.swift */; };
-		5038015021BBBDEE00EA82F9 /* GeoPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5038014F21BBBDEE00EA82F9 /* GeoPoint.swift */; };
-		5038015221BC585C00EA82F9 /* MessagesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5038015121BC585C00EA82F9 /* MessagesManager.swift */; };
-		5038015421BC587900EA82F9 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5038015321BC587900EA82F9 /* Colors.swift */; };
 		5038015721BC5A8600EA82F9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5038015921BC5A8600EA82F9 /* Localizable.strings */; };
 		5038015B21BC5B3700EA82F9 /* Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5038015A21BC5B3700EA82F9 /* Localizable.swift */; };
 		76A2FFC69A13C9FA8F87ACAD /* Pods_RxChallenge2018UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE9DB6FEF1F0517E4861B112 /* Pods_RxChallenge2018UITests.framework */; };
+		BD6F70C3B90180B40B651EAA /* Pods_RxChallengeDomain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B100CB64DB74631107A62372 /* Pods_RxChallengeDomain.framework */; };
 		CF24AE228E1E40D5F2ADA2E9 /* Pods_RxChallenge2018.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75A596011461E780B745E530 /* Pods_RxChallenge2018.framework */; };
+		D38746E2B14374C94FD536A9 /* Pods_RxChallengeUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28732785F6EF8A9ABE181BEE /* Pods_RxChallengeUtils.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		280D1CC221BE765100829061 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 287E026821BA4F4400437462 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 280D1CB721BE765100829061;
+			remoteInfo = RxChallengeNetwork;
+		};
+		280D1CC421BE765100829061 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 287E026821BA4F4400437462 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 287E026F21BA4F4400437462;
+			remoteInfo = RxChallenge2018;
+		};
+		280D1D0321BE847900829061 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 287E026821BA4F4400437462 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 280D1CF821BE847800829061;
+			remoteInfo = RxChallengeDomain;
+		};
+		280D1D0521BE847900829061 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 287E026821BA4F4400437462 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 287E026F21BA4F4400437462;
+			remoteInfo = RxChallenge2018;
+		};
+		280D1D0C21BE847900829061 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 287E026821BA4F4400437462 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 280D1CF821BE847800829061;
+			remoteInfo = RxChallengeDomain;
+		};
+		280D1D3721BE8C1900829061 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 287E026821BA4F4400437462 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 280D1D2C21BE8C1900829061;
+			remoteInfo = RxChallengeUtils;
+		};
+		280D1D3921BE8C1900829061 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 287E026821BA4F4400437462 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 287E026F21BA4F4400437462;
+			remoteInfo = RxChallenge2018;
+		};
+		280D1D4021BE8C1900829061 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 287E026821BA4F4400437462 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 280D1D2C21BE8C1900829061;
+			remoteInfo = RxChallengeUtils;
+		};
+		280D1D4D21BE9AED00829061 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 287E026821BA4F4400437462 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 280D1CB721BE765100829061;
+			remoteInfo = RxChallengeNetwork;
+		};
 		287E028721BA4F4600437462 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 287E026821BA4F4400437462 /* Project object */;
@@ -67,23 +155,64 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		280D1D1321BE847900829061 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				280D1D4C21BE9AED00829061 /* RxChallengeNetwork.framework in Embed Frameworks */,
+				280D1D4321BE8C1900829061 /* RxChallengeUtils.framework in Embed Frameworks */,
+				280D1D0F21BE847900829061 /* RxChallengeDomain.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		077079119CA92FD865430166 /* Pods-RxChallenge2018Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxChallenge2018Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxChallenge2018Tests/Pods-RxChallenge2018Tests.release.xcconfig"; sourceTree = "<group>"; };
+		2716584E39172351CC93B780 /* Pods-RxChallengeDomain.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxChallengeDomain.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxChallengeDomain/Pods-RxChallengeDomain.debug.xcconfig"; sourceTree = "<group>"; };
+		280D1CB821BE765100829061 /* RxChallengeNetwork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxChallengeNetwork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		280D1CBB21BE765100829061 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		280D1CC021BE765100829061 /* RxChallengeNetworkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RxChallengeNetworkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		280D1CC721BE765100829061 /* RxChallengeNetworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxChallengeNetworkTests.swift; sourceTree = "<group>"; };
+		280D1CC921BE765100829061 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		280D1CD721BE787000829061 /* GeoPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeoPoint.swift; sourceTree = "<group>"; };
+		280D1CD821BE787000829061 /* Address.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
+		280D1CD921BE787000829061 /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		280D1CDA21BE787000829061 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		280D1CDB21BE787000829061 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		280D1CED21BE7F5800829061 /* Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Provider.swift; sourceTree = "<group>"; };
+		280D1CEF21BE804C00829061 /* AppProviders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppProviders.swift; sourceTree = "<group>"; };
+		280D1CF221BE820900829061 /* NetworkErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrors.swift; sourceTree = "<group>"; };
+		280D1CF921BE847800829061 /* RxChallengeDomain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxChallengeDomain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		280D1CFC21BE847800829061 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		280D1D0121BE847800829061 /* RxChallengeDomainTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RxChallengeDomainTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		280D1D0821BE847900829061 /* RxChallengeDomainTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxChallengeDomainTests.swift; sourceTree = "<group>"; };
+		280D1D0A21BE847900829061 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		280D1D2621BE8BCA00829061 /* Single+Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Single+Map.swift"; sourceTree = "<group>"; };
+		280D1D2D21BE8C1900829061 /* RxChallengeUtils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxChallengeUtils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		280D1D3021BE8C1900829061 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		280D1D3521BE8C1900829061 /* RxChallengeUtilsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RxChallengeUtilsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		280D1D3C21BE8C1900829061 /* RxChallengeUtilsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxChallengeUtilsTests.swift; sourceTree = "<group>"; };
+		280D1D3E21BE8C1900829061 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		282FF98221BA5F970049A05D /* MainCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		282FF98721BA60D70049A05D /* ListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCoordinator.swift; sourceTree = "<group>"; };
 		282FF98821BA60D70049A05D /* ListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPresenter.swift; sourceTree = "<group>"; };
 		282FF98921BA60D70049A05D /* ListAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListAPI.swift; sourceTree = "<group>"; };
 		282FF98A21BA60D70049A05D /* ListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListInteractor.swift; sourceTree = "<group>"; };
 		282FF98B21BA60D70049A05D /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
-		282FF98C21BA60D70049A05D /* ListGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListGateway.swift; sourceTree = "<group>"; };
 		282FF99421BA61370049A05D /* Global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		282FF99D21BA6ACF0049A05D /* Endpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		282FF99F21BA6ACF0049A05D /* MoyaNetworkProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoyaNetworkProvider.swift; sourceTree = "<group>"; };
 		282FF9A021BA6ACF0049A05D /* TypicodeProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypicodeProvider.swift; sourceTree = "<group>"; };
 		282FF9A121BA6ACF0049A05D /* NetworkProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkProvider.swift; sourceTree = "<group>"; };
 		282FF9A221BA6ACF0049A05D /* Hosts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hosts.swift; sourceTree = "<group>"; };
-		282FF9AB21BA6B930049A05D /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		282FF9AB21BA6B930049A05D /* Post+Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Post+Decodable.swift"; sourceTree = "<group>"; };
 		282FF9B121BA94910049A05D /* UserDefaultsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsProvider.swift; sourceTree = "<group>"; };
+		28732785F6EF8A9ABE181BEE /* Pods_RxChallengeUtils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxChallengeUtils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		287E027021BA4F4400437462 /* RxChallenge2018.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxChallenge2018.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		287E027321BA4F4400437462 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		287E027C21BA4F4600437462 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -95,6 +224,7 @@
 		287E029121BA4F4600437462 /* RxChallenge2018UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RxChallenge2018UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		287E029521BA4F4600437462 /* RxChallenge2018UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxChallenge2018UITests.swift; sourceTree = "<group>"; };
 		287E029721BA4F4600437462 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2EA01E9FB09FC3E80C9B8A90 /* Pods_RxChallengeNetwork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxChallengeNetwork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4608BBA354F500F63ABBE0BF /* Pods-RxChallenge2018UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxChallenge2018UITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxChallenge2018UITests/Pods-RxChallenge2018UITests.debug.xcconfig"; sourceTree = "<group>"; };
 		4CD0AA5193917A71F9A0C25C /* Pods-RxChallenge2018.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxChallenge2018.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxChallenge2018/Pods-RxChallenge2018.debug.xcconfig"; sourceTree = "<group>"; };
 		5038013421BAE1D500EA82F9 /* UIView+Anchors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Anchors.swift"; sourceTree = "<group>"; };
@@ -105,12 +235,11 @@
 		5038013D21BBBA9800EA82F9 /* DetailAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailAPI.swift; sourceTree = "<group>"; };
 		5038013E21BBBA9800EA82F9 /* DetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInteractor.swift; sourceTree = "<group>"; };
 		5038013F21BBBA9800EA82F9 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
-		5038014021BBBA9800EA82F9 /* DetailGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailGateway.swift; sourceTree = "<group>"; };
 		5038014721BBBC5800EA82F9 /* ScrolledStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrolledStackView.swift; sourceTree = "<group>"; };
-		5038014921BBBD7900EA82F9 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		5038014B21BBBD8300EA82F9 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
-		5038014D21BBBDB600EA82F9 /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
-		5038014F21BBBDEE00EA82F9 /* GeoPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoPoint.swift; sourceTree = "<group>"; };
+		5038014921BBBD7900EA82F9 /* User+Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+Decodable.swift"; sourceTree = "<group>"; };
+		5038014B21BBBD8300EA82F9 /* Comment+Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Comment+Decodable.swift"; sourceTree = "<group>"; };
+		5038014D21BBBDB600EA82F9 /* Address+Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Address+Decodable.swift"; sourceTree = "<group>"; };
+		5038014F21BBBDEE00EA82F9 /* GeoPoint+Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GeoPoint+Decodable.swift"; sourceTree = "<group>"; };
 		5038015121BC585C00EA82F9 /* MessagesManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesManager.swift; sourceTree = "<group>"; };
 		5038015321BC587900EA82F9 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		5038015821BC5A8600EA82F9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -118,17 +247,77 @@
 		56B6687E9EC5610483E91819 /* Pods-RxChallenge2018.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxChallenge2018.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxChallenge2018/Pods-RxChallenge2018.release.xcconfig"; sourceTree = "<group>"; };
 		73ED6648045C194F1BB0ABB4 /* Pods_RxChallenge2018Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxChallenge2018Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		75A596011461E780B745E530 /* Pods_RxChallenge2018.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxChallenge2018.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E4894C296143A3DD3B98D0D /* Pods-RxChallengeNetwork.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxChallengeNetwork.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxChallengeNetwork/Pods-RxChallengeNetwork.release.xcconfig"; sourceTree = "<group>"; };
+		87C513A00B19B67776D8498D /* Pods-RxChallengeUtils.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxChallengeUtils.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxChallengeUtils/Pods-RxChallengeUtils.release.xcconfig"; sourceTree = "<group>"; };
+		8802C23144316FFECC202B0B /* Pods-RxChallengeNetwork.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxChallengeNetwork.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxChallengeNetwork/Pods-RxChallengeNetwork.debug.xcconfig"; sourceTree = "<group>"; };
 		934775E7FFD19564C4116CF3 /* Pods-RxChallenge2018Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxChallenge2018Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxChallenge2018Tests/Pods-RxChallenge2018Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		A9466F780CE50428069CED7C /* Pods-RxChallengeUtils.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxChallengeUtils.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxChallengeUtils/Pods-RxChallengeUtils.debug.xcconfig"; sourceTree = "<group>"; };
+		B100CB64DB74631107A62372 /* Pods_RxChallengeDomain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxChallengeDomain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD38049B98BD3064A64440E6 /* Pods-RxChallengeDomain.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxChallengeDomain.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxChallengeDomain/Pods-RxChallengeDomain.release.xcconfig"; sourceTree = "<group>"; };
 		DE9DB6FEF1F0517E4861B112 /* Pods_RxChallenge2018UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxChallenge2018UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFA8A5682477A58C5EF5C098 /* Pods-RxChallenge2018UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxChallenge2018UITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxChallenge2018UITests/Pods-RxChallenge2018UITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		280D1CB521BE765100829061 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				280D1D4A21BE9AE100829061 /* RxChallengeUtils.framework in Frameworks */,
+				280D1D1A21BE85CC00829061 /* RxChallengeDomain.framework in Frameworks */,
+				277181EDCCED81D9A5087EB6 /* Pods_RxChallengeNetwork.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		280D1CBD21BE765100829061 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				280D1CC121BE765100829061 /* RxChallengeNetwork.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		280D1CF621BE847800829061 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BD6F70C3B90180B40B651EAA /* Pods_RxChallengeDomain.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		280D1CFE21BE847800829061 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				280D1D0221BE847900829061 /* RxChallengeDomain.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		280D1D2A21BE8C1900829061 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				280D1D5721BEA72300829061 /* RxChallengeDomain.framework in Frameworks */,
+				D38746E2B14374C94FD536A9 /* Pods_RxChallengeUtils.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		280D1D3221BE8C1900829061 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				280D1D3621BE8C1900829061 /* RxChallengeUtils.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		287E026D21BA4F4400437462 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				280D1D0E21BE847900829061 /* RxChallengeDomain.framework in Frameworks */,
 				CF24AE228E1E40D5F2ADA2E9 /* Pods_RxChallenge2018.framework in Frameworks */,
+				280D1D4221BE8C1900829061 /* RxChallengeUtils.framework in Frameworks */,
+				280D1D4B21BE9AED00829061 /* RxChallengeNetwork.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -157,8 +346,97 @@
 				75A596011461E780B745E530 /* Pods_RxChallenge2018.framework */,
 				73ED6648045C194F1BB0ABB4 /* Pods_RxChallenge2018Tests.framework */,
 				DE9DB6FEF1F0517E4861B112 /* Pods_RxChallenge2018UITests.framework */,
+				2EA01E9FB09FC3E80C9B8A90 /* Pods_RxChallengeNetwork.framework */,
+				B100CB64DB74631107A62372 /* Pods_RxChallengeDomain.framework */,
+				28732785F6EF8A9ABE181BEE /* Pods_RxChallengeUtils.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		280D1CB921BE765100829061 /* RxChallengeNetwork */ = {
+			isa = PBXGroup;
+			children = (
+				280D1CBB21BE765100829061 /* Info.plist */,
+				282FF9AA21BA6B830049A05D /* Models */,
+				282FF99B21BA6ACF0049A05D /* Endpoints */,
+				282FF99E21BA6ACF0049A05D /* Providers */,
+			);
+			path = RxChallengeNetwork;
+			sourceTree = "<group>";
+		};
+		280D1CC621BE765100829061 /* RxChallengeNetworkTests */ = {
+			isa = PBXGroup;
+			children = (
+				280D1CC721BE765100829061 /* RxChallengeNetworkTests.swift */,
+				280D1CC921BE765100829061 /* Info.plist */,
+			);
+			path = RxChallengeNetworkTests;
+			sourceTree = "<group>";
+		};
+		280D1CEC21BE7F4800829061 /* Providers */ = {
+			isa = PBXGroup;
+			children = (
+				280D1CED21BE7F5800829061 /* Provider.swift */,
+			);
+			path = Providers;
+			sourceTree = "<group>";
+		};
+		280D1CF121BE81FC00829061 /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				280D1CF221BE820900829061 /* NetworkErrors.swift */,
+			);
+			path = Errors;
+			sourceTree = "<group>";
+		};
+		280D1CFA21BE847800829061 /* RxChallengeDomain */ = {
+			isa = PBXGroup;
+			children = (
+				280D1CFC21BE847800829061 /* Info.plist */,
+				280D1CF121BE81FC00829061 /* Errors */,
+				280D1CEC21BE7F4800829061 /* Providers */,
+				280D1D1721BE849D00829061 /* Models */,
+			);
+			path = RxChallengeDomain;
+			sourceTree = "<group>";
+		};
+		280D1D0721BE847900829061 /* RxChallengeDomainTests */ = {
+			isa = PBXGroup;
+			children = (
+				280D1D0821BE847900829061 /* RxChallengeDomainTests.swift */,
+				280D1D0A21BE847900829061 /* Info.plist */,
+			);
+			path = RxChallengeDomainTests;
+			sourceTree = "<group>";
+		};
+		280D1D1721BE849D00829061 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				280D1CDB21BE787000829061 /* Post.swift */,
+				280D1CDA21BE787000829061 /* User.swift */,
+				280D1CD821BE787000829061 /* Address.swift */,
+				280D1CD721BE787000829061 /* GeoPoint.swift */,
+				280D1CD921BE787000829061 /* Comment.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		280D1D2E21BE8C1900829061 /* RxChallengeUtils */ = {
+			isa = PBXGroup;
+			children = (
+				280D1D3021BE8C1900829061 /* Info.plist */,
+				282FF99321BA61020049A05D /* Utils */,
+			);
+			path = RxChallengeUtils;
+			sourceTree = "<group>";
+		};
+		280D1D3B21BE8C1900829061 /* RxChallengeUtilsTests */ = {
+			isa = PBXGroup;
+			children = (
+				280D1D3C21BE8C1900829061 /* RxChallengeUtilsTests.swift */,
+				280D1D3E21BE8C1900829061 /* Info.plist */,
+			);
+			path = RxChallengeUtilsTests;
 			sourceTree = "<group>";
 		};
 		282FF98121BA5C5C0049A05D /* Resources */ = {
@@ -191,7 +469,6 @@
 				282FF98921BA60D70049A05D /* ListAPI.swift */,
 				282FF98A21BA60D70049A05D /* ListInteractor.swift */,
 				282FF98B21BA60D70049A05D /* ListView.swift */,
-				282FF98C21BA60D70049A05D /* ListGateway.swift */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -204,7 +481,6 @@
 				5038013D21BBBA9800EA82F9 /* DetailAPI.swift */,
 				5038013E21BBBA9800EA82F9 /* DetailInteractor.swift */,
 				5038013F21BBBA9800EA82F9 /* DetailView.swift */,
-				5038014021BBBA9800EA82F9 /* DetailGateway.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -217,18 +493,9 @@
 				5038013421BAE1D500EA82F9 /* UIView+Anchors.swift */,
 				5038014721BBBC5800EA82F9 /* ScrolledStackView.swift */,
 				5038015121BC585C00EA82F9 /* MessagesManager.swift */,
+				280D1D2621BE8BCA00829061 /* Single+Map.swift */,
 			);
 			path = Utils;
-			sourceTree = "<group>";
-		};
-		282FF99821BA6ACF0049A05D /* Network */ = {
-			isa = PBXGroup;
-			children = (
-				282FF9AA21BA6B830049A05D /* Models */,
-				282FF99B21BA6ACF0049A05D /* Endpoints */,
-				282FF99E21BA6ACF0049A05D /* Providers */,
-			);
-			path = Network;
 			sourceTree = "<group>";
 		};
 		282FF99B21BA6ACF0049A05D /* Endpoints */ = {
@@ -254,11 +521,11 @@
 		282FF9AA21BA6B830049A05D /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				282FF9AB21BA6B930049A05D /* Post.swift */,
-				5038014921BBBD7900EA82F9 /* User.swift */,
-				5038014D21BBBDB600EA82F9 /* Address.swift */,
-				5038014F21BBBDEE00EA82F9 /* GeoPoint.swift */,
-				5038014B21BBBD8300EA82F9 /* Comment.swift */,
+				282FF9AB21BA6B930049A05D /* Post+Decodable.swift */,
+				5038014921BBBD7900EA82F9 /* User+Decodable.swift */,
+				5038014D21BBBDB600EA82F9 /* Address+Decodable.swift */,
+				5038014F21BBBDEE00EA82F9 /* GeoPoint+Decodable.swift */,
+				5038014B21BBBD8300EA82F9 /* Comment+Decodable.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -285,6 +552,12 @@
 				287E027221BA4F4400437462 /* RxChallenge2018 */,
 				287E028921BA4F4600437462 /* RxChallenge2018Tests */,
 				287E029421BA4F4600437462 /* RxChallenge2018UITests */,
+				280D1D2E21BE8C1900829061 /* RxChallengeUtils */,
+				280D1D3B21BE8C1900829061 /* RxChallengeUtilsTests */,
+				280D1CFA21BE847800829061 /* RxChallengeDomain */,
+				280D1D0721BE847900829061 /* RxChallengeDomainTests */,
+				280D1CB921BE765100829061 /* RxChallengeNetwork */,
+				280D1CC621BE765100829061 /* RxChallengeNetworkTests */,
 				287E027121BA4F4400437462 /* Products */,
 				9FCB77767826460D761A2756 /* Pods */,
 				00D259D6B0CBE48B539ECD60 /* Frameworks */,
@@ -297,6 +570,12 @@
 				287E027021BA4F4400437462 /* RxChallenge2018.app */,
 				287E028621BA4F4600437462 /* RxChallenge2018Tests.xctest */,
 				287E029121BA4F4600437462 /* RxChallenge2018UITests.xctest */,
+				280D1CB821BE765100829061 /* RxChallengeNetwork.framework */,
+				280D1CC021BE765100829061 /* RxChallengeNetworkTests.xctest */,
+				280D1CF921BE847800829061 /* RxChallengeDomain.framework */,
+				280D1D0121BE847800829061 /* RxChallengeDomainTests.xctest */,
+				280D1D2D21BE8C1900829061 /* RxChallengeUtils.framework */,
+				280D1D3521BE8C1900829061 /* RxChallengeUtilsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -306,9 +585,8 @@
 			children = (
 				287E027321BA4F4400437462 /* AppDelegate.swift */,
 				282FF98221BA5F970049A05D /* MainCoordinator.swift */,
-				282FF99821BA6ACF0049A05D /* Network */,
+				280D1CEF21BE804C00829061 /* AppProviders.swift */,
 				282FF98421BA60B20049A05D /* Modules */,
-				282FF99321BA61020049A05D /* Utils */,
 				282FF98121BA5C5C0049A05D /* Resources */,
 			);
 			path = RxChallenge2018;
@@ -350,13 +628,157 @@
 				077079119CA92FD865430166 /* Pods-RxChallenge2018Tests.release.xcconfig */,
 				4608BBA354F500F63ABBE0BF /* Pods-RxChallenge2018UITests.debug.xcconfig */,
 				FFA8A5682477A58C5EF5C098 /* Pods-RxChallenge2018UITests.release.xcconfig */,
+				8802C23144316FFECC202B0B /* Pods-RxChallengeNetwork.debug.xcconfig */,
+				7E4894C296143A3DD3B98D0D /* Pods-RxChallengeNetwork.release.xcconfig */,
+				2716584E39172351CC93B780 /* Pods-RxChallengeDomain.debug.xcconfig */,
+				BD38049B98BD3064A64440E6 /* Pods-RxChallengeDomain.release.xcconfig */,
+				A9466F780CE50428069CED7C /* Pods-RxChallengeUtils.debug.xcconfig */,
+				87C513A00B19B67776D8498D /* Pods-RxChallengeUtils.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		280D1CB321BE765100829061 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		280D1CF421BE847800829061 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		280D1D2821BE8C1900829061 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
+		280D1CB721BE765100829061 /* RxChallengeNetwork */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 280D1CD321BE765100829061 /* Build configuration list for PBXNativeTarget "RxChallengeNetwork" */;
+			buildPhases = (
+				83DD050BB8AC5AFB8B1D05BB /* [CP] Check Pods Manifest.lock */,
+				280D1CB321BE765100829061 /* Headers */,
+				280D1CB421BE765100829061 /* Sources */,
+				280D1CB521BE765100829061 /* Frameworks */,
+				280D1CB621BE765100829061 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RxChallengeNetwork;
+			productName = RxChallengeNetwork;
+			productReference = 280D1CB821BE765100829061 /* RxChallengeNetwork.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		280D1CBF21BE765100829061 /* RxChallengeNetworkTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 280D1CD521BE765100829061 /* Build configuration list for PBXNativeTarget "RxChallengeNetworkTests" */;
+			buildPhases = (
+				280D1CBC21BE765100829061 /* Sources */,
+				280D1CBD21BE765100829061 /* Frameworks */,
+				280D1CBE21BE765100829061 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				280D1CC321BE765100829061 /* PBXTargetDependency */,
+				280D1CC521BE765100829061 /* PBXTargetDependency */,
+			);
+			name = RxChallengeNetworkTests;
+			productName = RxChallengeNetworkTests;
+			productReference = 280D1CC021BE765100829061 /* RxChallengeNetworkTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		280D1CF821BE847800829061 /* RxChallengeDomain */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 280D1D1021BE847900829061 /* Build configuration list for PBXNativeTarget "RxChallengeDomain" */;
+			buildPhases = (
+				169CDA05C8838F6C20D42BE3 /* [CP] Check Pods Manifest.lock */,
+				280D1CF421BE847800829061 /* Headers */,
+				280D1CF521BE847800829061 /* Sources */,
+				280D1CF621BE847800829061 /* Frameworks */,
+				280D1CF721BE847800829061 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RxChallengeDomain;
+			productName = RxChallengeDomain;
+			productReference = 280D1CF921BE847800829061 /* RxChallengeDomain.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		280D1D0021BE847800829061 /* RxChallengeDomainTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 280D1D1421BE847900829061 /* Build configuration list for PBXNativeTarget "RxChallengeDomainTests" */;
+			buildPhases = (
+				280D1CFD21BE847800829061 /* Sources */,
+				280D1CFE21BE847800829061 /* Frameworks */,
+				280D1CFF21BE847800829061 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				280D1D0421BE847900829061 /* PBXTargetDependency */,
+				280D1D0621BE847900829061 /* PBXTargetDependency */,
+			);
+			name = RxChallengeDomainTests;
+			productName = RxChallengeDomainTests;
+			productReference = 280D1D0121BE847800829061 /* RxChallengeDomainTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		280D1D2C21BE8C1900829061 /* RxChallengeUtils */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 280D1D4421BE8C1900829061 /* Build configuration list for PBXNativeTarget "RxChallengeUtils" */;
+			buildPhases = (
+				B8900C2689F24F23F12A25C0 /* [CP] Check Pods Manifest.lock */,
+				280D1D2821BE8C1900829061 /* Headers */,
+				280D1D2921BE8C1900829061 /* Sources */,
+				280D1D2A21BE8C1900829061 /* Frameworks */,
+				280D1D2B21BE8C1900829061 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RxChallengeUtils;
+			productName = RxChallengeUtils;
+			productReference = 280D1D2D21BE8C1900829061 /* RxChallengeUtils.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		280D1D3421BE8C1900829061 /* RxChallengeUtilsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 280D1D4721BE8C1900829061 /* Build configuration list for PBXNativeTarget "RxChallengeUtilsTests" */;
+			buildPhases = (
+				280D1D3121BE8C1900829061 /* Sources */,
+				280D1D3221BE8C1900829061 /* Frameworks */,
+				280D1D3321BE8C1900829061 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				280D1D3821BE8C1900829061 /* PBXTargetDependency */,
+				280D1D3A21BE8C1900829061 /* PBXTargetDependency */,
+			);
+			name = RxChallengeUtilsTests;
+			productName = RxChallengeUtilsTests;
+			productReference = 280D1D3521BE8C1900829061 /* RxChallengeUtilsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		287E026F21BA4F4400437462 /* RxChallenge2018 */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 287E029A21BA4F4600437462 /* Build configuration list for PBXNativeTarget "RxChallenge2018" */;
@@ -366,10 +788,14 @@
 				287E026D21BA4F4400437462 /* Frameworks */,
 				287E026E21BA4F4400437462 /* Resources */,
 				0B1BF190424F0C4977D9DA1F /* [CP] Embed Pods Frameworks */,
+				280D1D1321BE847900829061 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				280D1D0D21BE847900829061 /* PBXTargetDependency */,
+				280D1D4121BE8C1900829061 /* PBXTargetDependency */,
+				280D1D4E21BE9AED00829061 /* PBXTargetDependency */,
 			);
 			name = RxChallenge2018;
 			productName = RxChallenge2018;
@@ -424,6 +850,27 @@
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = "Albert Montserrat";
 				TargetAttributes = {
+					280D1CB721BE765100829061 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					280D1CBF21BE765100829061 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 287E026F21BA4F4400437462;
+					};
+					280D1CF821BE847800829061 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					280D1D0021BE847800829061 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 287E026F21BA4F4400437462;
+					};
+					280D1D2C21BE8C1900829061 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					280D1D3421BE8C1900829061 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 287E026F21BA4F4400437462;
+					};
 					287E026F21BA4F4400437462 = {
 						CreatedOnToolsVersion = 10.1;
 					};
@@ -453,11 +900,59 @@
 				287E026F21BA4F4400437462 /* RxChallenge2018 */,
 				287E028521BA4F4600437462 /* RxChallenge2018Tests */,
 				287E029021BA4F4600437462 /* RxChallenge2018UITests */,
+				280D1D2C21BE8C1900829061 /* RxChallengeUtils */,
+				280D1D3421BE8C1900829061 /* RxChallengeUtilsTests */,
+				280D1CF821BE847800829061 /* RxChallengeDomain */,
+				280D1D0021BE847800829061 /* RxChallengeDomainTests */,
+				280D1CB721BE765100829061 /* RxChallengeNetwork */,
+				280D1CBF21BE765100829061 /* RxChallengeNetworkTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		280D1CB621BE765100829061 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		280D1CBE21BE765100829061 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		280D1CF721BE847800829061 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		280D1CFF21BE847800829061 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		280D1D2B21BE8C1900829061 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		280D1D3321BE8C1900829061 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		287E026E21BA4F4400437462 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -494,33 +989,33 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-RxChallenge2018/Pods-RxChallenge2018-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/GenericCellControllers/GenericCellControllers.framework",
 				"${BUILT_PRODUCTS_DIR}/Hue/Hue.framework",
-				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
-				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxKeyboard/RxKeyboard.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftMessages/SwiftMessages.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftMessages/SwiftMessages.framework",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GenericCellControllers.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hue.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxKeyboard.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftMessages.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftMessages.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -549,6 +1044,28 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		169CDA05C8838F6C20D42BE3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RxChallengeDomain-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		31F99158B4BB4B7ABBAED0A1 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -565,6 +1082,28 @@
 			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-RxChallenge2018-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		83DD050BB8AC5AFB8B1D05BB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RxChallengeNetwork-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -593,46 +1132,120 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		B8900C2689F24F23F12A25C0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RxChallengeUtils-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		280D1CB421BE765100829061 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				280D1CE721BE797F00829061 /* Endpoint.swift in Sources */,
+				280D1CE921BE798600829061 /* TypicodeProvider.swift in Sources */,
+				280D1CE521BE797900829061 /* Comment+Decodable.swift in Sources */,
+				280D1CE321BE797100829061 /* Address+Decodable.swift in Sources */,
+				280D1CE221BE796E00829061 /* User+Decodable.swift in Sources */,
+				280D1CE621BE797C00829061 /* Hosts.swift in Sources */,
+				280D1CE821BE798200829061 /* NetworkProvider.swift in Sources */,
+				280D1CEA21BE798B00829061 /* MoyaNetworkProvider.swift in Sources */,
+				280D1CE421BE797500829061 /* GeoPoint+Decodable.swift in Sources */,
+				280D1CE121BE796600829061 /* Post+Decodable.swift in Sources */,
+				280D1CEB21BE798F00829061 /* UserDefaultsProvider.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		280D1CBC21BE765100829061 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				280D1CC821BE765100829061 /* RxChallengeNetworkTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		280D1CF521BE847800829061 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				280D1D1F21BE85F900829061 /* GeoPoint.swift in Sources */,
+				280D1D1D21BE85F900829061 /* User.swift in Sources */,
+				280D1D1C21BE85F900829061 /* Post.swift in Sources */,
+				280D1D2021BE85F900829061 /* Comment.swift in Sources */,
+				280D1D1821BE84E800829061 /* Provider.swift in Sources */,
+				280D1D1921BE84EC00829061 /* NetworkErrors.swift in Sources */,
+				280D1D1E21BE85F900829061 /* Address.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		280D1CFD21BE847800829061 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				280D1D0921BE847900829061 /* RxChallengeDomainTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		280D1D2921BE8C1900829061 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				280D1D4F21BE9B2500829061 /* Global.swift in Sources */,
+				280D1D5121BE9B2500829061 /* UIView+Anchors.swift in Sources */,
+				280D1D5621BEA61800829061 /* Single+Map.swift in Sources */,
+				280D1D5021BE9B2500829061 /* Colors.swift in Sources */,
+				280D1D5221BE9B2500829061 /* ScrolledStackView.swift in Sources */,
+				280D1D5321BE9B2500829061 /* MessagesManager.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		280D1D3121BE8C1900829061 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				280D1D3D21BE8C1900829061 /* RxChallengeUtilsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		287E026C21BA4F4400437462 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				282FF9A521BA6ACF0049A05D /* Endpoint.swift in Sources */,
 				5038014521BBBA9800EA82F9 /* DetailView.swift in Sources */,
 				5038014321BBBA9800EA82F9 /* DetailAPI.swift in Sources */,
-				5038014C21BBBD8300EA82F9 /* Comment.swift in Sources */,
-				5038013521BAE1D500EA82F9 /* UIView+Anchors.swift in Sources */,
 				282FF99021BA60D70049A05D /* ListInteractor.swift in Sources */,
-				5038014A21BBBD7900EA82F9 /* User.swift in Sources */,
+				280D1CF021BE804C00829061 /* AppProviders.swift in Sources */,
 				287E027421BA4F4400437462 /* AppDelegate.swift in Sources */,
-				282FF99221BA60D70049A05D /* ListGateway.swift in Sources */,
 				5038014221BBBA9800EA82F9 /* DetailPresenter.swift in Sources */,
 				5038013A21BAF78A00EA82F9 /* PostTableViewCell.swift in Sources */,
-				5038015221BC585C00EA82F9 /* MessagesManager.swift in Sources */,
 				282FF98321BA5F970049A05D /* MainCoordinator.swift in Sources */,
 				282FF99121BA60D70049A05D /* ListView.swift in Sources */,
 				5038013821BAF77E00EA82F9 /* PostCellController.swift in Sources */,
-				282FF9A721BA6ACF0049A05D /* TypicodeProvider.swift in Sources */,
-				5038014821BBBC5800EA82F9 /* ScrolledStackView.swift in Sources */,
-				282FF9A821BA6ACF0049A05D /* NetworkProvider.swift in Sources */,
 				282FF98E21BA60D70049A05D /* ListPresenter.swift in Sources */,
-				5038014E21BBBDB600EA82F9 /* Address.swift in Sources */,
 				282FF98D21BA60D70049A05D /* ListCoordinator.swift in Sources */,
 				5038014121BBBA9800EA82F9 /* DetailCoordinator.swift in Sources */,
 				5038015B21BC5B3700EA82F9 /* Localizable.swift in Sources */,
 				282FF98F21BA60D70049A05D /* ListAPI.swift in Sources */,
-				5038014621BBBA9800EA82F9 /* DetailGateway.swift in Sources */,
-				282FF9AC21BA6B930049A05D /* Post.swift in Sources */,
-				5038015421BC587900EA82F9 /* Colors.swift in Sources */,
-				5038015021BBBDEE00EA82F9 /* GeoPoint.swift in Sources */,
-				282FF99521BA61370049A05D /* Global.swift in Sources */,
 				5038014421BBBA9800EA82F9 /* DetailInteractor.swift in Sources */,
-				282FF9B221BA94910049A05D /* UserDefaultsProvider.swift in Sources */,
-				282FF9A921BA6ACF0049A05D /* Hosts.swift in Sources */,
-				282FF9A621BA6ACF0049A05D /* MoyaNetworkProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -655,6 +1268,51 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		280D1CC321BE765100829061 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 280D1CB721BE765100829061 /* RxChallengeNetwork */;
+			targetProxy = 280D1CC221BE765100829061 /* PBXContainerItemProxy */;
+		};
+		280D1CC521BE765100829061 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 287E026F21BA4F4400437462 /* RxChallenge2018 */;
+			targetProxy = 280D1CC421BE765100829061 /* PBXContainerItemProxy */;
+		};
+		280D1D0421BE847900829061 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 280D1CF821BE847800829061 /* RxChallengeDomain */;
+			targetProxy = 280D1D0321BE847900829061 /* PBXContainerItemProxy */;
+		};
+		280D1D0621BE847900829061 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 287E026F21BA4F4400437462 /* RxChallenge2018 */;
+			targetProxy = 280D1D0521BE847900829061 /* PBXContainerItemProxy */;
+		};
+		280D1D0D21BE847900829061 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 280D1CF821BE847800829061 /* RxChallengeDomain */;
+			targetProxy = 280D1D0C21BE847900829061 /* PBXContainerItemProxy */;
+		};
+		280D1D3821BE8C1900829061 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 280D1D2C21BE8C1900829061 /* RxChallengeUtils */;
+			targetProxy = 280D1D3721BE8C1900829061 /* PBXContainerItemProxy */;
+		};
+		280D1D3A21BE8C1900829061 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 287E026F21BA4F4400437462 /* RxChallenge2018 */;
+			targetProxy = 280D1D3921BE8C1900829061 /* PBXContainerItemProxy */;
+		};
+		280D1D4121BE8C1900829061 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 280D1D2C21BE8C1900829061 /* RxChallengeUtils */;
+			targetProxy = 280D1D4021BE8C1900829061 /* PBXContainerItemProxy */;
+		};
+		280D1D4E21BE9AED00829061 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 280D1CB721BE765100829061 /* RxChallengeNetwork */;
+			targetProxy = 280D1D4D21BE9AED00829061 /* PBXContainerItemProxy */;
+		};
 		287E028821BA4F4600437462 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 287E026F21BA4F4400437462 /* RxChallenge2018 */;
@@ -687,6 +1345,312 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		280D1CCF21BE765100829061 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8802C23144316FFECC202B0B /* Pods-RxChallengeNetwork.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = Y9LBLMNMZG;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = RxChallengeNetwork/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.albertmontserratgambus.RxChallengeNetwork;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		280D1CD021BE765100829061 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7E4894C296143A3DD3B98D0D /* Pods-RxChallengeNetwork.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = Y9LBLMNMZG;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = RxChallengeNetwork/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.albertmontserratgambus.RxChallengeNetwork;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		280D1CD121BE765100829061 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y9LBLMNMZG;
+				INFOPLIST_FILE = RxChallengeNetworkTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.albertmontserratgambus.RxChallengeNetworkTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RxChallenge2018.app/RxChallenge2018";
+			};
+			name = Debug;
+		};
+		280D1CD221BE765100829061 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y9LBLMNMZG;
+				INFOPLIST_FILE = RxChallengeNetworkTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.albertmontserratgambus.RxChallengeNetworkTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RxChallenge2018.app/RxChallenge2018";
+			};
+			name = Release;
+		};
+		280D1D1121BE847900829061 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2716584E39172351CC93B780 /* Pods-RxChallengeDomain.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = Y9LBLMNMZG;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = RxChallengeDomain/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.albertmontserratgambus.RxChallengeDomain;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		280D1D1221BE847900829061 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BD38049B98BD3064A64440E6 /* Pods-RxChallengeDomain.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = Y9LBLMNMZG;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = RxChallengeDomain/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.albertmontserratgambus.RxChallengeDomain;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		280D1D1521BE847900829061 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y9LBLMNMZG;
+				INFOPLIST_FILE = RxChallengeDomainTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.albertmontserratgambus.RxChallengeDomainTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RxChallenge2018.app/RxChallenge2018";
+			};
+			name = Debug;
+		};
+		280D1D1621BE847900829061 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y9LBLMNMZG;
+				INFOPLIST_FILE = RxChallengeDomainTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.albertmontserratgambus.RxChallengeDomainTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RxChallenge2018.app/RxChallenge2018";
+			};
+			name = Release;
+		};
+		280D1D4521BE8C1900829061 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A9466F780CE50428069CED7C /* Pods-RxChallengeUtils.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = Y9LBLMNMZG;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = RxChallengeUtils/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.albertmontserratgambus.RxChallengeUtils;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		280D1D4621BE8C1900829061 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 87C513A00B19B67776D8498D /* Pods-RxChallengeUtils.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = Y9LBLMNMZG;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = RxChallengeUtils/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.albertmontserratgambus.RxChallengeUtils;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		280D1D4821BE8C1900829061 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y9LBLMNMZG;
+				INFOPLIST_FILE = RxChallengeUtilsTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.albertmontserratgambus.RxChallengeUtilsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RxChallenge2018.app/RxChallenge2018";
+			};
+			name = Debug;
+		};
+		280D1D4921BE8C1900829061 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y9LBLMNMZG;
+				INFOPLIST_FILE = RxChallengeUtilsTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.albertmontserratgambus.RxChallengeUtilsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RxChallenge2018.app/RxChallenge2018";
+			};
+			name = Release;
+		};
 		287E029821BA4F4600437462 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -930,6 +1894,60 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		280D1CD321BE765100829061 /* Build configuration list for PBXNativeTarget "RxChallengeNetwork" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				280D1CCF21BE765100829061 /* Debug */,
+				280D1CD021BE765100829061 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		280D1CD521BE765100829061 /* Build configuration list for PBXNativeTarget "RxChallengeNetworkTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				280D1CD121BE765100829061 /* Debug */,
+				280D1CD221BE765100829061 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		280D1D1021BE847900829061 /* Build configuration list for PBXNativeTarget "RxChallengeDomain" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				280D1D1121BE847900829061 /* Debug */,
+				280D1D1221BE847900829061 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		280D1D1421BE847900829061 /* Build configuration list for PBXNativeTarget "RxChallengeDomainTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				280D1D1521BE847900829061 /* Debug */,
+				280D1D1621BE847900829061 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		280D1D4421BE8C1900829061 /* Build configuration list for PBXNativeTarget "RxChallengeUtils" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				280D1D4521BE8C1900829061 /* Debug */,
+				280D1D4621BE8C1900829061 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		280D1D4721BE8C1900829061 /* Build configuration list for PBXNativeTarget "RxChallengeUtilsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				280D1D4821BE8C1900829061 /* Debug */,
+				280D1D4921BE8C1900829061 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		287E026B21BA4F4400437462 /* Build configuration list for PBXProject "RxChallenge2018" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

@@ -1,4 +1,5 @@
 import UIKit
+import RxChallengeUtils
 import RxSwift
 import RxCocoa
 
@@ -70,16 +71,16 @@ final class DetailView: UIViewController, DetailViewInterface {
         self.title = title
     }
     
-    func setTitles(with descriptorObservable: Driver<DetailDescriptor>) {
+    func setTitles(with driver: Driver<DetailDescriptor>) {
         driver.map { $0.titleText }.drive(titleLabel.rx.text).disposed(by: disposeBag)
         driver.map { $0.bodyText }.drive(bodyLabel.rx.text).disposed(by: disposeBag)
         driver.map { $0.authorText }.drive(authorLabel.rx.text).disposed(by: disposeBag)
         driver.map { $0.numberOfCommentsText }.drive(numberOfCommentsLabel.rx.text).disposed(by: disposeBag)
     }
     
-    func showError(with text: String) {
+    func showError(with title: String, message: String) {
         activityIndicator.stopAnimating()
-        MessagesManager.showErrorMessage(text)
+        MessagesManager.showErrorMessage(with: title, message: message)
     }
     
     func startAnimating() {

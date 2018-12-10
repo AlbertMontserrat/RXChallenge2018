@@ -1,4 +1,5 @@
-import Foundation
+import RxChallengeDomain
+import RxChallengeUtils
 import RxSwift
 import RxCocoa
 import GenericCellControllers
@@ -26,8 +27,8 @@ final class ListPresenter: ListPresenterInterface {
                 }, onSubscribe: {
                     self.presenterOutput?.startAnimating()
             })
-            .map { [unowned self] posts, searchQuery in
-                return posts.map { PostCellController(descriptor: PostCellDescriptor(title: $0.title ?? ""), didSelectCell: self.didSelectCell(with: $0.id ?? 0)) }
+            .map { [unowned self] data in
+                return data.posts.map { PostCellController(descriptor: PostCellDescriptor(title: $0.title ?? ""), didSelectCell: self.didSelectCell(with: $0.id ?? 0)) }
             }
             .asDriver(onErrorJustReturn: [])
         presenterOutput?.setupControllers(with: driver)
@@ -41,7 +42,7 @@ final class ListPresenter: ListPresenterInterface {
             text = Constants.errorLoadingErrorMessage
         }
         guard let errorMessage = text else { return }
-        presenterOutput?.showError(with: errorMessage)
+        presenterOutput?.showError(with: Constants.errorLoadingErrorTitle, message: errorMessage)
     }
 }
 
@@ -59,6 +60,7 @@ private extension ListPresenter {
     enum Constants {
         static var postsTitle: String { return .str_posts }
         static var searchPostsTitle: String { return .str_search_posts }
+        static var errorLoadingErrorTitle: String { return .str_error }
         static var errorLoadingErrorMessage: String { return .str_error_loading_data }
     }
 }

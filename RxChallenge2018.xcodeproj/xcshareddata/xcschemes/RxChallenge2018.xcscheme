@@ -48,6 +48,36 @@
                ReferencedContainer = "container:RxChallenge2018.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "280D1CBF21BE765100829061"
+               BuildableName = "RxChallengeNetworkTests.xctest"
+               BlueprintName = "RxChallengeNetworkTests"
+               ReferencedContainer = "container:RxChallenge2018.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "280D1D0021BE847800829061"
+               BuildableName = "RxChallengeDomainTests.xctest"
+               BlueprintName = "RxChallengeDomainTests"
+               ReferencedContainer = "container:RxChallenge2018.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "280D1D3421BE8C1900829061"
+               BuildableName = "RxChallengeUtilsTests.xctest"
+               BlueprintName = "RxChallengeUtilsTests"
+               ReferencedContainer = "container:RxChallenge2018.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
