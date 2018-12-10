@@ -68,6 +68,7 @@
 		5038014521BBBA9800EA82F9 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5038013F21BBBA9800EA82F9 /* DetailView.swift */; };
 		5038015721BC5A8600EA82F9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5038015921BC5A8600EA82F9 /* Localizable.strings */; };
 		5038015B21BC5B3700EA82F9 /* Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5038015A21BC5B3700EA82F9 /* Localizable.swift */; };
+		5038015D21BEDC6400EA82F9 /* ScreenFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5038015C21BEDC6400EA82F9 /* ScreenFactory.swift */; };
 		76A2FFC69A13C9FA8F87ACAD /* Pods_RxChallenge2018UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE9DB6FEF1F0517E4861B112 /* Pods_RxChallenge2018UITests.framework */; };
 		BD6F70C3B90180B40B651EAA /* Pods_RxChallengeDomain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B100CB64DB74631107A62372 /* Pods_RxChallengeDomain.framework */; };
 		CF24AE228E1E40D5F2ADA2E9 /* Pods_RxChallenge2018.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75A596011461E780B745E530 /* Pods_RxChallenge2018.framework */; };
@@ -242,6 +243,7 @@
 		5038015321BC587900EA82F9 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		5038015821BC5A8600EA82F9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5038015A21BC5B3700EA82F9 /* Localizable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Localizable.swift; sourceTree = "<group>"; };
+		5038015C21BEDC6400EA82F9 /* ScreenFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenFactory.swift; sourceTree = "<group>"; };
 		56B6687E9EC5610483E91819 /* Pods-RxChallenge2018.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxChallenge2018.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxChallenge2018/Pods-RxChallenge2018.release.xcconfig"; sourceTree = "<group>"; };
 		73ED6648045C194F1BB0ABB4 /* Pods_RxChallenge2018Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxChallenge2018Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		75A596011461E780B745E530 /* Pods_RxChallenge2018.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxChallenge2018.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -583,6 +585,7 @@
 				287E027321BA4F4400437462 /* AppDelegate.swift */,
 				282FF98221BA5F970049A05D /* MainCoordinator.swift */,
 				280D1CEF21BE804C00829061 /* AppProviders.swift */,
+				5038015C21BEDC6400EA82F9 /* ScreenFactory.swift */,
 				282FF98421BA60B20049A05D /* Modules */,
 				282FF98121BA5C5C0049A05D /* Resources */,
 			);
@@ -1228,6 +1231,7 @@
 			files = (
 				5038014521BBBA9800EA82F9 /* DetailView.swift in Sources */,
 				5038014321BBBA9800EA82F9 /* DetailAPI.swift in Sources */,
+				5038015D21BEDC6400EA82F9 /* ScreenFactory.swift in Sources */,
 				282FF99021BA60D70049A05D /* ListInteractor.swift in Sources */,
 				280D1CF021BE804C00829061 /* AppProviders.swift in Sources */,
 				287E027421BA4F4400437462 /* AppDelegate.swift in Sources */,
