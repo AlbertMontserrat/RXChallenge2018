@@ -2,7 +2,7 @@ import UIKit
 
 class DetailCoordinator {
     
-    private weak var navigationController: UINavigationController?
+    private unowned var navigationController: UINavigationController
     private let post: Post
     
     init(navigationController: UINavigationController, post: Post) {
@@ -15,6 +15,6 @@ class DetailCoordinator {
         let modulePresenter = DetailPresenter(outputInterface: moduleView)
         let gateway = DetailGateway(provider: TypicodeProvider())
         moduleView.viewOutput = DetailInteractor(outputInterface: modulePresenter, gateway: gateway, post: post)
-        navigationController?.pushViewController(moduleView, animated: animated)
+        navigationController.pushViewController(moduleView, animated: animated)
     }
 }

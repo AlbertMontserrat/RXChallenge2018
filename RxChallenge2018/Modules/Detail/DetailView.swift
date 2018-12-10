@@ -71,12 +71,6 @@ final class DetailView: UIViewController, DetailViewInterface {
     }
     
     func setTitles(with descriptorObservable: Driver<DetailDescriptor>) {
-        let driver = descriptorObservable
-            .do(onNext: { [unowned self] _ in
-                self.activityIndicator.stopAnimating()
-                }, onSubscribe: {
-                    self.activityIndicator.startAnimating()
-            })
         driver.map { $0.titleText }.drive(titleLabel.rx.text).disposed(by: disposeBag)
         driver.map { $0.bodyText }.drive(bodyLabel.rx.text).disposed(by: disposeBag)
         driver.map { $0.authorText }.drive(authorLabel.rx.text).disposed(by: disposeBag)
@@ -86,6 +80,14 @@ final class DetailView: UIViewController, DetailViewInterface {
     func showError(with text: String) {
         activityIndicator.stopAnimating()
         MessagesManager.showErrorMessage(text)
+    }
+    
+    func startAnimating() {
+        activityIndicator.startAnimating()
+    }
+    
+    func stopAnimating() {
+        activityIndicator.stopAnimating()
     }
 }
 

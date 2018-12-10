@@ -1,7 +1,7 @@
 import UIKit
 
 protocol MainCoordinator {
-    var navigationController: UINavigationController? { get }
+    var navigationController: UINavigationController { get }
     func setRootViewController(in window: UIWindow)
 }
 

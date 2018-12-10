@@ -13,6 +13,8 @@ protocol ListViewInterface: class {
     func setupControllers(with controllersObservable: Driver<[TableCellController]>)
     func didSelectCell(with id: Int)
     func showError(with text: String)
+    func startAnimating()
+    func stopAnimating()
 }
 
 protocol ListPresenterInterface {

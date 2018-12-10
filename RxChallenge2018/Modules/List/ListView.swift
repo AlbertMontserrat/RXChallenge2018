@@ -35,7 +35,6 @@ final class ListView: UIViewController, ListViewInterface {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-        activityIndicator.startAnimating()
         viewOutput?.initializeTitles()
         viewOutput?.configure(with: searchController.searchBar.rx.value.map { $0 ?? "" })
         viewOutput?.configureSelection(with: selectionSubject)
@@ -62,7 +61,6 @@ final class ListView: UIViewController, ListViewInterface {
         controllersObservable.drive(onNext: { [weak self] controllers in
             self?.cellControllers = controllers
             self?.tableView.reloadData()
-            self?.activityIndicator.stopAnimating()
         }).disposed(by: disposeBag)
     }
     
@@ -73,6 +71,14 @@ final class ListView: UIViewController, ListViewInterface {
     
     func didSelectCell(with id: Int) {
         selectionSubject.onNext(id)
+    }
+    
+    func startAnimating() {
+        activityIndicator.startAnimating()
+    }
+    
+    func stopAnimating() {
+        activityIndicator.stopAnimating()
     }
 }
 

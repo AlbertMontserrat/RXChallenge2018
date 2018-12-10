@@ -1,6 +1,7 @@
 import Foundation
 import RxSwift
 import RxCocoa
+import GenericCellControllers
 
 final class ListPresenter: ListPresenterInterface {
     
@@ -19,9 +20,17 @@ final class ListPresenter: ListPresenterInterface {
     }
     
     func setupPosts(with postsObservable: Observable<PostsWithQuery>) {
-        presenterOutput?.setupControllers(with: postsObservable.map { [unowned self] posts, searchQuery in
-            return posts.map { PostCellController(descriptor: PostCellDescriptor(title: $0.title ?? ""), didSelectCell: self.didSelectCell(with: $0.id ?? 0)) }
-        }.asDriver(onErrorJustReturn: []))
+        let driver: Driver<[TableCellController]> = postsObservable
+            .do(onNext: { [unowned self] _ in
+                self.presenterOutput?.stopAnimating()
+                }, onSubscribe: {
+                    self.presenterOutput?.startAnimating()
+            })
+            .map { [unowned self] posts, searchQuery in
+                return posts.map { PostCellController(descriptor: PostCellDescriptor(title: $0.title ?? ""), didSelectCell: self.didSelectCell(with: $0.id ?? 0)) }
+            }
+            .asDriver(onErrorJustReturn: [])
+        presenterOutput?.setupControllers(with: driver)
     }
     
     func showError(with error: NetworkError) {

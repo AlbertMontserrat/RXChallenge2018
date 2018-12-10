@@ -27,8 +27,8 @@ final class DetailInteractor: DetailInteractorInterface {
     func setupStartupObservable(_ startupObservable: Observable<()>) {
         let observable = startupObservable
             .flatMap { [unowned self] _ in
-                return Observable.zip(self.gateway.getUser(with: self.post.userId ?? 0).asObservable(),
-                                      self.gateway.getComments(for: self.post.id ?? 0).asObservable()) { [unowned self] user, comments -> DetailData in
+                return Single.zip(self.gateway.getUser(with: self.post.userId ?? 0),
+                                      self.gateway.getComments(for: self.post.id ?? 0)) { [unowned self] user, comments -> DetailData in
                                         return (self.post, user, comments)
                 }
             }

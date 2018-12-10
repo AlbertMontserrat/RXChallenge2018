@@ -20,13 +20,21 @@ final class DetailPresenter: DetailPresenterInterface {
     }
     
     func setupTitles(with detailObservable: Observable<DetailData>) {
-        presenterOutput?.setTitles(with: detailObservable.map { data in
-            let title = data.post.title ?? ""
-            let body = data.post.body ?? ""
-            let author = Constants.byAuthorTitle.replacingVariables([data.user.name ?? "", data.user.username ?? ""])
-            let numberOfComments = Constants.numberCommentsTitle.replacingVariables(["\(data.comments.count)"])
-            return (title, body, author, numberOfComments)
-        }.asDriver(onErrorJustReturn: ("", "", "", "")))
+        let driver: Driver<DetailDescriptor> = detailObservable
+            .do(onNext: { [unowned self] _ in
+                self.presenterOutput?.stopAnimating()
+                }, onSubscribe: {
+                    self.presenterOutput?.startAnimating()
+            })
+            .map { data in
+                let title = data.post.title ?? ""
+                let body = data.post.body ?? ""
+                let author = Constants.byAuthorTitle.replacingVariables([data.user.name ?? "", data.user.username ?? ""])
+                let numberOfComments = Constants.numberCommentsTitle.replacingVariables(["\(data.comments.count)"])
+                return (title, body, author, numberOfComments)
+            }
+            .asDriver(onErrorJustReturn: ("", "", "", ""))
+        presenterOutput?.setTitles(with: driver)
     }
     
     func showError(with error: NetworkError) {

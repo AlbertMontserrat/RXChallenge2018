@@ -6,6 +6,8 @@ protocol DetailViewInterface: class {
     func configureTitle(_ title: String)
     func setTitles(with descriptorObservable: Driver<DetailDescriptor>)
     func showError(with text: String)
+    func startAnimating()
+    func stopAnimating()
 }
 
 protocol DetailPresenterInterface {
