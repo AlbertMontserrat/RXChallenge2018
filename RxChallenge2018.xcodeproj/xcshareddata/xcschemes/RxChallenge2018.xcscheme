@@ -26,7 +26,39 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      codeCoverageEnabled = "YES"
+      onlyGenerateCoverageForSpecifiedTargets = "YES"
       shouldUseLaunchSchemeArgsEnv = "YES">
+      <CodeCoverageTargets>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "287E026F21BA4F4400437462"
+            BuildableName = "RxChallenge2018.app"
+            BlueprintName = "RxChallenge2018"
+            ReferencedContainer = "container:RxChallenge2018.xcodeproj">
+         </BuildableReference>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "280D1CF821BE847800829061"
+            BuildableName = "RxChallengeDomain.framework"
+            BlueprintName = "RxChallengeDomain"
+            ReferencedContainer = "container:RxChallenge2018.xcodeproj">
+         </BuildableReference>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "280D1CB721BE765100829061"
+            BuildableName = "RxChallengeNetwork.framework"
+            BlueprintName = "RxChallengeNetwork"
+            ReferencedContainer = "container:RxChallenge2018.xcodeproj">
+         </BuildableReference>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "280D1D2C21BE8C1900829061"
+            BuildableName = "RxChallengeUtils.framework"
+            BlueprintName = "RxChallengeUtils"
+            ReferencedContainer = "container:RxChallenge2018.xcodeproj">
+         </BuildableReference>
+      </CodeCoverageTargets>
       <Testables>
          <TestableReference
             skipped = "NO">
