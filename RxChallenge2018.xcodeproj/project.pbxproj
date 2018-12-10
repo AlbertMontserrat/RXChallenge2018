@@ -11,11 +11,11 @@
 		277181EDCCED81D9A5087EB6 /* Pods_RxChallengeNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EA01E9FB09FC3E80C9B8A90 /* Pods_RxChallengeNetwork.framework */; };
 		280D1CC121BE765100829061 /* RxChallengeNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 280D1CB821BE765100829061 /* RxChallengeNetwork.framework */; };
 		280D1CC821BE765100829061 /* RxChallengeNetworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280D1CC721BE765100829061 /* RxChallengeNetworkTests.swift */; };
-		280D1CE121BE796600829061 /* Post+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282FF9AB21BA6B930049A05D /* Post+Decodable.swift */; };
-		280D1CE221BE796E00829061 /* User+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5038014921BBBD7900EA82F9 /* User+Decodable.swift */; };
-		280D1CE321BE797100829061 /* Address+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5038014D21BBBDB600EA82F9 /* Address+Decodable.swift */; };
-		280D1CE421BE797500829061 /* GeoPoint+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5038014F21BBBDEE00EA82F9 /* GeoPoint+Decodable.swift */; };
-		280D1CE521BE797900829061 /* Comment+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5038014B21BBBD8300EA82F9 /* Comment+Decodable.swift */; };
+		280D1CE121BE796600829061 /* Post+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282FF9AB21BA6B930049A05D /* Post+Codable.swift */; };
+		280D1CE221BE796E00829061 /* User+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5038014921BBBD7900EA82F9 /* User+Codable.swift */; };
+		280D1CE321BE797100829061 /* Address+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5038014D21BBBDB600EA82F9 /* Address+Codable.swift */; };
+		280D1CE421BE797500829061 /* GeoPoint+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5038014F21BBBDEE00EA82F9 /* GeoPoint+Codable.swift */; };
+		280D1CE521BE797900829061 /* Comment+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5038014B21BBBD8300EA82F9 /* Comment+Codable.swift */; };
 		280D1CE621BE797C00829061 /* Hosts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282FF9A221BA6ACF0049A05D /* Hosts.swift */; };
 		280D1CE721BE797F00829061 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282FF99D21BA6ACF0049A05D /* Endpoint.swift */; };
 		280D1CE821BE798200829061 /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282FF9A121BA6ACF0049A05D /* NetworkProvider.swift */; };
@@ -210,7 +210,7 @@
 		282FF9A021BA6ACF0049A05D /* TypicodeProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypicodeProvider.swift; sourceTree = "<group>"; };
 		282FF9A121BA6ACF0049A05D /* NetworkProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkProvider.swift; sourceTree = "<group>"; };
 		282FF9A221BA6ACF0049A05D /* Hosts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hosts.swift; sourceTree = "<group>"; };
-		282FF9AB21BA6B930049A05D /* Post+Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Post+Decodable.swift"; sourceTree = "<group>"; };
+		282FF9AB21BA6B930049A05D /* Post+Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Post+Codable.swift"; sourceTree = "<group>"; };
 		282FF9B121BA94910049A05D /* UserDefaultsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsProvider.swift; sourceTree = "<group>"; };
 		28732785F6EF8A9ABE181BEE /* Pods_RxChallengeUtils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxChallengeUtils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		287E027021BA4F4400437462 /* RxChallenge2018.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxChallenge2018.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -236,10 +236,10 @@
 		5038013E21BBBA9800EA82F9 /* DetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInteractor.swift; sourceTree = "<group>"; };
 		5038013F21BBBA9800EA82F9 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		5038014721BBBC5800EA82F9 /* ScrolledStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrolledStackView.swift; sourceTree = "<group>"; };
-		5038014921BBBD7900EA82F9 /* User+Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+Decodable.swift"; sourceTree = "<group>"; };
-		5038014B21BBBD8300EA82F9 /* Comment+Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Comment+Decodable.swift"; sourceTree = "<group>"; };
-		5038014D21BBBDB600EA82F9 /* Address+Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Address+Decodable.swift"; sourceTree = "<group>"; };
-		5038014F21BBBDEE00EA82F9 /* GeoPoint+Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GeoPoint+Decodable.swift"; sourceTree = "<group>"; };
+		5038014921BBBD7900EA82F9 /* User+Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+Codable.swift"; sourceTree = "<group>"; };
+		5038014B21BBBD8300EA82F9 /* Comment+Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Comment+Codable.swift"; sourceTree = "<group>"; };
+		5038014D21BBBDB600EA82F9 /* Address+Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Address+Codable.swift"; sourceTree = "<group>"; };
+		5038014F21BBBDEE00EA82F9 /* GeoPoint+Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GeoPoint+Codable.swift"; sourceTree = "<group>"; };
 		5038015121BC585C00EA82F9 /* MessagesManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesManager.swift; sourceTree = "<group>"; };
 		5038015321BC587900EA82F9 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		5038015821BC5A8600EA82F9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -521,11 +521,11 @@
 		282FF9AA21BA6B830049A05D /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				282FF9AB21BA6B930049A05D /* Post+Decodable.swift */,
-				5038014921BBBD7900EA82F9 /* User+Decodable.swift */,
-				5038014D21BBBDB600EA82F9 /* Address+Decodable.swift */,
-				5038014F21BBBDEE00EA82F9 /* GeoPoint+Decodable.swift */,
-				5038014B21BBBD8300EA82F9 /* Comment+Decodable.swift */,
+				282FF9AB21BA6B930049A05D /* Post+Codable.swift */,
+				5038014921BBBD7900EA82F9 /* User+Codable.swift */,
+				5038014D21BBBDB600EA82F9 /* Address+Codable.swift */,
+				5038014F21BBBDEE00EA82F9 /* GeoPoint+Codable.swift */,
+				5038014B21BBBD8300EA82F9 /* Comment+Codable.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1163,14 +1163,14 @@
 			files = (
 				280D1CE721BE797F00829061 /* Endpoint.swift in Sources */,
 				280D1CE921BE798600829061 /* TypicodeProvider.swift in Sources */,
-				280D1CE521BE797900829061 /* Comment+Decodable.swift in Sources */,
-				280D1CE321BE797100829061 /* Address+Decodable.swift in Sources */,
-				280D1CE221BE796E00829061 /* User+Decodable.swift in Sources */,
+				280D1CE521BE797900829061 /* Comment+Codable.swift in Sources */,
+				280D1CE321BE797100829061 /* Address+Codable.swift in Sources */,
+				280D1CE221BE796E00829061 /* User+Codable.swift in Sources */,
 				280D1CE621BE797C00829061 /* Hosts.swift in Sources */,
 				280D1CE821BE798200829061 /* NetworkProvider.swift in Sources */,
 				280D1CEA21BE798B00829061 /* MoyaNetworkProvider.swift in Sources */,
-				280D1CE421BE797500829061 /* GeoPoint+Decodable.swift in Sources */,
-				280D1CE121BE796600829061 /* Post+Decodable.swift in Sources */,
+				280D1CE421BE797500829061 /* GeoPoint+Codable.swift in Sources */,
+				280D1CE121BE796600829061 /* Post+Codable.swift in Sources */,
 				280D1CEB21BE798F00829061 /* UserDefaultsProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

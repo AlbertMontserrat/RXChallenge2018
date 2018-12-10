@@ -16,7 +16,7 @@ public class TypicodeProvider: TypicodeService {
     public func getPosts() -> Single<[Post]> {
         let endpoint = Endpoint(baseURL: Hosts.typicode.getBaseURL(),
                                 path: "posts")
-        return networkProvider.requestDecodableArray(endpoint)
+        return networkProvider.requestDecodable(endpoint, customPath: nil)
     }
     
     public func getUser(with id: Int) -> Single<User> {
@@ -28,6 +28,6 @@ public class TypicodeProvider: TypicodeService {
     public func getComments(for postId: Int) -> Single<[Comment]> {
         let endpoint = Endpoint(baseURL: Hosts.typicode.getBaseURL(),
                                 path: "posts/\(postId)/comments")
-        return networkProvider.requestDecodableArray(endpoint)
+        return networkProvider.requestDecodable(endpoint, customPath: nil)
     }
 }

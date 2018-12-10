@@ -4,7 +4,7 @@ import Moya
 import RxSwift
 import SwiftyJSON
 
-public class MoyaNetworkProvider: NetworkProvider, PluginType {
+public class MoyaNetworkProvider: NetworkProvider {
     public static var shared = MoyaNetworkProvider()
     private let provider: MoyaProvider<Endpoint>
     private let cacheProvider: NetworkCacheProvider
@@ -14,40 +14,14 @@ public class MoyaNetworkProvider: NetworkProvider, PluginType {
         self.cacheProvider = cacheProvider
     }
     
-    private func customRequest(_ endpoint: Endpoint) -> Single<Response> {
+    func requestDecodable<D>(_ endpoint: Endpoint, customPath: String? = nil) -> Single<D> where D : Codable {
         return provider.rx.request(endpoint)
             .handleError()
-            .cacheResponse(endpoint: endpoint, cacheProvider: cacheProvider)
-    }
-    
-    func request(_ endpoint: Endpoint) -> Single<JSONDict> {
-        return customRequest(endpoint)
-            .parseToJSON()
-            .catchError({ [weak self] error -> Single<JSONDict> in
-                guard let cacheProvider = self?.cacheProvider else { throw error }
-                guard let error = error as? NetworkError else {
-                    return cacheProvider.request(endpoint)
-                }
-                throw error
-            })
-    }
-    
-    func requestDecodable<D>(_ endpoint: Endpoint, customPath: String? = nil) -> Single<D> where D : Decodable {
-        return customRequest(endpoint)
             .map(D.self, atKeyPath: customPath)
+            .cacheResponse(endpoint: endpoint, cacheProvider: cacheProvider)
             .catchError({ [weak self] error -> Single<D> in
                 guard let cacheProvider = self?.cacheProvider else { throw error }
-                return cacheProvider.requestDecodable(endpoint, customPath: customPath)
-            })
-    }
-    
-    func requestDecodableArray<D>(_ endpoint: Endpoint) -> PrimitiveSequence<SingleTrait, [D]> where D : Decodable {
-        return customRequest(endpoint)
-            .parseToArray()
-            .map(D.self)
-            .catchError({ [weak self] error -> Single<[D]> in
-                guard let cacheProvider = self?.cacheProvider else { throw error }
-                return cacheProvider.requestDecodableArray(endpoint)
+                return cacheProvider.requestDecodable(endpoint)
             })
     }
 }
@@ -97,20 +71,6 @@ extension Endpoint: TargetType {
 
 //MARK: - Single<Response> extensions
 private extension Single where TraitType == SingleTrait, Element == Response {
-    func parseToJSON() -> Single<JSONDict> {
-        return flatMap { response in
-            guard let json = try response.mapJSON() as? JSONDict else { throw NetworkError.malformedJSON }
-            return .just(json)
-        }
-    }
-    
-    func parseToArray() -> Single<JSONArray> {
-        return flatMap { response in
-            guard let json = try response.mapJSON() as? JSONArray else { throw NetworkError.malformedJSON }
-            return .just(json)
-        }
-    }
-    
     func handleError() -> Single<Response> {
         return flatMap { response in
             switch response.statusCode {
@@ -122,10 +82,14 @@ private extension Single where TraitType == SingleTrait, Element == Response {
             }
         }
     }
-    
-    func cacheResponse(endpoint: Endpoint, cacheProvider: NetworkCacheProvider) -> Single<Response> {
+}
+
+//MARK: - Single<Codable> extensions
+private extension Single where TraitType == SingleTrait, Element: Codable {
+    func cacheResponse(endpoint: Endpoint, cacheProvider: NetworkCacheProvider) -> Single<Element> {
         return self.do(onSuccess: {
-            cacheProvider.saveData($0.data, for: endpoint)
+            guard let data = try? JSONEncoder().encode($0) else { return }
+            cacheProvider.saveData(data, for: endpoint)
         })
     }
 }
