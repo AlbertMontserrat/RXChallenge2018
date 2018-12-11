@@ -33,20 +33,20 @@ class ListPresenterTests: XCTestCase {
     
     func testSetupPostsNilTitle() {
         //When
-        presenter.setupPosts(with: .just(([testPostNil, testPost2], "search")))
+        presenter.setupPosts(with: .just(([testPostNil1, testPost2], "search")))
         //Then
-        XCTAssertTrue(((try? listViewInterface.cellControllers.value())??.count == 2))
+        XCTAssertTrue((try? listViewInterface.cellControllers.value())??.count == 2)
         let controller = (try? listViewInterface.cellControllers.value())??.first as! PostCellController
         XCTAssertTrue(controller.descriptor.title == "")
     }
     
     func testSetupPostsNilId() {
         //When
-        presenter.setupPosts(with: .just(([testPostNil, testPost2], "search")))
+        presenter.setupPosts(with: .just(([testPostNil1, testPost2], "search")))
         let controller = (try? listViewInterface.cellControllers.value())??.first as! PostCellController
         controller.didSelectCell()
         //Then
-        XCTAssertTrue(((try? listViewInterface.cellControllers.value())??.count == 2))
+        XCTAssertTrue((try? listViewInterface.cellControllers.value())??.count == 2)
         XCTAssertTrue(listViewInterface.selectedId == 0)
     }
     
