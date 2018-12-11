@@ -42,6 +42,7 @@ final class ListPresenter: ListPresenterInterface {
             text = Constants.errorLoadingErrorMessage
         }
         guard let errorMessage = text else { return }
+        presenterOutput?.stopAnimating()
         presenterOutput?.showError(with: Constants.errorLoadingErrorTitle, message: errorMessage)
     }
 }

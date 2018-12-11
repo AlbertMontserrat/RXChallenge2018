@@ -79,7 +79,6 @@ final class DetailView: UIViewController, DetailViewInterface {
     }
     
     func showError(with title: String, message: String) {
-        activityIndicator.stopAnimating()
         MessagesManager.showErrorMessage(with: title, message: message)
     }
     

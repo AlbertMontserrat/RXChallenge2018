@@ -37,7 +37,7 @@ final class ListView: UIViewController, ListViewInterface {
         super.viewDidLoad()
         setupView()
         viewOutput?.initializeTitles()
-        viewOutput?.configure(with: searchController.searchBar.rx.value.map { $0 ?? "" })
+        viewOutput?.configure(with: searchController.searchBar.rx.value.orEmpty.asObservable())
         viewOutput?.configureSelection(with: selectionSubject)
         
         RxKeyboard.instance.visibleHeight.drive(onNext: { [weak self] height in
@@ -66,7 +66,6 @@ final class ListView: UIViewController, ListViewInterface {
     }
     
     func showError(with title: String, message: String) {
-        activityIndicator.stopAnimating()
         MessagesManager.showErrorMessage(with: title, message: message)
     }
     

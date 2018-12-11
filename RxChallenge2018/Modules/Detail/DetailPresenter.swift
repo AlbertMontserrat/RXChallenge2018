@@ -46,6 +46,7 @@ final class DetailPresenter: DetailPresenterInterface {
             text = Constants.errorLoadingErrorMessage
         }
         guard let errorMessage = text else { return }
+        presenterOutput?.stopAnimating()
         presenterOutput?.showError(with: Constants.errorLoadingErrorTitle, message: errorMessage)
     }
 }

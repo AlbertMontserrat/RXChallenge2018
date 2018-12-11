@@ -82,6 +82,7 @@
 		5038017621BF0FB300EA82F9 /* ListPresenterInterfaceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5038017521BF0FB300EA82F9 /* ListPresenterInterfaceMock.swift */; };
 		5038017821BF0FC500EA82F9 /* ListInteractorInterfaceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5038017721BF0FC500EA82F9 /* ListInteractorInterfaceMock.swift */; };
 		5038017A21BF0FF800EA82F9 /* ListRoutingInterfaceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5038017921BF0FF800EA82F9 /* ListRoutingInterfaceMock.swift */; };
+		5038017C21C02C9F00EA82F9 /* ListViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5038017B21C02C9F00EA82F9 /* ListViewTests.swift */; };
 		76A2FFC69A13C9FA8F87ACAD /* Pods_RxChallenge2018UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE9DB6FEF1F0517E4861B112 /* Pods_RxChallenge2018UITests.framework */; };
 		BD6F70C3B90180B40B651EAA /* Pods_RxChallengeDomain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B100CB64DB74631107A62372 /* Pods_RxChallengeDomain.framework */; };
 		CF24AE228E1E40D5F2ADA2E9 /* Pods_RxChallenge2018.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75A596011461E780B745E530 /* Pods_RxChallenge2018.framework */; };
@@ -270,6 +271,7 @@
 		5038017521BF0FB300EA82F9 /* ListPresenterInterfaceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPresenterInterfaceMock.swift; sourceTree = "<group>"; };
 		5038017721BF0FC500EA82F9 /* ListInteractorInterfaceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListInteractorInterfaceMock.swift; sourceTree = "<group>"; };
 		5038017921BF0FF800EA82F9 /* ListRoutingInterfaceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRoutingInterfaceMock.swift; sourceTree = "<group>"; };
+		5038017B21C02C9F00EA82F9 /* ListViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewTests.swift; sourceTree = "<group>"; };
 		56B6687E9EC5610483E91819 /* Pods-RxChallenge2018.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxChallenge2018.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxChallenge2018/Pods-RxChallenge2018.release.xcconfig"; sourceTree = "<group>"; };
 		73ED6648045C194F1BB0ABB4 /* Pods_RxChallenge2018Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxChallenge2018Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		75A596011461E780B745E530 /* Pods_RxChallenge2018.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxChallenge2018.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -675,6 +677,7 @@
 				5038016921BF061700EA82F9 /* ListCoordinatorTests.swift */,
 				5038017021BF0F5200EA82F9 /* ListPresenterTests.swift */,
 				28FE0ADC21C005F800D07DA6 /* ListInteractorTests.swift */,
+				5038017B21C02C9F00EA82F9 /* ListViewTests.swift */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -1334,6 +1337,7 @@
 			files = (
 				5038017421BF0F9F00EA82F9 /* ListViewInterfaceMock.swift in Sources */,
 				5038016A21BF061700EA82F9 /* ListCoordinatorTests.swift in Sources */,
+				5038017C21C02C9F00EA82F9 /* ListViewTests.swift in Sources */,
 				5038017821BF0FC500EA82F9 /* ListInteractorInterfaceMock.swift in Sources */,
 				5038016521BEFD9E00EA82F9 /* ScreenFactoryMock.swift in Sources */,
 				5038017121BF0F5200EA82F9 /* ListPresenterTests.swift in Sources */,

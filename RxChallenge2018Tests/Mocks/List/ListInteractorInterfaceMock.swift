@@ -5,6 +5,7 @@ class ListInteractorInterfaceMock: ListInteractorInterface {
     var initializeTitlesTimesCalled = 0
     let searchSubject = BehaviorSubject<String?>(value: nil)
     let selectionIdSubject = BehaviorSubject<Int?>(value: nil)
+    var configureSelectionTimesCalled = 0
 
     private let disposeBag = DisposeBag()
 
@@ -17,6 +18,7 @@ class ListInteractorInterfaceMock: ListInteractorInterface {
     }
     
     func configureSelection(with selectionIdObservable: Observable<Int>) {
+        configureSelectionTimesCalled += 1
         selectionIdObservable.bind(to: selectionIdSubject).disposed(by: disposeBag)
     }
 }
