@@ -13,6 +13,8 @@ final class ListView: UIViewController, ListViewInterface {
     //MARK: - Stored properties
     private(set) var cellControllers: [TableCellController] = []
     private let selectionSubject = ReplaySubject<Int>.create(bufferSize: 1)
+    private let startupSubject = ReplaySubject<()>.create(bufferSize: 1)
+    private let refreshSubject = ReplaySubject<()>.create(bufferSize: 1)
     private let disposeBag = DisposeBag()
     private var contentViewBottomConstraint: NSLayoutConstraint?
     private var animating = false
@@ -23,6 +25,14 @@ final class ListView: UIViewController, ListViewInterface {
     private let searchController = UISearchController(searchResultsController: nil)
     private(set) lazy var activityIndicator = UIActivityIndicatorView(style: .gray)
 
+    private lazy var refreshControl: UIRefreshControl = {
+        let refreshControl = UIRefreshControl(frame: .zero)
+        refreshControl.rx.controlEvent(.valueChanged).subscribe(onNext: { [weak self] in
+            self?.refreshSubject.onNext(())
+        }).disposed(by: disposeBag)
+        return refreshControl
+    }()
+    
     private lazy var tableView: UITableView = {
         let tableview = UITableView(frame: .zero)
         tableview.rowHeight = UITableView.automaticDimension
@@ -30,6 +40,7 @@ final class ListView: UIViewController, ListViewInterface {
         tableview.delegate = self
         tableview.dataSource = self
         DisplayData.cellControllers.forEach { $0.registerCell(on: tableview) }
+        tableview.addSubview(refreshControl)
         return tableview
     }()
     
@@ -47,12 +58,17 @@ final class ListView: UIViewController, ListViewInterface {
         super.viewDidLoad()
         setupView()
         viewOutput?.initializeTitles()
-        viewOutput?.configure(with: searchController.searchBar.rx.value.orEmpty.asObservable())
+        viewOutput?.configure(with: startupSubject, refreshObservable: refreshSubject, searchObservable: searchController.searchBar.rx.value.orEmpty.asObservable())
         viewOutput?.configureSelection(with: selectionSubject)
         
         RxKeyboard.instance.visibleHeight.drive(onNext: { [weak self] height in
             self?.animate(to: height)
         }).disposed(by: disposeBag)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        startupSubject.onNext(())
     }
     
     //MARK: - ListViewInterface
@@ -70,12 +86,14 @@ final class ListView: UIViewController, ListViewInterface {
         //Moreover, with this architecture, we cannot be 100% sure that the indexPath will be the same from interactor to presenter -> view.
         //So we cannot use itemSelected and send back to interactor directly. We could send the model, but then, the view wouldn't be 100% model agnostic.
         driver.drive(onNext: { [weak self] controllers in
+            self?.refreshControl.endRefreshing()
             self?.cellControllers = controllers
             self?.tableView.reloadData()
         }).disposed(by: disposeBag)
     }
     
     func showError(with title: String, message: String) {
+        refreshControl.endRefreshing()
         messagePresenter.showErrorMessage(with: title, message: message)
     }
     

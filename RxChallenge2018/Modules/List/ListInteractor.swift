@@ -25,9 +25,12 @@ final class ListInteractor: ListInteractorInterface {
         interactorOutput.configureTitles()
     }
     
-    func configure(with searchObservable: Observable<String>) {
+    func configure(with startupObservable: Observable<()>, refreshObservable: Observable<()>, searchObservable: Observable<String>) {
+        let refreshData = Observable.merge([startupObservable, refreshObservable]).flatMap { [unowned self] in
+            self.providers.typicodeProvider.getPosts().asObservable()
+        }
         let observable = Observable
-            .combineLatest(providers.typicodeProvider.getPosts().asObservable(), searchObservable) { posts, searchString -> PostsWithQuery in
+            .combineLatest(refreshData, searchObservable) { posts, searchString -> PostsWithQuery in
                 return (posts.filter {
                     guard !searchString.isEmpty, let title = $0.title else { return true }
                     return title.lowercased().contains(searchString.lowercased())

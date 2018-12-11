@@ -25,6 +25,6 @@ protocol ListPresenterInterface {
 
 protocol ListInteractorInterface {
     func initializeTitles()
-    func configure(with searchObservable: Observable<String>)
+    func configure(with startupObservable: Observable<()>, refreshObservable: Observable<()>, searchObservable: Observable<String>)
     func configureSelection(with selectionIdObservable: Observable<Int>)
 }
