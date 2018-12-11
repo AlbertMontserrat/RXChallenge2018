@@ -35,13 +35,12 @@ final class ListPresenter: ListPresenterInterface {
     }
     
     func showError(with error: NetworkError) {
-        var text: String? = nil
+        var errorMessage = ""
         switch error {
         //Option to show different errors for each network error
         default:
-            text = Constants.errorLoadingErrorMessage
+            errorMessage = Constants.errorLoadingErrorMessage
         }
-        guard let errorMessage = text else { return }
         presenterOutput?.stopAnimating()
         presenterOutput?.showError(with: Constants.errorLoadingErrorTitle, message: errorMessage)
     }

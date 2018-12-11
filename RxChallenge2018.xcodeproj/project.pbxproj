@@ -84,6 +84,12 @@
 		5038017A21BF0FF800EA82F9 /* ListRoutingInterfaceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5038017921BF0FF800EA82F9 /* ListRoutingInterfaceMock.swift */; };
 		5038017C21C02C9F00EA82F9 /* ListViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5038017B21C02C9F00EA82F9 /* ListViewTests.swift */; };
 		5038017E21C0452E00EA82F9 /* MessageManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5038017D21C0452E00EA82F9 /* MessageManagerMock.swift */; };
+		5038018121C04BDC00EA82F9 /* DetailViewInterfaceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5038018021C04BDC00EA82F9 /* DetailViewInterfaceMock.swift */; };
+		5038018321C04D0C00EA82F9 /* DetailPresenterInterfaceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5038018221C04D0C00EA82F9 /* DetailPresenterInterfaceMock.swift */; };
+		5038018521C04DBB00EA82F9 /* DetailInteractorInterfaceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5038018421C04DBB00EA82F9 /* DetailInteractorInterfaceMock.swift */; };
+		5038018921C04E9400EA82F9 /* DetailPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5038018821C04E9400EA82F9 /* DetailPresenterTests.swift */; };
+		5038018B21C0521700EA82F9 /* DetailInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5038018A21C0521700EA82F9 /* DetailInteractorTests.swift */; };
+		5038018D21C0579800EA82F9 /* DetailViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5038018C21C0579800EA82F9 /* DetailViewTests.swift */; };
 		76A2FFC69A13C9FA8F87ACAD /* Pods_RxChallenge2018UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE9DB6FEF1F0517E4861B112 /* Pods_RxChallenge2018UITests.framework */; };
 		BD6F70C3B90180B40B651EAA /* Pods_RxChallengeDomain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B100CB64DB74631107A62372 /* Pods_RxChallengeDomain.framework */; };
 		CF24AE228E1E40D5F2ADA2E9 /* Pods_RxChallenge2018.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75A596011461E780B745E530 /* Pods_RxChallenge2018.framework */; };
@@ -274,6 +280,12 @@
 		5038017921BF0FF800EA82F9 /* ListRoutingInterfaceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRoutingInterfaceMock.swift; sourceTree = "<group>"; };
 		5038017B21C02C9F00EA82F9 /* ListViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewTests.swift; sourceTree = "<group>"; };
 		5038017D21C0452E00EA82F9 /* MessageManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageManagerMock.swift; sourceTree = "<group>"; };
+		5038018021C04BDC00EA82F9 /* DetailViewInterfaceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewInterfaceMock.swift; sourceTree = "<group>"; };
+		5038018221C04D0C00EA82F9 /* DetailPresenterInterfaceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenterInterfaceMock.swift; sourceTree = "<group>"; };
+		5038018421C04DBB00EA82F9 /* DetailInteractorInterfaceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInteractorInterfaceMock.swift; sourceTree = "<group>"; };
+		5038018821C04E9400EA82F9 /* DetailPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenterTests.swift; sourceTree = "<group>"; };
+		5038018A21C0521700EA82F9 /* DetailInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInteractorTests.swift; sourceTree = "<group>"; };
+		5038018C21C0579800EA82F9 /* DetailViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewTests.swift; sourceTree = "<group>"; };
 		56B6687E9EC5610483E91819 /* Pods-RxChallenge2018.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxChallenge2018.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxChallenge2018/Pods-RxChallenge2018.release.xcconfig"; sourceTree = "<group>"; };
 		73ED6648045C194F1BB0ABB4 /* Pods_RxChallenge2018Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxChallenge2018Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		75A596011461E780B745E530 /* Pods_RxChallenge2018.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxChallenge2018.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -630,7 +642,6 @@
 				5038016821BF05F700EA82F9 /* List */,
 				5038016B21BF07F400EA82F9 /* Detail */,
 				5038015F21BEF97700EA82F9 /* Mocks */,
-				5038015E21BEF8FD00EA82F9 /* Models */,
 				287E028C21BA4F4600437462 /* Info.plist */,
 			);
 			path = RxChallenge2018Tests;
@@ -654,13 +665,6 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
-		5038015E21BEF8FD00EA82F9 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
 		5038015F21BEF97700EA82F9 /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
@@ -670,6 +674,7 @@
 				5038016E21BF0E1200EA82F9 /* MockNavigationController.swift */,
 				5038017D21C0452E00EA82F9 /* MessageManagerMock.swift */,
 				5038017221BF0F6F00EA82F9 /* List */,
+				5038017F21C04BB800EA82F9 /* Detail */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -689,6 +694,9 @@
 			isa = PBXGroup;
 			children = (
 				5038016C21BF080C00EA82F9 /* DetailCoordinatorTests.swift */,
+				5038018821C04E9400EA82F9 /* DetailPresenterTests.swift */,
+				5038018A21C0521700EA82F9 /* DetailInteractorTests.swift */,
+				5038018C21C0579800EA82F9 /* DetailViewTests.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -702,6 +710,16 @@
 				5038017921BF0FF800EA82F9 /* ListRoutingInterfaceMock.swift */,
 			);
 			path = List;
+			sourceTree = "<group>";
+		};
+		5038017F21C04BB800EA82F9 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				5038018021C04BDC00EA82F9 /* DetailViewInterfaceMock.swift */,
+				5038018221C04D0C00EA82F9 /* DetailPresenterInterfaceMock.swift */,
+				5038018421C04DBB00EA82F9 /* DetailInteractorInterfaceMock.swift */,
+			);
+			path = Detail;
 			sourceTree = "<group>";
 		};
 		9FCB77767826460D761A2756 /* Pods */ = {
@@ -1341,13 +1359,19 @@
 				5038017421BF0F9F00EA82F9 /* ListViewInterfaceMock.swift in Sources */,
 				5038016A21BF061700EA82F9 /* ListCoordinatorTests.swift in Sources */,
 				5038017C21C02C9F00EA82F9 /* ListViewTests.swift in Sources */,
+				5038018921C04E9400EA82F9 /* DetailPresenterTests.swift in Sources */,
 				5038017821BF0FC500EA82F9 /* ListInteractorInterfaceMock.swift in Sources */,
+				5038018121C04BDC00EA82F9 /* DetailViewInterfaceMock.swift in Sources */,
 				5038016521BEFD9E00EA82F9 /* ScreenFactoryMock.swift in Sources */,
 				5038017121BF0F5200EA82F9 /* ListPresenterTests.swift in Sources */,
+				5038018B21C0521700EA82F9 /* DetailInteractorTests.swift in Sources */,
 				287E028B21BA4F4600437462 /* MainCoordinatorTests.swift in Sources */,
 				5038016D21BF080C00EA82F9 /* DetailCoordinatorTests.swift in Sources */,
+				5038018321C04D0C00EA82F9 /* DetailPresenterInterfaceMock.swift in Sources */,
 				5038016721BF003800EA82F9 /* ServicesMock.swift in Sources */,
+				5038018D21C0579800EA82F9 /* DetailViewTests.swift in Sources */,
 				5038016121BEF99000EA82F9 /* MainCoordinatorMock.swift in Sources */,
+				5038018521C04DBB00EA82F9 /* DetailInteractorInterfaceMock.swift in Sources */,
 				5038017A21BF0FF800EA82F9 /* ListRoutingInterfaceMock.swift in Sources */,
 				28FE0ADD21C005F800D07DA6 /* ListInteractorTests.swift in Sources */,
 				5038016321BEFD9000EA82F9 /* ScreenFactoryTests.swift in Sources */,

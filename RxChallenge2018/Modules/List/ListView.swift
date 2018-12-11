@@ -21,7 +21,7 @@ final class ListView: UIViewController, ListViewInterface {
     
     //MARK: - UI Elements
     private let searchController = UISearchController(searchResultsController: nil)
-    private lazy var activityIndicator = UIActivityIndicatorView(style: .gray)
+    private(set) lazy var activityIndicator = UIActivityIndicatorView(style: .gray)
 
     private lazy var tableView: UITableView = {
         let tableview = UITableView(frame: .zero)
@@ -40,7 +40,7 @@ final class ListView: UIViewController, ListViewInterface {
     }
     
     required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        return nil
     }
     
     override func viewDidLoad() {

@@ -14,7 +14,7 @@ final class DetailView: UIViewController, DetailViewInterface {
     private let messagePresenter: MessagePresentable
     
     //MARK: - UI Elements
-    private lazy var activityIndicator = UIActivityIndicatorView(style: .gray)
+    private(set) lazy var activityIndicator = UIActivityIndicatorView(style: .gray)
     
     private lazy var stackView: ScrolledStackView = {
         let stackView = ScrolledStackView(direction: .vertical, insets: DisplayData.stackViewInsets)
@@ -22,7 +22,7 @@ final class DetailView: UIViewController, DetailViewInterface {
         return stackView
     }()
     
-    private lazy var titleLabel: UILabel = {
+    private(set) lazy var titleLabel: UILabel = {
         let lbl = UILabel()
         lbl.textColor = .customDarkBlue
         lbl.font = .boldSystemFont(ofSize: 22)
@@ -30,7 +30,7 @@ final class DetailView: UIViewController, DetailViewInterface {
         return lbl
     }()
     
-    private lazy var bodyLabel: UILabel = {
+    private(set) lazy var bodyLabel: UILabel = {
         let lbl = UILabel()
         lbl.textColor = .customDarkBlue
         lbl.font = .systemFont(ofSize: 18)
@@ -38,7 +38,7 @@ final class DetailView: UIViewController, DetailViewInterface {
         return lbl
     }()
     
-    private lazy var authorLabel: UILabel = {
+    private(set) lazy var authorLabel: UILabel = {
         let lbl = UILabel()
         lbl.textColor = .customBlueGray
         lbl.font = .systemFont(ofSize: 15)
@@ -46,7 +46,7 @@ final class DetailView: UIViewController, DetailViewInterface {
         return lbl
     }()
     
-    private lazy var numberOfCommentsLabel: UILabel = {
+    private(set) lazy var numberOfCommentsLabel: UILabel = {
         let lbl = UILabel()
         lbl.textColor = .customBlueGray
         lbl.font = .systemFont(ofSize: 15)
@@ -61,7 +61,7 @@ final class DetailView: UIViewController, DetailViewInterface {
     }
     
     required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        return nil
     }
     
     override func viewDidLoad() {

@@ -8,9 +8,10 @@ class ListViewTests: XCTestCase {
 
     var listView: ListView!
     var interactor: ListInteractorInterfaceMock!
-    var messagePresentable = MessagesManagerMock()
+    var messagePresentable: MessagesManagerMock!
     
     override func setUp() {
+        messagePresentable = MessagesManagerMock()
         interactor = ListInteractorInterfaceMock()
         listView = ListView(messagePresentable: messagePresentable)
         listView.viewOutput = interactor
@@ -82,6 +83,10 @@ class ListViewTests: XCTestCase {
         postCellController2.didSelectCell()
         //Then
         XCTAssertTrue((try? interactor.selectionIdSubject.value()) == id2)
+        //When
+        listView.tableView(UITableView(), didSelectRowAt: IndexPath(row: 0, section: 0))
+        //Then
+        XCTAssertTrue((try? interactor.selectionIdSubject.value()) == id1)
     }
     
     func testShowError() {
@@ -92,5 +97,34 @@ class ListViewTests: XCTestCase {
         //Then
         XCTAssertTrue(messagePresentable.errorTitle == title)
         XCTAssertTrue(messagePresentable.errorMessage == message)
+    }
+    
+    func testInitDecoder() {
+        //When
+        listView = ListView(coder: NSCoder())
+        //Then
+        XCTAssertTrue(listView == nil)
+    }
+    
+    func testTableviewCellInitDecoder() {
+        //When
+        let cell = PostTableViewCell(coder: NSCoder())
+        //Then
+        XCTAssertTrue(cell == nil)
+    }
+    
+    func testStartAnimating() {
+        //When
+        listView.startAnimating()
+        //Then
+        XCTAssertTrue(listView.activityIndicator.isAnimating == true)
+    }
+    
+    func testStopAnimating() {
+        //When
+        listView.startAnimating()
+        listView.stopAnimating()
+        //Then
+        XCTAssertTrue(listView.activityIndicator.isAnimating == false)
     }
 }
