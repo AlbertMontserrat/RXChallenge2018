@@ -36,7 +36,7 @@
 		280D1D1F21BE85F900829061 /* GeoPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280D1CD721BE787000829061 /* GeoPoint.swift */; };
 		280D1D2021BE85F900829061 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280D1CD921BE787000829061 /* Comment.swift */; };
 		280D1D3621BE8C1900829061 /* RxChallengeUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 280D1D2D21BE8C1900829061 /* RxChallengeUtils.framework */; };
-		280D1D3D21BE8C1900829061 /* RxChallengeUtilsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280D1D3C21BE8C1900829061 /* RxChallengeUtilsTests.swift */; };
+		280D1D3D21BE8C1900829061 /* GlobalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280D1D3C21BE8C1900829061 /* GlobalTests.swift */; };
 		280D1D4221BE8C1900829061 /* RxChallengeUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 280D1D2D21BE8C1900829061 /* RxChallengeUtils.framework */; };
 		280D1D4321BE8C1900829061 /* RxChallengeUtils.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 280D1D2D21BE8C1900829061 /* RxChallengeUtils.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		280D1D4A21BE9AE100829061 /* RxChallengeUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 280D1D2D21BE8C1900829061 /* RxChallengeUtils.framework */; };
@@ -216,7 +216,7 @@
 		280D1D2D21BE8C1900829061 /* RxChallengeUtils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxChallengeUtils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		280D1D3021BE8C1900829061 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		280D1D3521BE8C1900829061 /* RxChallengeUtilsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RxChallengeUtilsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		280D1D3C21BE8C1900829061 /* RxChallengeUtilsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxChallengeUtilsTests.swift; sourceTree = "<group>"; };
+		280D1D3C21BE8C1900829061 /* GlobalTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalTests.swift; sourceTree = "<group>"; };
 		280D1D3E21BE8C1900829061 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		282FF98221BA5F970049A05D /* MainCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		282FF98721BA60D70049A05D /* ListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCoordinator.swift; sourceTree = "<group>"; };
@@ -475,7 +475,7 @@
 		280D1D3B21BE8C1900829061 /* RxChallengeUtilsTests */ = {
 			isa = PBXGroup;
 			children = (
-				280D1D3C21BE8C1900829061 /* RxChallengeUtilsTests.swift */,
+				280D1D3C21BE8C1900829061 /* GlobalTests.swift */,
 				280D1D3E21BE8C1900829061 /* Info.plist */,
 			);
 			path = RxChallengeUtilsTests;
@@ -1324,7 +1324,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				280D1D3D21BE8C1900829061 /* RxChallengeUtilsTests.swift in Sources */,
+				280D1D3D21BE8C1900829061 /* GlobalTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

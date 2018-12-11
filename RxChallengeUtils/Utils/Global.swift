@@ -10,7 +10,7 @@ public typealias ObjectClosure<T> = (T) -> (Void)
 public extension String {
     public func replacingVariables(_ variables: [String]) -> String {
         var replaced = self
-        variables.enumerated().forEach {
+        variables.enumerated().reversed().forEach {
             replaced = replaced.replacingOccurrences(of: "$var\($0.offset + 1)", with: $0.element)
         }
         return replaced
