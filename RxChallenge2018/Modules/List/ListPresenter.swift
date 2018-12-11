@@ -24,7 +24,7 @@ final class ListPresenter: ListPresenterInterface {
         let driver: Driver<[TableCellController]> = postsObservable
             .do(onNext: { [unowned self] _ in
                 self.presenterOutput?.stopAnimating()
-                }, onSubscribe: {
+                }, onSubscribe: { [unowned self] in
                     self.presenterOutput?.startAnimating()
             })
             .map { [unowned self] data in
