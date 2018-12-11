@@ -1,9 +1,16 @@
 import Foundation
 import SwiftMessages
 
-public struct MessagesManager {
+public protocol MessagePresentable {
+    func showErrorMessage(with title: String, message: String)
+    func hideAll()
+}
+
+public struct MessagesManager: MessagePresentable {
     
-    public static func showErrorMessage(with title: String, message: String) {
+    public init() {}
+    
+    public func showErrorMessage(with title: String, message: String) {
         var config = SwiftMessages.Config()
         config.presentationStyle = .bottom
         config.presentationContext = .automatic
@@ -29,7 +36,7 @@ public struct MessagesManager {
         SwiftMessages.show(config: config, view: view)
     }
     
-    public static func hideAll() {
+    public func hideAll() {
         SwiftMessages.hideAll()
     }
 }

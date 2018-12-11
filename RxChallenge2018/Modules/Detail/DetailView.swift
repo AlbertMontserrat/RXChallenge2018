@@ -11,6 +11,7 @@ final class DetailView: UIViewController, DetailViewInterface {
     //MARK: - Stored properties
     private let startupSubject = ReplaySubject<()>.create(bufferSize: 1)
     private let disposeBag = DisposeBag()
+    private let messagePresenter: MessagePresentable
     
     //MARK: - UI Elements
     private lazy var activityIndicator = UIActivityIndicatorView(style: .gray)
@@ -54,6 +55,15 @@ final class DetailView: UIViewController, DetailViewInterface {
     }()
     
     //MARK: - View Lifecycle
+    init(messagePresentable: MessagePresentable = MessagesManager()) {
+        self.messagePresenter = messagePresentable
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
@@ -79,7 +89,7 @@ final class DetailView: UIViewController, DetailViewInterface {
     }
     
     func showError(with title: String, message: String) {
-        MessagesManager.showErrorMessage(with: title, message: message)
+        messagePresenter.showErrorMessage(with: title, message: message)
     }
     
     func startAnimating() {

@@ -11,12 +11,13 @@ final class ListView: UIViewController, ListViewInterface {
     var viewOutput: ListInteractorInterface?
     
     //MARK: - Stored properties
-    private var cellControllers: [TableCellController] = []
+    private(set) var cellControllers: [TableCellController] = []
     private let selectionSubject = ReplaySubject<Int>.create(bufferSize: 1)
     private let disposeBag = DisposeBag()
     private var contentViewBottomConstraint: NSLayoutConstraint?
     private var animating = false
     private var firstAnimation = true
+    private let messagePresenter: MessagePresentable
     
     //MARK: - UI Elements
     private let searchController = UISearchController(searchResultsController: nil)
@@ -33,6 +34,15 @@ final class ListView: UIViewController, ListViewInterface {
     }()
     
     //MARK: - View Lifecycle
+    init(messagePresentable: MessagePresentable = MessagesManager()) {
+        self.messagePresenter = messagePresentable
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
@@ -66,7 +76,7 @@ final class ListView: UIViewController, ListViewInterface {
     }
     
     func showError(with title: String, message: String) {
-        MessagesManager.showErrorMessage(with: title, message: message)
+        messagePresenter.showErrorMessage(with: title, message: message)
     }
     
     func didSelectCell(with id: Int) {
