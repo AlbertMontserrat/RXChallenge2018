@@ -3,17 +3,29 @@ import XCTest
 
 class DetailCoordinatorTests: XCTestCase {
     
-    override func setUp() {}
+    var postScreenFactory: PostScreenFactoryMock!
+    var appScreenFactory: AppScreenFactory!
+    var appProviders: AppProviders!
+    var navigationController: UINavigationController!
+    var listCoordinator: DetailCoordinator!
     
-    override func tearDown() {}
+    override func setUp() {
+        postScreenFactory = PostScreenFactoryMock()
+        appScreenFactory = AppScreenFactory(postScreenFactory: postScreenFactory)
+        appProviders = AppProviders(typicodeProvider: TypicodeServiceMock())
+        navigationController = MockNavigationController()
+        listCoordinator = DetailCoordinator(navigationController: navigationController, screenFactory: appScreenFactory, providers: appProviders, post: testPost1)
+    }
+    
+    override func tearDown() {
+        postScreenFactory = nil
+        appScreenFactory = nil
+        appProviders = nil
+        navigationController = nil
+        listCoordinator = nil
+    }
     
     func testListCoordinator() {
-        //Having
-        let postScreenFactory = PostScreenFactoryMock()
-        let appScreenFactory = AppScreenFactory(postScreenFactory: postScreenFactory)
-        let appProviders = AppProviders(typicodeProvider: TypicodeServiceMock())
-        let navigationController = MockNavigationController()
-        let listCoordinator = DetailCoordinator(navigationController: navigationController, screenFactory: appScreenFactory, providers: appProviders, post: testPost1)
         //When
         listCoordinator.start()
         //Then

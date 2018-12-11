@@ -4,15 +4,23 @@ import RxChallengeNetwork
 
 class ScreenFactoryTests: XCTestCase {
 
-    override func setUp() {}
+    var postScreenFactory: PostScreenFactory!
+    var appScreenFactory: AppScreenFactory!
+    var appProviders: AppProviders!
+    
+    override func setUp() {
+        postScreenFactory = PostScreenFactory()
+        appScreenFactory = AppScreenFactory(postScreenFactory: postScreenFactory)
+        appProviders = AppProviders(typicodeProvider: TypicodeServiceMock())
+    }
 
-    override func tearDown() {}
+    override func tearDown() {
+        postScreenFactory = nil
+        appScreenFactory = nil
+        appProviders = nil
+    }
     
     func testPostScreenFactory() {
-        //Given
-        let postScreenFactory = PostScreenFactory()
-        let appScreenFactory = AppScreenFactory(postScreenFactory: postScreenFactory)
-        let appProviders = AppProviders(typicodeProvider: TypicodeServiceMock())
         //When
         let listScreen = appScreenFactory.postScreenFactory.getPostListScreen(router: ListRoutingInterfaceMock(), providers: appProviders)
         let detailScreen = appScreenFactory.postScreenFactory.getPostDetailScreen(with: testPost1, providers: appProviders)

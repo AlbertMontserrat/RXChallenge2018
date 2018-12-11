@@ -2,18 +2,30 @@ import XCTest
 @testable import RxChallenge2018
 
 class ListCoordinatorTests: XCTestCase {
+    
+    var postScreenFactory: PostScreenFactoryMock!
+    var appScreenFactory: AppScreenFactory!
+    var appProviders: AppProviders!
+    var navigationController: UINavigationController!
+    var listCoordinator: ListCoordinator!
 
-    override func setUp() {}
+    override func setUp() {
+        postScreenFactory = PostScreenFactoryMock()
+        appScreenFactory = AppScreenFactory(postScreenFactory: postScreenFactory)
+        appProviders = AppProviders(typicodeProvider: TypicodeServiceMock())
+        navigationController = MockNavigationController()
+        listCoordinator = ListCoordinator(navigationController: navigationController, screenFactory: appScreenFactory, providers: appProviders)
+    }
 
-    override func tearDown() {}
+    override func tearDown() {
+        postScreenFactory = nil
+        appScreenFactory = nil
+        appProviders = nil
+        navigationController = nil
+        listCoordinator = nil
+    }
     
     func testListCoordinator() {
-        //Having
-        let postScreenFactory = PostScreenFactoryMock()
-        let appScreenFactory = AppScreenFactory(postScreenFactory: postScreenFactory)
-        let appProviders = AppProviders(typicodeProvider: TypicodeServiceMock())
-        let navigationController = MockNavigationController()
-        let listCoordinator = ListCoordinator(navigationController: navigationController, screenFactory: appScreenFactory, providers: appProviders)
         //When
         listCoordinator.start()
         //Then
@@ -22,12 +34,6 @@ class ListCoordinatorTests: XCTestCase {
     }
     
     func testListCoordinatorRoutingToDetail() {
-        //Having
-        let postScreenFactory = PostScreenFactoryMock()
-        let appScreenFactory = AppScreenFactory(postScreenFactory: postScreenFactory)
-        let appProviders = AppProviders(typicodeProvider: TypicodeServiceMock())
-        let navigationController = MockNavigationController()
-        let listCoordinator = ListCoordinator(navigationController: navigationController, screenFactory: appScreenFactory, providers: appProviders)
         //When
         listCoordinator.start(animated: false)
         listCoordinator.gotoDetail(with: testPost1)
