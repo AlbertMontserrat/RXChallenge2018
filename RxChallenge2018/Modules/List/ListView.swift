@@ -14,7 +14,6 @@ final class ListView: UIViewController, ListViewInterface {
     private(set) var cellControllers: [TableCellController] = []
     private let selectionSubject = ReplaySubject<Int>.create(bufferSize: 1)
     private let startupSubject = ReplaySubject<()>.create(bufferSize: 1)
-    private let refreshSubject = ReplaySubject<()>.create(bufferSize: 1)
     private let disposeBag = DisposeBag()
     private var contentViewBottomConstraint: NSLayoutConstraint?
     private var animating = false
@@ -24,14 +23,7 @@ final class ListView: UIViewController, ListViewInterface {
     //MARK: - UI Elements
     private let searchController = UISearchController(searchResultsController: nil)
     private(set) lazy var activityIndicator = UIActivityIndicatorView(style: .gray)
-
-    private lazy var refreshControl: UIRefreshControl = {
-        let refreshControl = UIRefreshControl(frame: .zero)
-        refreshControl.rx.controlEvent(.valueChanged).subscribe(onNext: { [weak self] in
-            self?.refreshSubject.onNext(())
-        }).disposed(by: disposeBag)
-        return refreshControl
-    }()
+    private lazy var refreshControl = UIRefreshControl(frame: .zero)
     
     private lazy var tableView: UITableView = {
         let tableview = UITableView(frame: .zero)
@@ -58,7 +50,7 @@ final class ListView: UIViewController, ListViewInterface {
         super.viewDidLoad()
         setupView()
         viewOutput?.initializeTitles()
-        viewOutput?.configure(with: startupSubject, refreshObservable: refreshSubject, searchObservable: searchController.searchBar.rx.value.orEmpty.asObservable())
+        viewOutput?.configure(with: startupSubject, refreshObservable: refreshControl.rx.controlEvent(.valueChanged).asObservable(), searchObservable: searchController.searchBar.rx.value.orEmpty.distinctUntilChanged().asObservable())
         viewOutput?.configureSelection(with: selectionSubject)
         
         RxKeyboard.instance.visibleHeight.drive(onNext: { [weak self] height in

@@ -9,6 +9,7 @@ final class ListInteractor: ListInteractorInterface {
     private let interactorOutput: ListPresenterInterface
     private let router: ListRoutingInterface
     private let providers: AppProviders
+    private var posts: [Post] = []
     private let disposeBag = DisposeBag()
     
     //MARK: - Lifecycle
@@ -36,7 +37,9 @@ final class ListInteractor: ListInteractorInterface {
                     return title.lowercased().contains(searchString.lowercased())
                 }, searchString)
             }
-            .do(onError: { [unowned self] error in
+            .do(onNext: { [unowned self] result in
+                self.posts = result.posts
+            }, onError: { [unowned self] error in
                 let error = error as? NetworkError ?? .undefined
                 self.interactorOutput.showError(with: error)
             })
@@ -45,9 +48,10 @@ final class ListInteractor: ListInteractorInterface {
     
     func configureSelection(with selectionIdObservable: Observable<Int>) {
         selectionIdObservable
-            .withLatestFrom(providers.typicodeProvider.getPosts().asObservable()) { id, posts -> Post? in
-                return posts.first { $0.id == id }
-            }.subscribe(onNext: { [unowned self] post in
+            .map { [unowned self] id in
+                return self.posts.first { $0.id == id }
+            }
+            .subscribe(onNext: { [unowned self] post in
                 guard let post = post else { return }
                 self.router.gotoDetail(with: post)
             }).disposed(by: disposeBag)

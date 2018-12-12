@@ -93,6 +93,7 @@ class ListInteractorTests: XCTestCase {
     func testConfigureOnSelection() {
         //When
         typicodeService.returnNils = false
+        interactor.configure(with: .just(()), refreshObservable: .just(()), searchObservable: .just(testPost1.title!))
         interactor.configureSelection(with: .just(testPost1.id!))
         //Then
         XCTAssertTrue(routing.gotoDetailsTimesCalled == 1)
@@ -101,6 +102,7 @@ class ListInteractorTests: XCTestCase {
     func testConfigureOnSelectionIncorrectId() {
         //When
         typicodeService.returnNils = false
+        interactor.configure(with: .just(()), refreshObservable: .just(()), searchObservable: .just(""))
         interactor.configureSelection(with: .just(-1000))
         //Then
         XCTAssertTrue(routing.gotoDetailsTimesCalled == 0)
@@ -109,6 +111,7 @@ class ListInteractorTests: XCTestCase {
     func testConfigureOnSelectionNilsPosts() {
         //When
         typicodeService.returnNils = true
+        interactor.configure(with: .just(()), refreshObservable: .just(()), searchObservable: .just(testPost1.title!))
         interactor.configureSelection(with: .just(0))
         //Then
         XCTAssertTrue(routing.gotoDetailsTimesCalled == 0)
