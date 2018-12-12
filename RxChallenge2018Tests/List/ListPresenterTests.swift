@@ -26,27 +26,27 @@ class ListPresenterTests: XCTestCase {
     
     func testSetupPosts() {
         //When
-        presenter.setupPosts(with: .just(([testPost1, testPost2], "search")))
+        presenter.setupObservables(postsObservable: .just(([testPost1, testPost2], "search")), selectionObservable: .just(()))
         //Then
-        XCTAssertTrue(((try? listViewInterface.cellControllers.value())??.count == 2))
+        XCTAssertTrue(((try? listViewInterface.cellControllersSubject.value())??.count == 2))
     }
     
     func testSetupPostsNilTitle() {
         //When
-        presenter.setupPosts(with: .just(([testPostNil1, testPost2], "search")))
+        presenter.setupObservables(postsObservable: .just(([testPostNil1, testPost2], "search")), selectionObservable: .just(()))
         //Then
-        XCTAssertTrue((try? listViewInterface.cellControllers.value())??.count == 2)
-        let controller = (try? listViewInterface.cellControllers.value())??.first as! PostCellController
+        XCTAssertTrue((try? listViewInterface.cellControllersSubject.value())??.count == 2)
+        let controller = (try? listViewInterface.cellControllersSubject.value())??.first as! PostCellController
         XCTAssertTrue(controller.descriptor.title == "")
     }
     
     func testSetupPostsNilId() {
         //When
-        presenter.setupPosts(with: .just(([testPostNil1, testPost2], "search")))
-        let controller = (try? listViewInterface.cellControllers.value())??.first as! PostCellController
+        presenter.setupObservables(postsObservable: .just(([testPostNil1, testPost2], "search")), selectionObservable: .just(()))
+        let controller = (try? listViewInterface.cellControllersSubject.value())??.first as! PostCellController
         controller.didSelectCell()
         //Then
-        XCTAssertTrue((try? listViewInterface.cellControllers.value())??.count == 2)
+        XCTAssertTrue((try? listViewInterface.cellControllersSubject.value())??.count == 2)
         XCTAssertTrue(listViewInterface.selectedId == 0)
     }
     

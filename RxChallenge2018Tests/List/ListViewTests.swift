@@ -29,7 +29,6 @@ class ListViewTests: XCTestCase {
         //Then
         XCTAssertTrue(interactor.initializeTitlesTimesCalled == 1)
         XCTAssertTrue((try? interactor.searchSubject.value()) == "")
-        XCTAssertTrue(interactor.configureSelectionTimesCalled == 1)
         XCTAssertTrue((try? interactor.selectionIdSubject.value()) ?? nil == nil)
     }
     
@@ -54,7 +53,7 @@ class ListViewTests: XCTestCase {
         })
         let driver = Observable<[TableCellController]>.just([postCellController1, postCellController2]).asDriver(onErrorJustReturn: [])
         //When
-        listView.setupControllers(with: driver)
+        listView.setupObservables(controllers: driver, selection: .just(()))
         //Then
         XCTAssertTrue(listView.cellControllers.count == 2)
         XCTAssertTrue((listView.cellControllers.first as? PostCellController)?.descriptor.title == postCellDescriptor1.title)
@@ -75,7 +74,7 @@ class ListViewTests: XCTestCase {
         let driver = Observable<[TableCellController]>.just([postCellController1, postCellController2]).asDriver(onErrorJustReturn: [])
         //When
         _ = listView.view
-        listView.setupControllers(with: driver)
+        listView.setupObservables(controllers: driver, selection: .just(()))
         postCellController1.didSelectCell()
         //Then
         XCTAssertTrue((try? interactor.selectionIdSubject.value()) == id1)

@@ -6,7 +6,8 @@ import GenericCellControllers
 class ListViewInterfaceMock: ListViewInterface {
     var title: String?
     var placeholder: String?
-    let cellControllers = BehaviorSubject<[TableCellController]?>(value: nil)
+    let cellControllersSubject = BehaviorSubject<[TableCellController]?>(value: nil)
+    let selectionSubject = BehaviorSubject<()?>(value: nil)
     var selectedId: Int?
     var errorTitle: String?
     var errorMessage: String?
@@ -22,8 +23,9 @@ class ListViewInterfaceMock: ListViewInterface {
         self.placeholder = title
     }
     
-    func setupControllers(with driver: SharedSequence<DriverSharingStrategy, Array<CellController<UITableView>>>) {
-        driver.drive(cellControllers).disposed(by: disposeBag)
+    func setupObservables(controllers: Driver<[TableCellController]>, selection: Driver<()>) {
+        controllers.drive(cellControllersSubject).disposed(by: disposeBag)
+        selection.drive(selectionSubject).disposed(by: disposeBag)
     }
     
     func didSelectCell(with id: Int) {
