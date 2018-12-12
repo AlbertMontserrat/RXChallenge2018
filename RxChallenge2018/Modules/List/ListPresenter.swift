@@ -20,8 +20,8 @@ final class ListPresenter: ListPresenterInterface {
         presenterOutput?.configureSearchBarPlaceholder(Constants.searchPostsTitle)
     }
     
-    func setupPosts(with postsObservable: Observable<PostsWithQuery>, selectionObservable: Observable<()>) {
-        let driver: Driver<[TableCellController]> = postsObservable
+    func setupObservables(postsObservable: Observable<PostsWithQuery>, selectionObservable: Observable<()>) {
+        let postsDriver: Driver<[TableCellController]> = postsObservable
             .do(onNext: { [unowned self] _ in
                 self.presenterOutput?.stopAnimating()
                 }, onSubscribe: { [unowned self] in
@@ -31,7 +31,8 @@ final class ListPresenter: ListPresenterInterface {
                 return data.posts.map { PostCellController(descriptor: PostCellDescriptor(title: $0.title ?? ""), didSelectCell: self.didSelectCell(with: $0.id ?? 0)) }
             }
             .asDriver(onErrorJustReturn: [])
-        presenterOutput?.setupControllers(with: driver, selectionObservable: selectionObservable.asDriver(onErrorJustReturn: ()))
+        presenterOutput?.setupObservables(controllers: postsDriver,
+                                          selection: selectionObservable.asDriver(onErrorJustReturn: ()))
     }
     
     func showError(with error: NetworkError) {

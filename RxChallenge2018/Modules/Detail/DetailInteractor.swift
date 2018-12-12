@@ -26,7 +26,7 @@ final class DetailInteractor: DetailInteractorInterface {
     
     func setupStartupObservable(_ startupObservable: Observable<()>) {
         let observable = startupObservable
-            .flatMap { [unowned self] _ in
+            .flatMapLatest { [unowned self] _ in
                 return Single.zip(self.providers.typicodeProvider.getUser(with: self.post.userId ?? 0),
                                   self.providers.typicodeProvider.getComments(for: self.post.id ?? 0)) { [unowned self] user, comments -> DetailData in
                                     return (self.post, user, comments)

@@ -24,15 +24,15 @@ final class ListInteractor: ListInteractorInterface {
         interactorOutput.configureTitles()
     }
     
-    func configure(with startupObservable: Observable<()>, refreshObservable: Observable<()>, searchObservable: Observable<String>, selectionIdObservable: Observable<Int>) {
+    func configureObservables(startupObservable: Observable<()>, refreshObservable: Observable<()>, searchObservable: Observable<String>, selectionIdObservable: Observable<Int>) {
         let refreshData = Observable
             .merge([startupObservable, refreshObservable])
-            .flatMap { [unowned self] in
-                self.providers.typicodeProvider.getPosts().asObservable().debug()
+            .flatMapLatest { [unowned self] in
+                self.providers.typicodeProvider.getPosts().asObservable()
             }
             .share()
         
-        let observable = Observable<PostsWithQuery>
+        let postsObservable = Observable<PostsWithQuery>
             .combineLatest(refreshData, searchObservable) { posts, searchString -> PostsWithQuery in
                 return (posts.filter {
                     guard !searchString.isEmpty, let title = $0.title else { return true }
@@ -45,7 +45,7 @@ final class ListInteractor: ListInteractorInterface {
             })
         
         let selectionObservable = selectionIdObservable
-            .withLatestFrom(observable) { id, result -> Post? in
+            .withLatestFrom(postsObservable) { id, result -> Post? in
                 return result.posts.first { $0.id == id }
             }
             .do(onNext: { [unowned self] post in
@@ -54,6 +54,7 @@ final class ListInteractor: ListInteractorInterface {
             })
             .map { _ in () }
         
-        interactorOutput.setupPosts(with: observable, selectionObservable: selectionObservable)
+        interactorOutput.setupObservables(postsObservable: postsObservable,
+                                          selectionObservable: selectionObservable)
     }
 }
