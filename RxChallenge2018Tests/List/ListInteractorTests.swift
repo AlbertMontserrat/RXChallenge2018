@@ -37,7 +37,7 @@ class ListInteractorTests: XCTestCase {
     func testConfigurePostsEmptyString() {
         //When
         typicodeService.returnNils = false
-        interactor.configure(with: .just(""))
+        interactor.configure(with: .just(()), refreshObservable: .just(()), searchObservable: .just(""))
         //Then
         XCTAssertTrue((try? presenter.postsSubject.value())??.posts.count == validPosts.count)
         XCTAssertTrue((try? presenter.postsSubject.value())??.query == "")
@@ -46,7 +46,7 @@ class ListInteractorTests: XCTestCase {
     func testConfigurePostsNotEmptyString() {
         //When
         typicodeService.returnNils = false
-        interactor.configure(with: .just(testPost1.title!))
+        interactor.configure(with: .just(()), refreshObservable: .just(()), searchObservable: .just(testPost1.title!))
         //Then
         XCTAssertTrue((try? presenter.postsSubject.value())??.posts.count == 1)
         XCTAssertTrue((try? presenter.postsSubject.value())??.query == testPost1.title!)
@@ -55,7 +55,7 @@ class ListInteractorTests: XCTestCase {
     func testConfigurePostsEmptyStringPostNil() {
         //When
         typicodeService.returnNils = true
-        interactor.configure(with: .just(""))
+        interactor.configure(with: .just(()), refreshObservable: .just(()), searchObservable: .just(""))
         //Then
         XCTAssertTrue((try? presenter.postsSubject.value())??.posts.count == nilPosts.count)
         XCTAssertTrue((try? presenter.postsSubject.value())??.query == "")
@@ -64,7 +64,7 @@ class ListInteractorTests: XCTestCase {
     func testConfigurePostsNotEmptyStringPostNil() {
         //When
         typicodeService.returnNils = true
-        interactor.configure(with: .just(testPost1.title!))
+        interactor.configure(with: .just(()), refreshObservable: .just(()), searchObservable: .just(testPost1.title!))
         //Then
         XCTAssertTrue((try? presenter.postsSubject.value())??.posts.count == nilPosts.count)
         XCTAssertTrue((try? presenter.postsSubject.value())??.query == testPost1.title!)
@@ -73,7 +73,7 @@ class ListInteractorTests: XCTestCase {
     func testConfigurePostsError() {
         //When
         typicodeService.returnNils = true
-        interactor.configure(with: Observable<String>.just("").map { _ in throw NetworkError.undefined })
+        interactor.configure(with: .just(()), refreshObservable: .just(()), searchObservable: Observable<String>.just("").map { _ in throw NetworkError.undefined })
         //Then
         XCTAssertTrue((try? presenter.postsSubject.value())??.posts.count == nil)
         XCTAssertTrue((try? presenter.postsSubject.value())??.query == nil)
@@ -83,7 +83,7 @@ class ListInteractorTests: XCTestCase {
     func testConfigurePostsCommonError() {
         //When
         typicodeService.returnNils = true
-        interactor.configure(with: Observable<String>.just("").map { _ in throw NSError(domain: "test", code: 0, userInfo: nil) })
+        interactor.configure(with: .just(()), refreshObservable: .just(()), searchObservable: Observable<String>.just("").map { _ in throw NSError(domain: "test", code: 0, userInfo: nil) })
         //Then
         XCTAssertTrue((try? presenter.postsSubject.value())??.posts.count == nil)
         XCTAssertTrue((try? presenter.postsSubject.value())??.query == nil)

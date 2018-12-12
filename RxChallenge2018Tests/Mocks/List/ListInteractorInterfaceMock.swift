@@ -4,6 +4,8 @@ import RxSwift
 class ListInteractorInterfaceMock: ListInteractorInterface {
     var initializeTitlesTimesCalled = 0
     let searchSubject = BehaviorSubject<String?>(value: nil)
+    let startupSubject = BehaviorSubject<()?>(value: nil)
+    let refreshSubject = BehaviorSubject<()?>(value: nil)
     let selectionIdSubject = BehaviorSubject<Int?>(value: nil)
     var configureSelectionTimesCalled = 0
 
@@ -13,7 +15,9 @@ class ListInteractorInterfaceMock: ListInteractorInterface {
         initializeTitlesTimesCalled += 1
     }
     
-    func configure(with searchObservable: Observable<String>) {
+    func configure(with startupObservable: Observable<()>, refreshObservable: Observable<()>, searchObservable: Observable<String>) {
+        startupObservable.bind(to: startupSubject).disposed(by: disposeBag)
+        refreshObservable.bind(to: refreshSubject).disposed(by: disposeBag)
         searchObservable.bind(to: searchSubject).disposed(by: disposeBag)
     }
     
