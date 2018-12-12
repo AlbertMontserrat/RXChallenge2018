@@ -50,8 +50,7 @@ final class ListView: UIViewController, ListViewInterface {
         super.viewDidLoad()
         setupView()
         viewOutput?.initializeTitles()
-        viewOutput?.configure(with: startupSubject, refreshObservable: refreshControl.rx.controlEvent(.valueChanged).asObservable(), searchObservable: searchController.searchBar.rx.value.orEmpty.distinctUntilChanged().asObservable())
-        viewOutput?.configureSelection(with: selectionSubject)
+        viewOutput?.configure(with: startupSubject, refreshObservable: refreshControl.rx.controlEvent(.valueChanged).asObservable(), searchObservable: searchController.searchBar.rx.value.orEmpty.distinctUntilChanged().asObservable(), selectionIdObservable: selectionSubject)
         
         RxKeyboard.instance.visibleHeight.drive(onNext: { [weak self] height in
             self?.animate(to: height)
@@ -72,7 +71,7 @@ final class ListView: UIViewController, ListViewInterface {
         searchController.searchBar.placeholder = title
     }
 
-    func setupControllers(with driver: Driver<[TableCellController]>) {
+    func setupControllers(with driver: Driver<[TableCellController]>, selectionObservable: Driver<()>) {
         //NOTE: I don't use tableview.rx.items data binding and tableview.rx.itemSelected because I use the Generic cell controllers
         //which gives the option to create fully heterogenic lists with a common controller type.
         //Moreover, with this architecture, we cannot be 100% sure that the indexPath will be the same from interactor to presenter -> view.
@@ -82,6 +81,8 @@ final class ListView: UIViewController, ListViewInterface {
             self?.cellControllers = controllers
             self?.tableView.reloadData()
         }).disposed(by: disposeBag)
+        
+        selectionObservable.drive().disposed(by: disposeBag)
     }
     
     func showError(with title: String, message: String) {

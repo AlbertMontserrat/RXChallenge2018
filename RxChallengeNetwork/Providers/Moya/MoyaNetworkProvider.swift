@@ -73,6 +73,7 @@ extension Endpoint: TargetType {
 private extension Single where TraitType == SingleTrait, Element == Response {
     func handleError() -> Single<Response> {
         return flatMap { response in
+            print("")
             switch response.statusCode {
             case 200..<300: return .just(response)
             case 401: throw NetworkError.unauthorized

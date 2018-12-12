@@ -9,8 +9,6 @@ final class ListInteractor: ListInteractorInterface {
     private let interactorOutput: ListPresenterInterface
     private let router: ListRoutingInterface
     private let providers: AppProviders
-    private var posts: [Post] = []
-    private let disposeBag = DisposeBag()
     
     //MARK: - Lifecycle
     init(router: ListRoutingInterface,
@@ -26,34 +24,36 @@ final class ListInteractor: ListInteractorInterface {
         interactorOutput.configureTitles()
     }
     
-    func configure(with startupObservable: Observable<()>, refreshObservable: Observable<()>, searchObservable: Observable<String>) {
-        let refreshData = Observable.merge([startupObservable, refreshObservable]).flatMap { [unowned self] in
-            self.providers.typicodeProvider.getPosts().asObservable()
-        }
-        let observable = Observable
+    func configure(with startupObservable: Observable<()>, refreshObservable: Observable<()>, searchObservable: Observable<String>, selectionIdObservable: Observable<Int>) {
+        let refreshData = Observable
+            .merge([startupObservable, refreshObservable])
+            .flatMap { [unowned self] in
+                self.providers.typicodeProvider.getPosts().asObservable().debug()
+            }
+            .share()
+        
+        let observable = Observable<PostsWithQuery>
             .combineLatest(refreshData, searchObservable) { posts, searchString -> PostsWithQuery in
                 return (posts.filter {
                     guard !searchString.isEmpty, let title = $0.title else { return true }
                     return title.lowercased().contains(searchString.lowercased())
                 }, searchString)
             }
-            .do(onNext: { [unowned self] result in
-                self.posts = result.posts
-            }, onError: { [unowned self] error in
+            .do(onError: { [unowned self] error in
                 let error = error as? NetworkError ?? .undefined
                 self.interactorOutput.showError(with: error)
             })
-        interactorOutput.setupPosts(with: observable)
-    }
-    
-    func configureSelection(with selectionIdObservable: Observable<Int>) {
-        selectionIdObservable
-            .map { [unowned self] id in
-                return self.posts.first { $0.id == id }
+        
+        let selectionObservable = selectionIdObservable
+            .withLatestFrom(observable) { id, result -> Post? in
+                return result.posts.first { $0.id == id }
             }
-            .subscribe(onNext: { [unowned self] post in
+            .do(onNext: { [unowned self] post in
                 guard let post = post else { return }
                 self.router.gotoDetail(with: post)
-            }).disposed(by: disposeBag)
+            })
+            .map { _ in () }
+        
+        interactorOutput.setupPosts(with: observable, selectionObservable: selectionObservable)
     }
 }
