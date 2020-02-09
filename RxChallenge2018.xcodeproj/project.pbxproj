@@ -11,23 +11,11 @@
 		277181EDCCED81D9A5087EB6 /* Pods_RxChallengeNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EA01E9FB09FC3E80C9B8A90 /* Pods_RxChallengeNetwork.framework */; };
 		280D1CC121BE765100829061 /* RxChallengeNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 280D1CB821BE765100829061 /* RxChallengeNetwork.framework */; };
 		280D1CC821BE765100829061 /* RxChallengeNetworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280D1CC721BE765100829061 /* RxChallengeNetworkTests.swift */; };
-		280D1CE121BE796600829061 /* Post+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282FF9AB21BA6B930049A05D /* Post+Codable.swift */; };
-		280D1CE221BE796E00829061 /* User+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5038014921BBBD7900EA82F9 /* User+Codable.swift */; };
-		280D1CE321BE797100829061 /* Address+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5038014D21BBBDB600EA82F9 /* Address+Codable.swift */; };
-		280D1CE421BE797500829061 /* GeoPoint+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5038014F21BBBDEE00EA82F9 /* GeoPoint+Codable.swift */; };
-		280D1CE521BE797900829061 /* Comment+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5038014B21BBBD8300EA82F9 /* Comment+Codable.swift */; };
-		280D1CE621BE797C00829061 /* Hosts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282FF9A221BA6ACF0049A05D /* Hosts.swift */; };
-		280D1CE721BE797F00829061 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282FF99D21BA6ACF0049A05D /* Endpoint.swift */; };
-		280D1CE821BE798200829061 /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282FF9A121BA6ACF0049A05D /* NetworkProvider.swift */; };
-		280D1CE921BE798600829061 /* TypicodeProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282FF9A021BA6ACF0049A05D /* TypicodeProvider.swift */; };
 		280D1CEA21BE798B00829061 /* MoyaNetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282FF99F21BA6ACF0049A05D /* MoyaNetworkProvider.swift */; };
 		280D1CEB21BE798F00829061 /* UserDefaultsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282FF9B121BA94910049A05D /* UserDefaultsProvider.swift */; };
 		280D1CF021BE804C00829061 /* AppProviders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280D1CEF21BE804C00829061 /* AppProviders.swift */; };
-		280D1D0221BE847900829061 /* RxChallengeDomain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 280D1CF921BE847800829061 /* RxChallengeDomain.framework */; };
-		280D1D0921BE847900829061 /* RxChallengeDomainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280D1D0821BE847900829061 /* RxChallengeDomainTests.swift */; };
 		280D1D0E21BE847900829061 /* RxChallengeDomain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 280D1CF921BE847800829061 /* RxChallengeDomain.framework */; };
 		280D1D0F21BE847900829061 /* RxChallengeDomain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 280D1CF921BE847800829061 /* RxChallengeDomain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		280D1D1821BE84E800829061 /* Providers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280D1CED21BE7F5800829061 /* Providers.swift */; };
 		280D1D1921BE84EC00829061 /* NetworkErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280D1CF221BE820900829061 /* NetworkErrors.swift */; };
 		280D1D1A21BE85CC00829061 /* RxChallengeDomain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 280D1CF921BE847800829061 /* RxChallengeDomain.framework */; };
 		280D1D1C21BE85F900829061 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280D1CDB21BE787000829061 /* Post.swift */; };
@@ -48,7 +36,7 @@
 		280D1D5221BE9B2500829061 /* ScrolledStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5038014721BBBC5800EA82F9 /* ScrolledStackView.swift */; };
 		280D1D5321BE9B2500829061 /* MessagesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5038015121BC585C00EA82F9 /* MessagesManager.swift */; };
 		280D1D5721BEA72300829061 /* RxChallengeDomain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 280D1CF921BE847800829061 /* RxChallengeDomain.framework */; };
-		282FF98321BA5F970049A05D /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282FF98221BA5F970049A05D /* MainCoordinator.swift */; };
+		282FF98321BA5F970049A05D /* CoordinatorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282FF98221BA5F970049A05D /* CoordinatorType.swift */; };
 		282FF98D21BA60D70049A05D /* ListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282FF98721BA60D70049A05D /* ListCoordinator.swift */; };
 		282FF98E21BA60D70049A05D /* ListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282FF98821BA60D70049A05D /* ListPresenter.swift */; };
 		282FF98F21BA60D70049A05D /* ListAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282FF98921BA60D70049A05D /* ListAPI.swift */; };
@@ -90,6 +78,14 @@
 		5038018921C04E9400EA82F9 /* DetailPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5038018821C04E9400EA82F9 /* DetailPresenterTests.swift */; };
 		5038018B21C0521700EA82F9 /* DetailInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5038018A21C0521700EA82F9 /* DetailInteractorTests.swift */; };
 		5038018D21C0579800EA82F9 /* DetailViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5038018C21C0579800EA82F9 /* DetailViewTests.swift */; };
+		504C15C823F0986A005DE1CF /* TypicodeProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504C15C723F0986A005DE1CF /* TypicodeProvider.swift */; };
+		504C15CF23F0989F005DE1CF /* User+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504C15CA23F0989F005DE1CF /* User+Codable.swift */; };
+		504C15D023F0989F005DE1CF /* Address+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504C15CB23F0989F005DE1CF /* Address+Codable.swift */; };
+		504C15D123F0989F005DE1CF /* GeoPoint+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504C15CC23F0989F005DE1CF /* GeoPoint+Codable.swift */; };
+		504C15D223F0989F005DE1CF /* Comment+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504C15CD23F0989F005DE1CF /* Comment+Codable.swift */; };
+		504C15D323F0989F005DE1CF /* Post+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504C15CE23F0989F005DE1CF /* Post+Codable.swift */; };
+		504C15D523F099BF005DE1CF /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504C15D423F099BF005DE1CF /* NetworkProvider.swift */; };
+		504C15D723F09B88005DE1CF /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504C15D623F09B88005DE1CF /* Endpoint.swift */; };
 		76A2FFC69A13C9FA8F87ACAD /* Pods_RxChallenge2018UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE9DB6FEF1F0517E4861B112 /* Pods_RxChallenge2018UITests.framework */; };
 		BD6F70C3B90180B40B651EAA /* Pods_RxChallengeDomain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B100CB64DB74631107A62372 /* Pods_RxChallengeDomain.framework */; };
 		CF24AE228E1E40D5F2ADA2E9 /* Pods_RxChallenge2018.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75A596011461E780B745E530 /* Pods_RxChallenge2018.framework */; };
@@ -105,20 +101,6 @@
 			remoteInfo = RxChallengeNetwork;
 		};
 		280D1CC421BE765100829061 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 287E026821BA4F4400437462 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 287E026F21BA4F4400437462;
-			remoteInfo = RxChallenge2018;
-		};
-		280D1D0321BE847900829061 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 287E026821BA4F4400437462 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 280D1CF821BE847800829061;
-			remoteInfo = RxChallengeDomain;
-		};
-		280D1D0521BE847900829061 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 287E026821BA4F4400437462 /* Project object */;
 			proxyType = 1;
@@ -205,32 +187,23 @@
 		280D1CD921BE787000829061 /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		280D1CDA21BE787000829061 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		280D1CDB21BE787000829061 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
-		280D1CED21BE7F5800829061 /* Providers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Providers.swift; sourceTree = "<group>"; };
 		280D1CEF21BE804C00829061 /* AppProviders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppProviders.swift; sourceTree = "<group>"; };
 		280D1CF221BE820900829061 /* NetworkErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrors.swift; sourceTree = "<group>"; };
 		280D1CF921BE847800829061 /* RxChallengeDomain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxChallengeDomain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		280D1CFC21BE847800829061 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		280D1D0121BE847800829061 /* RxChallengeDomainTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RxChallengeDomainTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		280D1D0821BE847900829061 /* RxChallengeDomainTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxChallengeDomainTests.swift; sourceTree = "<group>"; };
-		280D1D0A21BE847900829061 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		280D1D2D21BE8C1900829061 /* RxChallengeUtils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxChallengeUtils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		280D1D3021BE8C1900829061 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		280D1D3521BE8C1900829061 /* RxChallengeUtilsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RxChallengeUtilsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		280D1D3C21BE8C1900829061 /* GlobalTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalTests.swift; sourceTree = "<group>"; };
 		280D1D3E21BE8C1900829061 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		282FF98221BA5F970049A05D /* MainCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		282FF98221BA5F970049A05D /* CoordinatorType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoordinatorType.swift; sourceTree = "<group>"; };
 		282FF98721BA60D70049A05D /* ListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCoordinator.swift; sourceTree = "<group>"; };
 		282FF98821BA60D70049A05D /* ListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPresenter.swift; sourceTree = "<group>"; };
 		282FF98921BA60D70049A05D /* ListAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListAPI.swift; sourceTree = "<group>"; };
 		282FF98A21BA60D70049A05D /* ListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListInteractor.swift; sourceTree = "<group>"; };
 		282FF98B21BA60D70049A05D /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		282FF99421BA61370049A05D /* Global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
-		282FF99D21BA6ACF0049A05D /* Endpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		282FF99F21BA6ACF0049A05D /* MoyaNetworkProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoyaNetworkProvider.swift; sourceTree = "<group>"; };
-		282FF9A021BA6ACF0049A05D /* TypicodeProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypicodeProvider.swift; sourceTree = "<group>"; };
-		282FF9A121BA6ACF0049A05D /* NetworkProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkProvider.swift; sourceTree = "<group>"; };
-		282FF9A221BA6ACF0049A05D /* Hosts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hosts.swift; sourceTree = "<group>"; };
-		282FF9AB21BA6B930049A05D /* Post+Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Post+Codable.swift"; sourceTree = "<group>"; };
 		282FF9B121BA94910049A05D /* UserDefaultsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsProvider.swift; sourceTree = "<group>"; };
 		28732785F6EF8A9ABE181BEE /* Pods_RxChallengeUtils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxChallengeUtils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		287E027021BA4F4400437462 /* RxChallenge2018.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxChallenge2018.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -257,10 +230,6 @@
 		5038013E21BBBA9800EA82F9 /* DetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInteractor.swift; sourceTree = "<group>"; };
 		5038013F21BBBA9800EA82F9 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		5038014721BBBC5800EA82F9 /* ScrolledStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrolledStackView.swift; sourceTree = "<group>"; };
-		5038014921BBBD7900EA82F9 /* User+Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+Codable.swift"; sourceTree = "<group>"; };
-		5038014B21BBBD8300EA82F9 /* Comment+Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Comment+Codable.swift"; sourceTree = "<group>"; };
-		5038014D21BBBDB600EA82F9 /* Address+Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Address+Codable.swift"; sourceTree = "<group>"; };
-		5038014F21BBBDEE00EA82F9 /* GeoPoint+Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GeoPoint+Codable.swift"; sourceTree = "<group>"; };
 		5038015121BC585C00EA82F9 /* MessagesManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesManager.swift; sourceTree = "<group>"; };
 		5038015321BC587900EA82F9 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		5038015821BC5A8600EA82F9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -286,6 +255,14 @@
 		5038018821C04E9400EA82F9 /* DetailPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenterTests.swift; sourceTree = "<group>"; };
 		5038018A21C0521700EA82F9 /* DetailInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInteractorTests.swift; sourceTree = "<group>"; };
 		5038018C21C0579800EA82F9 /* DetailViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewTests.swift; sourceTree = "<group>"; };
+		504C15C723F0986A005DE1CF /* TypicodeProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypicodeProvider.swift; sourceTree = "<group>"; };
+		504C15CA23F0989F005DE1CF /* User+Codable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "User+Codable.swift"; sourceTree = "<group>"; };
+		504C15CB23F0989F005DE1CF /* Address+Codable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Address+Codable.swift"; sourceTree = "<group>"; };
+		504C15CC23F0989F005DE1CF /* GeoPoint+Codable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GeoPoint+Codable.swift"; sourceTree = "<group>"; };
+		504C15CD23F0989F005DE1CF /* Comment+Codable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Comment+Codable.swift"; sourceTree = "<group>"; };
+		504C15CE23F0989F005DE1CF /* Post+Codable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Post+Codable.swift"; sourceTree = "<group>"; };
+		504C15D423F099BF005DE1CF /* NetworkProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkProvider.swift; sourceTree = "<group>"; };
+		504C15D623F09B88005DE1CF /* Endpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		56B6687E9EC5610483E91819 /* Pods-RxChallenge2018.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxChallenge2018.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxChallenge2018/Pods-RxChallenge2018.release.xcconfig"; sourceTree = "<group>"; };
 		73ED6648045C194F1BB0ABB4 /* Pods_RxChallenge2018Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxChallenge2018Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		75A596011461E780B745E530 /* Pods_RxChallenge2018.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxChallenge2018.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -324,14 +301,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD6F70C3B90180B40B651EAA /* Pods_RxChallengeDomain.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		280D1CFE21BE847800829061 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				280D1D0221BE847900829061 /* RxChallengeDomain.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -399,8 +368,6 @@
 			isa = PBXGroup;
 			children = (
 				280D1CBB21BE765100829061 /* Info.plist */,
-				282FF9AA21BA6B830049A05D /* Models */,
-				282FF99B21BA6ACF0049A05D /* Endpoints */,
 				282FF99E21BA6ACF0049A05D /* Providers */,
 			);
 			path = RxChallengeNetwork;
@@ -415,40 +382,24 @@
 			path = RxChallengeNetworkTests;
 			sourceTree = "<group>";
 		};
-		280D1CEC21BE7F4800829061 /* Providers */ = {
+		280D1CF121BE81FC00829061 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				280D1CED21BE7F5800829061 /* Providers.swift */,
-			);
-			path = Providers;
-			sourceTree = "<group>";
-		};
-		280D1CF121BE81FC00829061 /* Errors */ = {
-			isa = PBXGroup;
-			children = (
+				504C15D623F09B88005DE1CF /* Endpoint.swift */,
+				504C15D423F099BF005DE1CF /* NetworkProvider.swift */,
 				280D1CF221BE820900829061 /* NetworkErrors.swift */,
 			);
-			path = Errors;
+			path = Network;
 			sourceTree = "<group>";
 		};
 		280D1CFA21BE847800829061 /* RxChallengeDomain */ = {
 			isa = PBXGroup;
 			children = (
 				280D1CFC21BE847800829061 /* Info.plist */,
-				280D1CF121BE81FC00829061 /* Errors */,
-				280D1CEC21BE7F4800829061 /* Providers */,
+				280D1CF121BE81FC00829061 /* Network */,
 				280D1D1721BE849D00829061 /* Models */,
 			);
 			path = RxChallengeDomain;
-			sourceTree = "<group>";
-		};
-		280D1D0721BE847900829061 /* RxChallengeDomainTests */ = {
-			isa = PBXGroup;
-			children = (
-				280D1D0821BE847900829061 /* RxChallengeDomainTests.swift */,
-				280D1D0A21BE847900829061 /* Info.plist */,
-			);
-			path = RxChallengeDomainTests;
 			sourceTree = "<group>";
 		};
 		280D1D1721BE849D00829061 /* Models */ = {
@@ -539,36 +490,13 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
-		282FF99B21BA6ACF0049A05D /* Endpoints */ = {
-			isa = PBXGroup;
-			children = (
-				282FF9A221BA6ACF0049A05D /* Hosts.swift */,
-				282FF99D21BA6ACF0049A05D /* Endpoint.swift */,
-			);
-			path = Endpoints;
-			sourceTree = "<group>";
-		};
 		282FF99E21BA6ACF0049A05D /* Providers */ = {
 			isa = PBXGroup;
 			children = (
-				282FF9A121BA6ACF0049A05D /* NetworkProvider.swift */,
-				282FF9A021BA6ACF0049A05D /* TypicodeProvider.swift */,
 				282FF9AD21BA93790049A05D /* Moya */,
 				282FF9AE21BA93930049A05D /* UserDefaults */,
 			);
 			path = Providers;
-			sourceTree = "<group>";
-		};
-		282FF9AA21BA6B830049A05D /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				282FF9AB21BA6B930049A05D /* Post+Codable.swift */,
-				5038014921BBBD7900EA82F9 /* User+Codable.swift */,
-				5038014D21BBBDB600EA82F9 /* Address+Codable.swift */,
-				5038014F21BBBDEE00EA82F9 /* GeoPoint+Codable.swift */,
-				5038014B21BBBD8300EA82F9 /* Comment+Codable.swift */,
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		282FF9AD21BA93790049A05D /* Moya */ = {
@@ -596,7 +524,6 @@
 				280D1D2E21BE8C1900829061 /* RxChallengeUtils */,
 				280D1D3B21BE8C1900829061 /* RxChallengeUtilsTests */,
 				280D1CFA21BE847800829061 /* RxChallengeDomain */,
-				280D1D0721BE847900829061 /* RxChallengeDomainTests */,
 				280D1CB921BE765100829061 /* RxChallengeNetwork */,
 				280D1CC621BE765100829061 /* RxChallengeNetworkTests */,
 				287E027121BA4F4400437462 /* Products */,
@@ -614,7 +541,6 @@
 				280D1CB821BE765100829061 /* RxChallengeNetwork.framework */,
 				280D1CC021BE765100829061 /* RxChallengeNetworkTests.xctest */,
 				280D1CF921BE847800829061 /* RxChallengeDomain.framework */,
-				280D1D0121BE847800829061 /* RxChallengeDomainTests.xctest */,
 				280D1D2D21BE8C1900829061 /* RxChallengeUtils.framework */,
 				280D1D3521BE8C1900829061 /* RxChallengeUtilsTests.xctest */,
 			);
@@ -625,9 +551,10 @@
 			isa = PBXGroup;
 			children = (
 				287E027321BA4F4400437462 /* AppDelegate.swift */,
-				282FF98221BA5F970049A05D /* MainCoordinator.swift */,
+				282FF98221BA5F970049A05D /* CoordinatorType.swift */,
 				280D1CEF21BE804C00829061 /* AppProviders.swift */,
 				5038015C21BEDC6400EA82F9 /* ScreenFactory.swift */,
+				504C15C623F09846005DE1CF /* NetworkProviders */,
 				282FF98421BA60B20049A05D /* Modules */,
 				282FF98121BA5C5C0049A05D /* Resources */,
 			);
@@ -720,6 +647,27 @@
 				5038018421C04DBB00EA82F9 /* DetailInteractorInterfaceMock.swift */,
 			);
 			path = Detail;
+			sourceTree = "<group>";
+		};
+		504C15C623F09846005DE1CF /* NetworkProviders */ = {
+			isa = PBXGroup;
+			children = (
+				504C15C923F0987E005DE1CF /* Models */,
+				504C15C723F0986A005DE1CF /* TypicodeProvider.swift */,
+			);
+			path = NetworkProviders;
+			sourceTree = "<group>";
+		};
+		504C15C923F0987E005DE1CF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				504C15CB23F0989F005DE1CF /* Address+Codable.swift */,
+				504C15CD23F0989F005DE1CF /* Comment+Codable.swift */,
+				504C15CC23F0989F005DE1CF /* GeoPoint+Codable.swift */,
+				504C15CE23F0989F005DE1CF /* Post+Codable.swift */,
+				504C15CA23F0989F005DE1CF /* User+Codable.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		9FCB77767826460D761A2756 /* Pods */ = {
@@ -824,25 +772,6 @@
 			productName = RxChallengeDomain;
 			productReference = 280D1CF921BE847800829061 /* RxChallengeDomain.framework */;
 			productType = "com.apple.product-type.framework";
-		};
-		280D1D0021BE847800829061 /* RxChallengeDomainTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 280D1D1421BE847900829061 /* Build configuration list for PBXNativeTarget "RxChallengeDomainTests" */;
-			buildPhases = (
-				280D1CFD21BE847800829061 /* Sources */,
-				280D1CFE21BE847800829061 /* Frameworks */,
-				280D1CFF21BE847800829061 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				280D1D0421BE847900829061 /* PBXTargetDependency */,
-				280D1D0621BE847900829061 /* PBXTargetDependency */,
-			);
-			name = RxChallengeDomainTests;
-			productName = RxChallengeDomainTests;
-			productReference = 280D1D0121BE847800829061 /* RxChallengeDomainTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		280D1D2C21BE8C1900829061 /* RxChallengeUtils */ = {
 			isa = PBXNativeTarget;
@@ -963,10 +892,6 @@
 					280D1CF821BE847800829061 = {
 						CreatedOnToolsVersion = 10.1;
 					};
-					280D1D0021BE847800829061 = {
-						CreatedOnToolsVersion = 10.1;
-						TestTargetID = 287E026F21BA4F4400437462;
-					};
 					280D1D2C21BE8C1900829061 = {
 						CreatedOnToolsVersion = 10.1;
 					};
@@ -1006,7 +931,6 @@
 				280D1D2C21BE8C1900829061 /* RxChallengeUtils */,
 				280D1D3421BE8C1900829061 /* RxChallengeUtilsTests */,
 				280D1CF821BE847800829061 /* RxChallengeDomain */,
-				280D1D0021BE847800829061 /* RxChallengeDomainTests */,
 				280D1CB721BE765100829061 /* RxChallengeNetwork */,
 				280D1CBF21BE765100829061 /* RxChallengeNetworkTests */,
 			);
@@ -1029,13 +953,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		280D1CF721BE847800829061 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		280D1CFF21BE847800829061 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1264,16 +1181,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				280D1CE721BE797F00829061 /* Endpoint.swift in Sources */,
-				280D1CE921BE798600829061 /* TypicodeProvider.swift in Sources */,
-				280D1CE521BE797900829061 /* Comment+Codable.swift in Sources */,
-				280D1CE321BE797100829061 /* Address+Codable.swift in Sources */,
-				280D1CE221BE796E00829061 /* User+Codable.swift in Sources */,
-				280D1CE621BE797C00829061 /* Hosts.swift in Sources */,
-				280D1CE821BE798200829061 /* NetworkProvider.swift in Sources */,
 				280D1CEA21BE798B00829061 /* MoyaNetworkProvider.swift in Sources */,
-				280D1CE421BE797500829061 /* GeoPoint+Codable.swift in Sources */,
-				280D1CE121BE796600829061 /* Post+Codable.swift in Sources */,
 				280D1CEB21BE798F00829061 /* UserDefaultsProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1291,20 +1199,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				280D1D1F21BE85F900829061 /* GeoPoint.swift in Sources */,
+				504C15D723F09B88005DE1CF /* Endpoint.swift in Sources */,
 				280D1D1D21BE85F900829061 /* User.swift in Sources */,
 				280D1D1C21BE85F900829061 /* Post.swift in Sources */,
 				280D1D2021BE85F900829061 /* Comment.swift in Sources */,
-				280D1D1821BE84E800829061 /* Providers.swift in Sources */,
+				504C15D523F099BF005DE1CF /* NetworkProvider.swift in Sources */,
 				280D1D1921BE84EC00829061 /* NetworkErrors.swift in Sources */,
 				280D1D1E21BE85F900829061 /* Address.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		280D1CFD21BE847800829061 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				280D1D0921BE847900829061 /* RxChallengeDomainTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1333,21 +1234,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				5038014521BBBA9800EA82F9 /* DetailView.swift in Sources */,
+				504C15C823F0986A005DE1CF /* TypicodeProvider.swift in Sources */,
 				5038014321BBBA9800EA82F9 /* DetailAPI.swift in Sources */,
 				5038015D21BEDC6400EA82F9 /* ScreenFactory.swift in Sources */,
 				282FF99021BA60D70049A05D /* ListInteractor.swift in Sources */,
 				280D1CF021BE804C00829061 /* AppProviders.swift in Sources */,
 				287E027421BA4F4400437462 /* AppDelegate.swift in Sources */,
+				504C15D023F0989F005DE1CF /* Address+Codable.swift in Sources */,
 				5038014221BBBA9800EA82F9 /* DetailPresenter.swift in Sources */,
 				5038013A21BAF78A00EA82F9 /* PostTableViewCell.swift in Sources */,
-				282FF98321BA5F970049A05D /* MainCoordinator.swift in Sources */,
+				282FF98321BA5F970049A05D /* CoordinatorType.swift in Sources */,
 				282FF99121BA60D70049A05D /* ListView.swift in Sources */,
 				5038013821BAF77E00EA82F9 /* PostCellController.swift in Sources */,
+				504C15CF23F0989F005DE1CF /* User+Codable.swift in Sources */,
+				504C15D223F0989F005DE1CF /* Comment+Codable.swift in Sources */,
 				282FF98E21BA60D70049A05D /* ListPresenter.swift in Sources */,
 				282FF98D21BA60D70049A05D /* ListCoordinator.swift in Sources */,
 				5038014121BBBA9800EA82F9 /* DetailCoordinator.swift in Sources */,
+				504C15D323F0989F005DE1CF /* Post+Codable.swift in Sources */,
 				5038015B21BC5B3700EA82F9 /* Localizable.swift in Sources */,
 				282FF98F21BA60D70049A05D /* ListAPI.swift in Sources */,
+				504C15D123F0989F005DE1CF /* GeoPoint+Codable.swift in Sources */,
 				5038014421BBBA9800EA82F9 /* DetailInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1401,16 +1308,6 @@
 			isa = PBXTargetDependency;
 			target = 287E026F21BA4F4400437462 /* RxChallenge2018 */;
 			targetProxy = 280D1CC421BE765100829061 /* PBXContainerItemProxy */;
-		};
-		280D1D0421BE847900829061 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 280D1CF821BE847800829061 /* RxChallengeDomain */;
-			targetProxy = 280D1D0321BE847900829061 /* PBXContainerItemProxy */;
-		};
-		280D1D0621BE847900829061 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 287E026F21BA4F4400437462 /* RxChallenge2018 */;
-			targetProxy = 280D1D0521BE847900829061 /* PBXContainerItemProxy */;
 		};
 		280D1D0D21BE847900829061 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1628,48 +1525,6 @@
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		280D1D1521BE847900829061 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Y9LBLMNMZG;
-				INFOPLIST_FILE = RxChallengeDomainTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.albertmontserratgambus.RxChallengeDomainTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RxChallenge2018.app/RxChallenge2018";
-			};
-			name = Debug;
-		};
-		280D1D1621BE847900829061 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Y9LBLMNMZG;
-				INFOPLIST_FILE = RxChallengeDomainTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.albertmontserratgambus.RxChallengeDomainTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RxChallenge2018.app/RxChallenge2018";
 			};
 			name = Release;
 		};
@@ -2041,15 +1896,6 @@
 			buildConfigurations = (
 				280D1D1121BE847900829061 /* Debug */,
 				280D1D1221BE847900829061 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		280D1D1421BE847900829061 /* Build configuration list for PBXNativeTarget "RxChallengeDomainTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				280D1D1521BE847900829061 /* Debug */,
-				280D1D1621BE847900829061 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

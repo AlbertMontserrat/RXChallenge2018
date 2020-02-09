@@ -1,11 +1,11 @@
 import UIKit
 
-protocol MainCoordinator {
+protocol CoordinatorType {
     var navigationController: UINavigationController { get }
     func setRootViewController(in window: UIWindow)
 }
 
-extension MainCoordinator {
+extension CoordinatorType {
     func setRootViewController(in window: UIWindow) {
         window.rootViewController = navigationController
         window.makeKeyAndVisible()

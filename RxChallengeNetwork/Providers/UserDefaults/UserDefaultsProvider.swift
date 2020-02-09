@@ -4,11 +4,18 @@ import RxSwift
 import RxCocoa
 import SwiftyJSON
 
+protocol DataStorage {
+    func data(forKey defaultName: String) -> Data?
+    func set(_ value: Any?, forKey defaultName: String)
+}
+
+extension UserDefaults: DataStorage {}
+
 public class UserDefaultsProvider: NetworkCacheProvider {
     static var shared = UserDefaultsProvider()
-    private let provider: UserDefaults
+    private let provider: DataStorage
     
-    private init(provider: UserDefaults = UserDefaults.standard) {
+    private init(provider: DataStorage = UserDefaults.standard) {
         self.provider = provider
     }
     
@@ -24,11 +31,11 @@ public class UserDefaultsProvider: NetworkCacheProvider {
         }.asSingle()
     }
     
-    func requestDecodable<D: Decodable>(_ endpoint: Endpoint) -> Single<D> {
+    public func requestDecodable<D: Decodable>(_ endpoint: RxChallengeDomain.Endpoint) -> Single<D> {
         return customRequest(endpoint).mapDecodable()
     }
     
-    func saveData(_ data: Data, for endpoint: Endpoint) {
+    public func saveData(_ data: Data, for endpoint: RxChallengeDomain.Endpoint) {
         provider.set(data, forKey: endpoint.key)
     }
 }
@@ -40,5 +47,12 @@ private extension Single where TraitType == SingleTrait, Element == Data {
             guard let decoded = try? JSONDecoder().decode(D.self, from: $0) else { throw NetworkError.malformedJSON }
             return decoded
         }
+    }
+}
+
+//MARK - Cache extension
+private extension RxChallengeDomain.Endpoint {
+    var key: String {
+        return [httpMethod.rawValue, host.url.absoluteString, path, String(describing: parameters ?? [:])].joined(separator: "|")
     }
 }

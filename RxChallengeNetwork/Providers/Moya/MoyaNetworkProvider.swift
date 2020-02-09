@@ -6,15 +6,15 @@ import SwiftyJSON
 
 public class MoyaNetworkProvider: NetworkProvider {
     public static var shared = MoyaNetworkProvider()
-    private let provider: MoyaProvider<Endpoint>
+    private let provider: MoyaProvider<RxChallengeDomain.Endpoint>
     private let cacheProvider: NetworkCacheProvider
 
-    private init(provider: MoyaProvider<Endpoint> = MoyaProvider<Endpoint>(), cacheProvider: NetworkCacheProvider = UserDefaultsProvider.shared) {
+    private init(provider: MoyaProvider<RxChallengeDomain.Endpoint> = MoyaProvider<RxChallengeDomain.Endpoint>(), cacheProvider: NetworkCacheProvider = UserDefaultsProvider.shared) {
         self.provider = provider
         self.cacheProvider = cacheProvider
     }
     
-    func requestDecodable<D>(_ endpoint: Endpoint, customPath: String? = nil) -> Single<D> where D : Codable {
+    public func requestDecodable<D>(_ endpoint: RxChallengeDomain.Endpoint, customPath: String? = nil) -> Single<D> where D : Codable {
         return provider.rx.request(endpoint)
             .handleError()
             .map(D.self, atKeyPath: customPath)
@@ -27,7 +27,11 @@ public class MoyaNetworkProvider: NetworkProvider {
 }
 
 //MARK: - Endpoint Moya extension
-extension Endpoint: TargetType {
+extension RxChallengeDomain.Endpoint: TargetType {
+    public var baseURL: URL {
+        return host.url
+    }
+    
     public var method: Moya.Method {
         switch httpMethod {
         case .options:
@@ -86,7 +90,7 @@ private extension Single where TraitType == SingleTrait, Element == Response {
 
 //MARK: - Single<Codable> extensions
 private extension Single where TraitType == SingleTrait, Element: Codable {
-    func cacheResponse(endpoint: Endpoint, cacheProvider: NetworkCacheProvider) -> Single<Element> {
+    func cacheResponse(endpoint: RxChallengeDomain.Endpoint, cacheProvider: NetworkCacheProvider) -> Single<Element> {
         return self.do(onSuccess: {
             guard let data = try? JSONEncoder().encode($0) else { return }
             cacheProvider.saveData(data, for: endpoint)

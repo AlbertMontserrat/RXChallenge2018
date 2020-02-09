@@ -12,7 +12,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         let screenFactory = AppScreenFactory(postScreenFactory: PostScreenFactory())
         
         //Generate the application providers
-        let providers = AppProviders(typicodeProvider: TypicodeProvider())
+        let providers = AppProviders(typicodeProvider: TypicodeProvider(networkProvider: MoyaNetworkProvider.shared))
         
         //Start main coordinator
         let window = UIWindow(frame: UIScreen.main.bounds)

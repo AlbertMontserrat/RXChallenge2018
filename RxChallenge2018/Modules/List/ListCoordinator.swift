@@ -1,7 +1,7 @@
 import UIKit
 import RxChallengeDomain
 
-class ListCoordinator: MainCoordinator {
+class ListCoordinator: CoordinatorType {
     
     unowned var navigationController: UINavigationController
     private let screenFactory: AppScreenFactory

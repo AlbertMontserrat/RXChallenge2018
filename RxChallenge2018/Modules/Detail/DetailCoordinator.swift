@@ -1,9 +1,9 @@
 import UIKit
 import RxChallengeDomain
 
-class DetailCoordinator {
+class DetailCoordinator: CoordinatorType {
     
-    private unowned var navigationController: UINavigationController
+    unowned var navigationController: UINavigationController
     private let screenFactory: AppScreenFactory
     private let providers: AppProviders
     private let post: Post
